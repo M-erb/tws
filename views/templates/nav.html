@@ -1,0 +1,36 @@
+<nav class="cd-stretchy-nav ng-class:{'nav-is-visible' : visible}">
+  <div class="nav_bkgd" ng-click="mainNavToggle()"></div>
+  <a class="cd-nav-trigger" href="" ng-click="mainNavToggle()">
+    menu
+    <span aria-hidden="true"></span>
+  </a>
+  <ul>
+    <li><a href="/" class="active" id="home" ng-click="mainNavToggle()"><span>home</span></a></li>
+    <li><a href="/product-directory" id="products" ng-click="mainNavToggle()"><span>products</span></a></li>
+    <li><a href="https://tiedwithstrings.com/blog/" id="blog" ng-click="mainNavToggle()"><span>blog</span></a></li>
+    <li><a href="/policy" id="policy" ng-click="mainNavToggle()"><span>our policies</span></a></li>
+    <li><a href="/contact-us" id="contact" ng-click="mainNavToggle()"><span>contact us</span></a></li>
+  </ul>
+  <span aria-hidden="true" class="stretchy-nav-bg"></span>
+</nav>
+
+<div class="searchCart_container">
+  <div class="search">
+    <div class="icon_holder search_open" ng-click="searchToggle()">
+      <i class="fa fa-search" ng-hide="searchVisable"></i>
+      <i class="fa fa-times" ng-show="searchVisable"></i>
+    </div>
+    <form class="search_form ng-class:{'stretch_search' : searchVisable}">
+      <input type="text" placeholder="product search...">
+      <button class="search_button" type="submit">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+  </div>
+
+  <a href="https://an140.infusionsoft.com/app/manageCart/showManageOrder" target="_blank">
+    <div class="goToCart">
+      <i class="fa fa-shopping-bag"></i>
+    </div>
+  </a>
+</div>

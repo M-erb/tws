@@ -1,0 +1,202 @@
+@import 'var';
+@import 'home';
+@import 'nav';
+@import 'footer';
+@import 'controls';
+@import 'animate.css';
+@import 'buttons-forms.css';
+@import 'background-colors.css';
+
+@import 'media-queries';
+@import 'reset.css';
+
+p {
+	font-family: lato, sans-serif;
+  font-size: 90%;
+}
+header a {
+  text-decoration: none;
+}
+a {
+	font-family: lato, sans-serif;
+	color: #8ECEDB;
+	-webkit-transition: color .4s;
+	-moz-transition: color .4s;
+	transition: color .4s;
+}
+a:hover {
+	color: #47AFC2;
+}
+h1 {
+	font-size: 260%;
+	font-weight: 800;
+	font-family: lato, sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+	&.page_title {
+		font-weight: 300;
+		font-size: 260%;
+	}
+}
+h2 {
+	font-family: lato, sans-serif;
+	font-size: 275%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+h3 {
+	font-family: lato, sans-serif;
+	font-size: 150%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+h4 {
+	font-size: 120%;
+    font-family: lato, sans-serif;
+}
+
+h6 {
+	font-weight: 700;
+    font-size: 110%;
+    background: darkgray;
+    padding: 10px 0 8px 19px;
+    margin-top: 30px;
+}
+pre {
+	font-family: "Lucida Console", Monaco, monospace;
+    white-space: pre;
+    margin-top: -20px;
+    overflow-x: hidden;
+}
+blockquote {
+    margin: 10px 0;
+    padding: 15px 50px;
+    font-weight: 600;
+    font-style: italic;
+    border-left: 20px solid #ccc;
+    background: #47AFC2;
+    color: white;
+}
+strong {
+	font-weight:700;
+	font-family: lato;
+}
+img {
+	-webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+	display: block; max-width: 100%;
+}
+/*-body*/
+body {
+  line-height: 1;
+	-webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+	position: relative;
+  margin: 0;
+  padding: 0;
+  background: #595959;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.6rem;
+  color: #292929;
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+/*-structure*/
+header {
+	position: relative;
+	width: 100%;
+	text-align: center;
+	padding: 3em;
+}
+.header_padding {
+	padding: 7em 0 2em 0;
+}
+main {
+	width: 100%;
+	height: 100%;
+}
+.page_wrap {
+  width: 90%;
+  max-width: 70em;
+  margin-left: auto;
+  margin-right: auto;
+	position: relative;
+}
+.page_section {
+  width: 100%;
+  padding: 5em 0;
+	position: relative;
+}
+
+.full_page_section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5em 0;
+	position: relative;
+}
+
+.views {
+	width: 100%;
+	min-height: 100vh;
+	clear: both;
+}
+
+/*flex containers*/
+.flex_center {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/*-page Page Animations
+------------------------------------------------------------------------------*/
+.page {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+}
+
+/*enter and leave animations*/
+.views.ng-enter {
+	animation-name: fadeIn;
+	animation-duration: 0.8s;
+}
+
+.views.ng-leave {
+	animation-name: fadeOut;
+	animation-duration: 0.8s;
+}
+
+/*angular show animations*/
+.ng-hide {
+	transition: opacity ease-in-out 0.3s;
+	opacity: 0;
+}
+
+* {
+	transition: opacity ease-in-out 0.3s;
+}
+
+
+
+
+@media only screen and (min-width:771px){
+
+}
+@media only screen and (max-width:770px){
+
+}
+@media only screen and (max-width:400px){
+
+}

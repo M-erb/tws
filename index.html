@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="twsApp">
+<head>
+  <base href="/" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="application-name" content=""/>
+  <meta name="description" content="A place where we are focused on crafts and you. We strive to bring you some of your favorite things all wrapped in paper and tied with strings. Have a look at our products and let us know if there is anything you are interested in">
+  <meta name="keywords" content="design,invitations,wedding,baby shower,tied with strings,craft,blog,newsletter">
+  <meta name="theme-color" content="#7BD5ED">
+  <meta name="p:domain_verify" content="e22136ab81ca3341b04755aadb53f77f"/>
+  <title>tws</title>
+  <link rel="icon" href="content/img/favicon.ico" type="image/x-icon" />
+  <!--CSS-->
+  <link rel="stylesheet" href="content/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!--JS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="content/js/validation.js"></script>
+  <!--Angular-->
+  <script src="app/lib/angular.min.js"></script>
+  <script src="app/lib/angular-animate.min.js"></script>
+  <script src="app/lib/angular-cookies.min.js"></script>
+  <!-- <script src="app/lib/ngStorage.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/angular.config.js"></script>
+  <script src="app/appData.js"></script>
+</head>
+  <body>
+    <nav ng-controller="navCtrl" ng-include src="'views/templates/nav.html'"></nav>
+    <div class="views" ui-view></div>
+    <footer ng-include src="'views/templates/footer.html'"></footer>
+  </body>
+</html>
