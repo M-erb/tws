@@ -8,25 +8,22 @@ twsApp.controller('homeCtrl', ['$scope', 'products', '$cookies', '$localStorage'
 
 }]);
 
-twsApp.controller('contactCtrl', ['$scope', 'products', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
+twsApp.controller('contactCtrl', ['$scope', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
 
-  $scope.products = products.products
   $scope.storage = $localStorage;
   $scope.pagetitle = 'contact us';
 
 }]);
 
-twsApp.controller('policyCtrl', ['$scope', 'products', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
+twsApp.controller('policyCtrl', ['$scope', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
 
-  $scope.products = products.products
   $scope.storage = $localStorage;
   $scope.pagetitle = 'policies';
 
 }]);
 
-twsApp.controller('aboutCtrl', ['$scope', 'products', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
+twsApp.controller('aboutCtrl', ['$scope', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
 
-  $scope.products = products.products
   $scope.storage = $localStorage;
   $scope.pagetitle = 'about us';
 
@@ -35,7 +32,7 @@ twsApp.controller('aboutCtrl', ['$scope', 'products', '$cookies', '$localStorage
 twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
 
   $scope.storage = $localStorage
-  //$scope.phase = products.products[$stateParams.phaseIndex]
+  $scope.products = products.products
   $scope.pagetitle = 'products'
 
 }]);
@@ -43,7 +40,7 @@ twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', 
 twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
 
   $scope.storage = $localStorage
-  $scope.phase = products.products[$stateParams.phaseIndex]
+  $scope.product = products.products[$stateParams.proIndex]
   $scope.pagetitle = 'Product title'
 
 }]);

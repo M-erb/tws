@@ -1,1 +1,18 @@
 <header class="header" ng-include src="'views/templates/pages-header.html'"></header>
+
+<main class="page_wrap">
+  <div class="pro_container">
+    <a class="pro_box" ng-href="/product-directory/product{{$index}}"
+    ng-repeat="pro in products">
+      <div class="pro_img">
+        <img src="https://placeholdit.imgix.net/~text?txtsize=19&bg=b2b2b2&txt=200%C3%97200&w=200&h=200" alt="image of {{pro.name}}"/>
+      </div>
+      <h4>{{pro.name}}</h4>
+      <div class="price_box">
+        <span class="pro_price">${{pro.price}}</span>
+      </div>
+    </a>
+  </div>
+</main>
+
+<footer ng-include src="'views/templates/footer.html'"></footer>

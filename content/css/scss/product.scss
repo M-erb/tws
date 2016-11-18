@@ -1,0 +1,29 @@
+@import 'var';
+
+.pro_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .pro_box {
+    margin: 1em;
+    box-shadow: 3px 3px 10px -5px $gray;
+    text-decoration: none;
+    color: #fff;
+    background: $light_gray;
+    position: relative;
+    .pro_img {
+      padding: 40px;
+      margin: 0 auto;
+    }
+    .price_box {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 0.4em;
+      background: lighten($gray, 10%);
+      .pro_price {
+
+      }
+    }
+  }
+}

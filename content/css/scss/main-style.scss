@@ -3,6 +3,7 @@
 @import 'nav';
 @import 'footer';
 @import 'controls';
+@import 'product';
 @import 'animate.css';
 @import 'buttons-forms.css';
 @import 'background-colors.css';
@@ -70,18 +71,18 @@ h6 {
 }
 pre {
 	font-family: "Lucida Console", Monaco, monospace;
-    white-space: pre;
-    margin-top: -20px;
-    overflow-x: hidden;
+  white-space: pre;
+  margin-top: -20px;
+  overflow-x: hidden;
 }
 blockquote {
-    margin: 10px 0;
-    padding: 15px 50px;
-    font-weight: 600;
-    font-style: italic;
-    border-left: 20px solid #ccc;
-    background: #47AFC2;
-    color: white;
+  margin: 10px 0;
+  padding: 15px 50px;
+  font-weight: 600;
+  font-style: italic;
+  border-left: 20px solid #ccc;
+  background: #47AFC2;
+  color: white;
 }
 strong {
 	font-weight:700;
@@ -116,9 +117,6 @@ header {
 	width: 100%;
 	text-align: center;
 	padding: 3em;
-}
-.header_padding {
-	padding: 7em 0 2em 0;
 }
 main {
 	width: 100%;

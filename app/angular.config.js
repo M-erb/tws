@@ -36,7 +36,7 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
     });
   $stateProvider
     .state('productInfo', {
-      url: '/product-collections/product{productID}',
+      url: '/product-directory/product{proIndex}',
       templateUrl: 'views/product/product-info.html',
       controller: 'productInfoCtrl'
     });
