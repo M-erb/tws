@@ -13,9 +13,14 @@
 @import "https://fonts.googleapis.com/css?family=Raleway:100,300";
 @import "https://fonts.googleapis.com/css?family=Poiret+One";
 @import "https://fonts.googleapis.com/css?family=Open+Sans";
+@import url("https://fonts.googleapis.com/css?family=Satisfy");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Allura");
+@import url("https://fonts.googleapis.com/css?family=Delius+Swash+Caps");
+@import "https://fonts.googleapis.com/css?family=Raleway:100,300";
+@import "https://fonts.googleapis.com/css?family=Poiret+One";
+@import "https://fonts.googleapis.com/css?family=Open+Sans";
 @import url(animate.css);
-@import url(buttons-forms.css);
-@import url(background-colors.css);
 @import url(reset.css);
 .home_header {
   width: 100%;
@@ -1358,7 +1363,7 @@ footer .social_wrap ul li img {
   text-decoration: line-through; }
 
 /*==========BUTTONS==========*/
-.btn {
+.btn, .btn_white, .btn_blue, .btn_green {
   font-size: 0.8em;
   font-weight: bold;
   cursor: pointer;
@@ -1375,53 +1380,23 @@ footer .social_wrap ul li img {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-
-.btn:hover {
-  box-shadow: 6px 6px 3px rgba(41, 41, 41, 0.4); }
+  .btn:hover, .btn_white:hover, .btn_blue:hover, .btn_green:hover {
+    box-shadow: 6px 6px 3px rgba(41, 41, 41, 0.4); }
 
 .btn_white {
   color: #302B2C;
   background: white; }
-
-.btn_white:hover {
-  color: #302B2C;
-  background: white; }
-
-.btn_alt_white {
-  box-shadow: none;
-  box-shadow: 0;
-  border: 2px solid white;
-  color: #fff;
-  background: transparent;
-  transition: all .3s; }
-
-.btn_alt_white:hover {
-  color: #79be37;
-  background: white; }
-
-.btn_darkgray {
-  border: 1px solid #2D2D30;
-  color: white;
-  background: #2D2D30; }
-
-.btn_darkgray:hover {
-  color: white; }
-
-.btn_orange {
-  color: white;
-  background-color: #ff9610; }
-
-.btn_orange:hover {
-  color: white;
-  background: #ff6410; }
+  .btn_white:hover {
+    color: #302B2C;
+    background: white; }
 
 .btn_blue {
   color: white;
-  background: #42baf7; }
+  background: #7BD5ED; }
 
-.btn_blue:hover {
+.btn_green {
   color: white;
-  background: #42baff; }
+  background: #7BD59C; }
 
 /*---==forms==---*/
 .me-input-group input, [type=submit], .me-input-group textarea {

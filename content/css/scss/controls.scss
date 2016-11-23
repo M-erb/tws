@@ -1,3 +1,5 @@
+@import 'var';
+
 /*==========BUTTONS==========*/
 .btn {
   font-size: 0.8em;
@@ -16,59 +18,32 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-  .btn:hover {
+  &:hover {
       box-shadow: 6px 6px 3px rgba(41,41,41,0.4);
   }
+}
 
 .btn_white {
+  @extend .btn;
+  color: #302B2C;
+  background: white;
+  &:hover {
     color: #302B2C;
     background: white;
-}
-  .btn_white:hover {
-      color: #302B2C;
-      background: white;
   }
-
-.btn_alt_white {
-  box-shadow: none;
-  box-shadow: 0;
-  border: 2px solid white;
-  color: #fff;
-  background: transparent;
-  transition: all .3s;
 }
-  .btn_alt_white:hover {
-    color: #79be37;
-    background: white;
-  }
-
-.btn_darkgray {
-  border: 1px solid #2D2D30;
-  color: white;
-  background: #2D2D30;
-}
-  .btn_darkgray:hover {
-    color: white;
-  }
-
-.btn_orange {
-  color: white;
-  background-color: rgba(255,150,16,1);
-}
-  .btn_orange:hover {
-    color: white;
-    background: rgba(255,100,16,1);
-  }
 
 .btn_blue {
+  @extend .btn;
   color: white;
-  background: rgba(66,186,247,1);
+  background: $blue;
 }
-  .btn_blue:hover {
-    color: white;
-    background: rgba(66,186,255,1);
-  }
+
+.btn_green {
+  @extend .btn;
+  color: white;
+  background: $green;
+}
 
 /*---==forms==---*/
 .me-input-group input, [type=submit], .me-input-group textarea {
