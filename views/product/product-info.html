@@ -1,7 +1,21 @@
 <header class="header" ng-include src="'views/templates/pages-header.html'"></header>
 
-<main class="page_wrap">
+<main class="page_wrap" style="min-height: 50vh">
   <h2>{{product.name}}</h2>
+
+  <div class="slider_wrap">
+    <div class="slideBtns prev" ng-click="prev()"><span><</span></div>
+    <div class="slideBtns next" ng-click="next()"><span>></span></div>
+    <div class="slides_container">
+      <img
+      class="slide ng-class:{'active' : item.visible}"
+      ng-repeat="item in slides"
+      ng-show="item.visible"
+      src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"
+      ng-src="{{item.img}}"/>
+  </div>
+
+
 </main>
 
 <footer ng-include src="'views/templates/footer.html'"></footer>

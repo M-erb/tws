@@ -2,12 +2,16 @@
 
 <main class="page_wrap">
   <div class="pro_container">
-    <a class="pro_box" ng-href="/product-directory/product{{$index}}"
-    ng-repeat="pro in products">
+    <a class="pro_box" ng-href="/product-directory/product{{$index}}" ng-repeat="pro in products">
       <div class="pro_img">
-        <img src="https://placeholdit.imgix.net/~text?txtsize=19&bg=b2b2b2&txt=200%C3%97200&w=200&h=200" alt="image of {{pro.name}}"/>
+        <img
+        ng-src="content/img/products/{{pro.img}}"
+        src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"
+        alt="image of {{pro.name}}"/>
       </div>
-      <h4>{{pro.name}}</h4>
+      <div class="pro_name">
+        <span>{{pro.name}}</span>
+      </div>
       <div class="price_box">
         <span class="pro_price">${{pro.price}}</span>
       </div>

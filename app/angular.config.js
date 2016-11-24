@@ -1,5 +1,6 @@
-twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$localStorageProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $localStorageProvider){
+twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$localStorageProvider', '$uiViewScrollProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $localStorageProvider, $uiViewScrollProvider){
 
+  $uiViewScrollProvider.useAnchorScroll();
   $locationProvider.html5Mode(true);
   $localStorageProvider.setKeyPrefix('');
 
@@ -43,4 +44,11 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
 
 
   $urlRouterProvider.otherwise('/');
-}])
+}]);
+
+twsApp.run(['$rootScope', '$location', '$stateParams', '$anchorScroll', function($rootScope, $location, $stateParams, $anchorScroll){
+
+  $rootScope.$on('$stateChangeSuccess', function() {
+   document.body.scrollTop = document.documentElement.scrollTop = 0;
+  });
+}]);

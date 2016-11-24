@@ -47,12 +47,31 @@ twsApp.factory('products',['$localStorage', function($localStorage){
     }, {
       id: 88,
       name: "tied patchwork neutral baby quilt",
-      img: "",
+      img: "blanket.png",//TEST image
       price: 50,
       discount: 0,
       status: 'active',
       category: 'blankets and quilts',
       mainColor: 'red',
+      dimentions: 'dimentions',
+      shortDescription: 'this is a short description',
+      longDescription: 'this is a long description'
+    }, {
+      id: 106,
+      name: "blue tied patchwork baby quilt",
+      img: "blue-blanket.png",
+      slides: [
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+      ],
+      price: 50,
+      discount: 0,
+      status: 'active',
+      category: 'blankets and quilts',
+      mainColor: 'blue',
+      mainPattern: 'plaid',
       dimentions: 'dimentions',
       shortDescription: 'this is a short description',
       longDescription: 'this is a long description'

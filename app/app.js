@@ -8,6 +8,62 @@ twsApp.controller('homeCtrl', ['$scope', 'products', '$cookies', '$localStorage'
 
 }]);
 
+twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
+
+  $scope.storage = $localStorage
+  $scope.products = products.products
+  $scope.pagetitle = 'products'
+
+}]);
+
+twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
+
+  $scope.storage = $localStorage
+  $scope.product = products.products[$stateParams.proIndex]
+  $scope.pagetitle = ''//$scope.product.name
+
+  $scope.slides = $scope.product.slides
+  $scope.currentIndex=0
+
+  $scope.prev=function(){
+    $scope.currentIndex>0?$scope.currentIndex--:$scope.currentIndex=$scope.slides.length-1;
+  }
+
+  $scope.next=function(){
+    $scope.currentIndex<$scope.slides.length-1?$scope.currentIndex++:$scope.currentIndex=0;
+  }
+
+  $scope.$watch('currentIndex',function(){
+    $scope.slides.forEach(function(slide){
+      slide.visible=false;
+    });
+    $scope.slides[$scope.currentIndex].visible=true;
+  })
+
+  /*$scope.tutList = directory.directory[$stateParams.phaseIndex].tutList[$stateParams.tutIndex]
+  $scope.storage = $localStorage
+  $scope.pageClass = directory.directory[$stateParams.phaseIndex].class
+
+  $scope.pages = $scope.tutList.tutorialPages
+  $scope.currentIndex=0;
+
+  $scope.prev=function(){
+    $scope.currentIndex>0?$scope.currentIndex--:$scope.currentIndex=$scope.pages.length-1;
+  };
+
+  $scope.next=function(){
+    $scope.currentIndex<$scope.pages.length-1?$scope.currentIndex++:$scope.currentIndex=$scope.pages.length-1;
+  };
+
+  $scope.$watch('currentIndex',function(){
+    $scope.pages.forEach(function(page){
+      page.visible=false;
+    });
+    $scope.pages[$scope.currentIndex].visible=true;
+  });*/
+
+}]);
+
 twsApp.controller('contactCtrl', ['$scope', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
 
   $scope.storage = $localStorage;
@@ -26,22 +82,6 @@ twsApp.controller('aboutCtrl', ['$scope', '$cookies', '$localStorage', '$session
 
   $scope.storage = $localStorage;
   $scope.pagetitle = 'about us';
-
-}]);
-
-twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
-
-  $scope.storage = $localStorage
-  $scope.products = products.products
-  $scope.pagetitle = 'products'
-
-}]);
-
-twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
-
-  $scope.storage = $localStorage
-  $scope.product = products.products[$stateParams.proIndex]
-  $scope.pagetitle = 'Product title'
 
 }]);
 
@@ -70,7 +110,7 @@ twsApp.controller('navCtrl', ['$scope', '$stateParams','products', '$cookies', '
 
 }]);
 
-twsApp.controller('tutorialCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
+/*twsApp.controller('tutorialCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
 
   $scope.tutList = products.products[$stateParams.phaseIndex].tutList[$stateParams.tutIndex]
   $scope.storage = $localStorage
@@ -94,4 +134,4 @@ twsApp.controller('tutorialCtrl', ['$scope', '$stateParams','products', '$cookie
     $scope.pages[$scope.currentIndex].visible=true;
   });
 
-}]);
+}]);*/

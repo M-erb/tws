@@ -4,26 +4,120 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
   .pro_box {
     margin: 1em;
     box-shadow: 3px 3px 10px -5px $gray;
     text-decoration: none;
     color: #fff;
-    background: $light_gray;
+    background: #fff;
     position: relative;
     .pro_img {
       padding: 40px;
       margin: 0 auto;
+      img {
+        margin: 0 auto;
+        transition: all 0.2s;
+        width: 200px;
+        height: 200px;
+      }
+    }
+    &:hover .pro_img img {
+      opacity: 0.3;
+      filter: blur(2px);
+    }
+    .pro_name {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: transparent;
+      span {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        width: 100%;
+        transform: translateY(-50%);
+        color: lighten($gray, 30%);
+        padding: 0.5em;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      &:hover span {
+        opacity: 1;
+      }
     }
     .price_box {
       position: absolute;
       bottom: 0;
       right: 0;
       padding: 0.4em;
-      background: lighten($gray, 10%);
+      background: lighten($gray, 15%);
+      transition: background 0.2s;
       .pro_price {
 
       }
     }
+    &:hover .price_box {
+      background: $blue;
+    }
   }
+}
+
+// slider
+.slider_wrap {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  .slides_container {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    .slide {
+      width: 100%;
+      position: absolute;
+      transition: opacity ease-in-out 0.3s;
+    }
+  }
+}
+/*enter and leave animations*/
+.slide.ng-hide {
+	animation-name: bounceOutLeft;
+	animation-duration: 0.8s;
+  display: block!important;
+}
+/*next buttons*/
+.slideBtns {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  transition: all 0.2s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &:hover {
+    transform: scale(1.2);
+  }
+  span {
+    display: block;
+    align-self: center;
+    font-size: 1em;
+  }
+}
+.next {
+  @extend .slideBtns;
+  right: 0.5em;
+}
+.prev {
+  left: 0.5em;
+  @extend .slideBtns;
 }
