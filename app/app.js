@@ -22,6 +22,14 @@ twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', 
       $scope.searchVisable = false
     }
   }
+  $scope.openFilter = false
+  $scope.filterToggle = function() {
+    if ($scope.openFilter == false) {
+      $scope.openFilter = true
+    }else {
+      $scope.openFilter = false
+    }
+  }
 
   $scope.categories = [
     'blankets',

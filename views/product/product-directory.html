@@ -1,28 +1,50 @@
 <header class="header" ng-include src="'views/templates/pages-header.html'"></header>
 
 <div class="filters_wrap">
-  <div class="collection_container">
-    <div class="collection erica">
-      Ericas
-    </div>
-    <div class="collection moms">
-      Moms
+  <div class="page_wrap">
+    <div class="collection_container">
+      <div class="collection_label">
+        <span>Collections: </span>
+      </div>
+      <div class="collection erica">
+        Ericas
+      </div>
+      <div class="collection moms">
+        Moms
+      </div>
     </div>
   </div>
-  <div class="filters_container">
-    <div class="me_dropdown filters_dropdown">
-      <select ng-model="categorySearch">
-        <<option value="">category...</option>
-        <option ng-repeat="item in categories" value="{{item}}">
-          {{item}}
-        </option>
-      </select>
+
+  <div class="filters_bar">
+    <div class="filters_tab ng-class:{'show_filters' : openFilter}">
+      <div class="filters_close_wrap">
+        <div class="close_btn" ng-click="openFilter = false">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <div class="filters_tab_controls">
+        <div class="me_dropdown filters_dropdown">
+          <select ng-model="categorySearch">
+            <<option value="">category...</option>
+            <option ng-repeat="item in categories" value="{{item}}">
+              {{item}}
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
-    <div class="me_input input_search">
-      <input type="text" ng-class="{show_search : searchVisable}" ng-model="inputSearch" placeholder="ex. blankets" />
-      <div class="search_icons" ng-click="searchToggle()">
-        <i class="fa fa-search" ng-hide="searchVisable"></i>
-        <i class="fa fa-times" ng-show="searchVisable"></i>
+    <div class="filters_bar_container">
+      <div class="filters_toggle" ng-click="filterToggle()">
+        filters
+      </div>
+
+      <div class="me_input input_search">
+        <input type="text" ng-class="{show_search : searchVisable}" ng-model="inputSearch" placeholder="ex. blankets" />
+        <div class="search_icons" ng-click="searchToggle()">
+          <i class="fa fa-search" ng-hide="searchVisable"></i>
+          <i class="fa fa-times" ng-show="searchVisable"></i>
+        </div>
       </div>
     </div>
   </div>

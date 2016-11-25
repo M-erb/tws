@@ -48,7 +48,6 @@
 /*---==forms==---*/
 .me_input input, [type=submit], .me_input textarea {
   font-family: lato, sans-serif;
-  padding: 10px;
   border-radius: 3px;
 }
 
@@ -60,7 +59,8 @@
   width: 100%;
   height: auto;
   transition: all .5s;
-  font-size: 18px;
+  font-size: 0.6em;
+  padding: 0.33em;
 }
 
 .me_input textarea {
@@ -85,12 +85,13 @@
     -webkit-border-radius: 5px;
     border-radius: 5px;
     cursor: pointer;
-    padding: 10px;
+    padding: 0.33em;
     border: 1px solid #bdc3c7;
     border-radius: 3px;
     display: block;
     width: 200px;
     height: auto;
+    font-size: 0.6em;
     font-family: lato, sans-serif;
     box-sizing: border-box;
   }
