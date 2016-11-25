@@ -15,6 +15,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       price: 50,
       discount: -1,
       status: 'active',
+      collection: '',
       category: 'blankets and quilts',
       mainColor: 'blue',
       dimentions: 'dimentions',

@@ -14,6 +14,25 @@ twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', 
   $scope.products = products.products
   $scope.pagetitle = 'products'
 
+  $scope.searchVisable = false
+  $scope.searchToggle = function() {
+    if ($scope.searchVisable == false) {
+      $scope.searchVisable = true
+    }else {
+      $scope.searchVisable = false
+    }
+  }
+
+  $scope.categories = [
+    'blankets',
+    'quilts',
+    'travel',
+    'invitations',
+    'wedding',
+    'formal',
+    'informal'
+  ]
+
 }]);
 
 twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){

@@ -68,8 +68,91 @@
 .filters_wrap {
   position: relative;
   width: 100%;
-  height: 60px;
+  padding: 1em;
   background: lighten($gray, 25%);
+  .collection_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-self: center;
+    margin-bottom: 1em;
+    .collection {
+      border: 1px solid #fff;
+      padding: 0.3em;
+      margin: 0 0.3em;
+      cursor: pointer;
+    }
+  }
+  .filters_container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-self: center;
+    .input_search {
+      display: flex;
+      align-self: center;
+      margin: 0 0.3em 0 0.3em;
+      width: 150px;
+      input {
+        align-self: center;
+        padding: 0;
+        width: 0;
+        border: 0px solid $fields;
+        border-radius: 2px;
+        background: transparent;
+        transition: all 0.3s;
+        margin: 0;
+        &::-webkit-input-placeholder {
+          color: $fields;
+        }
+        &::-moz-placeholder {
+          color: $fields;
+        }
+        &:-ms-input-placeholder {
+          color: $fields;
+        }
+        &:-moz-placeholder {
+          color: $fields;
+        }
+        &:focus {
+          outline: 1px solid $blue;
+        }
+      }
+      input.show_search {
+        width: 100%;
+        margin-right: 0.3em;
+        padding: 0.33em;
+        border: 2px solid $fields;
+      }
+      .search_icons {
+        cursor: pointer;
+        align-self: center;
+        color: $fields;
+        position: relative;
+        top: 0;
+        right: 0;
+        i {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform:translateY(-50%);
+          -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .filters_dropdown select {
+      background: transparent;
+      color: $fields;
+      border: 2px solid $fields;
+      option {
+        color: $fields;
+      }
+    }
+  }
+
 }
 
 // slider
