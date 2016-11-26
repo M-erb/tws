@@ -14,23 +14,34 @@
   <span aria-hidden="true" class="stretchy-nav-bg"></span>
 </nav>
 
-<div class="searchCart_container">
-  <!-- <div class="search">
-    <div class="icon_holder search_open" ng-click="searchToggle()">
-      <i class="fa fa-search" ng-hide="searchVisable"></i>
-      <i class="fa fa-times" ng-show="searchVisable"></i>
-    </div>
-    <form class="search_form ng-class:{'stretch_search' : searchVisable}">
-      <input type="text" placeholder="product search...">
-      <button class="search_button" type="submit">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
-  </div> -->
-
-  <a href="https://an140.infusionsoft.com/app/manageCart/showManageOrder" target="_blank">
-    <div class="goToCart">
+<div class="bag_container">
+  <div class="bag_btn_wrap" ng-click="bagToggle()">
+    <div class="view_bag_btn">
       <i class="fa fa-shopping-bag"></i>
     </div>
-  </a>
+    <div class="bag_length" ng-show="bag.length > 0">
+      <span>{{bag.length}}</span>
+    </div>
+  </div>
+
+  <div class="bag_contents_wrap" ng-show="showBag">
+    <div class="bag_contents">
+      <a class="bag_item" ng-href="/product-directory/product{{item.link}}" ng-repeat="item in bag">
+        <div class="bag_img_holder">
+          <img ng-src="content/img/products/{{item.img}}" src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200" alt="image of {{item.name}}" />
+        </div>
+        <span class="bag_item_name">{{item.name}}</span>
+        <span class="bag_item_qty">x {{item.qty}}</span>
+      </a>
+    </div>
+    <div class="bag_controls">
+      <a class="bag_checkout" ng-href="https://an140.infusionsoft.com/app/manageCart/processBundle?{{checkoutItemsLink()}}">Checkout</a>
+      <div class="close_bag" ng-click="bagToggle()">
+        <div class="close_btn">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

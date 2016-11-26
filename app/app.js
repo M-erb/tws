@@ -43,10 +43,11 @@ twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', 
 
 }]);
 
-twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
+twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, bag, $cookies, $localStorage, $sessionStorage, $stateParams){
 
   $scope.storage = $localStorage
   $scope.product = products.products[$stateParams.proIndex]
+
   $scope.pagetitle = ''//$scope.product.name
 
   $scope.slides = $scope.product.slides
@@ -66,28 +67,6 @@ twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', '$coo
     });
     $scope.slides[$scope.currentIndex].visible=true;
   })
-
-  /*$scope.tutList = directory.directory[$stateParams.phaseIndex].tutList[$stateParams.tutIndex]
-  $scope.storage = $localStorage
-  $scope.pageClass = directory.directory[$stateParams.phaseIndex].class
-
-  $scope.pages = $scope.tutList.tutorialPages
-  $scope.currentIndex=0;
-
-  $scope.prev=function(){
-    $scope.currentIndex>0?$scope.currentIndex--:$scope.currentIndex=$scope.pages.length-1;
-  };
-
-  $scope.next=function(){
-    $scope.currentIndex<$scope.pages.length-1?$scope.currentIndex++:$scope.currentIndex=$scope.pages.length-1;
-  };
-
-  $scope.$watch('currentIndex',function(){
-    $scope.pages.forEach(function(page){
-      page.visible=false;
-    });
-    $scope.pages[$scope.currentIndex].visible=true;
-  });*/
 
 }]);
 
@@ -112,27 +91,38 @@ twsApp.controller('aboutCtrl', ['$scope', '$cookies', '$localStorage', '$session
 
 }]);
 
-twsApp.controller('navCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
+twsApp.controller('navCtrl', ['$scope', '$stateParams','products', 'bag', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, bag, $cookies, $localStorage, $sessionStorage, $stateParams){
 
   $scope.storage = $localStorage
-  //$scope.phase = products.products[$stateParams.phaseIndex]
-  //$scope.pageClass = $scope.phase.class
+  $scope.products = products.products[$stateParams.phaseIndex]
+  $scope.bag = bag.bag
+
   $scope.visible = false;
   $scope.mainNavToggle = function() {
     if ($scope.visible == false) {
       $scope.visible = true
+      $scope.showBag = false
     }else {
       $scope.visible = false
     }
   }
 
-  $scope.searchVisable = false
-  $scope.searchToggle = function() {
-    if ($scope.searchVisable == false) {
-      $scope.searchVisable = true
+  $scope.showBag = false
+  $scope.bagToggle = function() {
+    if ($scope.showBag == false) {
+      $scope.showBag = true
     }else {
-      $scope.searchVisable = false
+      $scope.showBag = false
     }
+  }
+
+  //build infusionsoft checkout link
+  $scope.checkoutItemsLink = function() {
+    var url = []
+    for(var i=0; i < $scope.bag.length; i++) {
+      url.push('productId='+$scope.bag[i].proID+'&productQuantity='+$scope.bag[i].qty+'&')
+    }
+    return url.join('')
   }
 
 }]);

@@ -68,30 +68,6 @@
 .filters_wrap {
   position: relative;
   width: 100%;
-  padding-top: 1em;
-  background: lighten($gray, 25%);
-  .collection_container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-self: center;
-    padding-bottom: 1em;
-    .collection {
-      border: 1px solid $controls;
-      border-radius: 3px;
-      padding: 0.3em;
-      margin: 0 0.3em;
-      cursor: pointer;
-    }
-    .collection_label {
-      color: $controls;
-      font-size: 0.8em;
-      display: flex;
-      span {
-        align-self: center;
-      }
-    }
-  }
   .filters_bar {
     background: #fff;
     padding: 1em 0;
@@ -104,7 +80,7 @@
       left: 0;
       transform: translateX(-100%);
       transition: all 0.4s;
-      background: #fff;
+      background: lighten($gray, 50%);
       height: 100vh;
       z-index: 8;
       .filters_close_wrap {
@@ -128,12 +104,21 @@
             position: absolute;
             top: 50%;
             left: 0;
-            transform: translateY(-50%);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
           }
           div:first-child {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
             transform: rotate(45deg);
           }
           div:last-child {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
           }
         }
@@ -147,6 +132,7 @@
     }
     .filters_bar_container {
       width: 90%;
+      height: 100%;
       max-width: 70em;
       margin-left: auto;
       margin-right: auto;
@@ -164,7 +150,33 @@
         background-position: left center;
         cursor: pointer;
         color: $controls;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
         z-index: 10;
+      }
+      .collection_container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-self: center;
+        .collection {
+          border: 2px solid $controls;
+          border-radius: 3px;
+          color: $controls;
+          padding: 0.3em;
+          margin: 0 0.3em;
+          cursor: pointer;
+        }
+        .collection_label {
+          color: $controls;
+          font-size: 0.8em;
+          display: flex;
+          span {
+            align-self: center;
+          }
+        }
       }
     }
   }
@@ -173,13 +185,10 @@
 .input_search {
   display: flex;
   align-self: center;
-  margin: 0 0.3em 0 0.3em;
-  width: 150px;
+  margin-bottom: 1em;
   input {
     align-self: center;
-    padding: 0;
-    width: 0;
-    border: 0px solid $controls;
+    border: 2px solid $controls;
     border-radius: 2px;
     background: transparent;
     transition: all 0.3s;
@@ -197,31 +206,8 @@
       color: $controls;
     }
     &:focus {
-      outline: 1px solid $blue;
-    }
-  }
-  input.show_search {
-    width: 100%;
-    margin-right: 0.3em;
-    padding: 0.33em;
-    border: 2px solid $controls;
-  }
-  .search_icons {
-    cursor: pointer;
-    align-self: center;
-    color: $controls;
-    position: relative;
-    top: 0;
-    right: 0;
-    i {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translateY(-50%);
-      -moz-transform: translateY(-50%);
-      -ms-transform:translateY(-50%);
-      -o-transform: translateY(-50%);
-      transform: translateY(-50%);
+      border: 2px solid $blue;
+      background: #fff;
     }
   }
 }
@@ -232,6 +218,11 @@
   border: 2px solid $controls;
   option {
     color: $controls;
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid $blue;
+    background: #fff;
   }
 }
 
