@@ -13,29 +13,32 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       name: "hibiscus travel blanket",
       img: "",
       slides: [
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
       ],
       price: 50,
-      discount: -1,
+      discount: 30,
       status: 'active',
       collection: 'moms blankets',
       category: 'blankets and quilts',
       mainColor: 'blue',
-      dimentions: 'dimentions',
-      shortDescription: 'this is a short description',
-      longDescription: 'this is a long description'
+      features: [
+        'feature 1',
+        'feature 2',
+        "dimentions: 9'x11'"
+      ],
+      longDescription: 'this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description this is a long description '
     }, {
       id: '94',
       name: "blue hedgehog baby quilt",
       img: "",
       slides: [
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
       ],
       price: 55,
       discount: 0,
@@ -43,7 +46,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       status: 'active',
       category: 'blankets and quilts',
       mainColor: 'red',
-      dimentions: 'dimentions',
+      features: ['feature 1', 'feature 2'],
       shortDescription: 'this is a short description',
       longDescription: 'this is a long description'
     }, {
@@ -51,10 +54,10 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       name: "baby girl tied patchwork quilt",
       img: "",
       slides: [
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
       ],
       price: 50,
       discount: 0,
@@ -62,7 +65,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       status: 'active',
       category: 'blankets and quilts',
       mainColor: 'red',
-      dimentions: 'dimentions',
+      features: ['feature 1', 'feature 2'],
       shortDescription: 'this is a short description',
       longDescription: 'this is a long description'
     }, {
@@ -70,10 +73,10 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       name: "tied patchwork neutral baby quilt",
       img: "blanket.png",//TEST image
       slides: [
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
       ],
       price: 50,
       discount: 0,
@@ -81,7 +84,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       status: 'active',
       category: 'blankets and quilts',
       mainColor: 'red',
-      dimentions: 'dimentions',
+      features: ['feature 1', 'feature 2'],
       shortDescription: 'this is a short description',
       longDescription: 'this is a long description'
     }, {
@@ -89,10 +92,10 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       name: "blue tied patchwork baby quilt",
       img: "blue-blanket.png",
       slides: [
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
       ],
       price: 50,
       discount: 0,
@@ -101,7 +104,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       category: 'blankets and quilts',
       mainColor: 'blue',
       mainPattern: 'plaid',
-      dimentions: 'dimentions',
+      features: ['feature 1', 'feature 2'],
       shortDescription: 'this is a short description',
       longDescription: 'this is a long description'
     }, {
@@ -109,10 +112,10 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       name: "trucks and cars travel blanket",
       img: "",
       slides: [
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
       ],
       price: 50,
       discount: 0,
@@ -120,7 +123,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       status: 'active',
       category: 'blankets and quilts',
       mainColor: 'red',
-      dimentions: 'dimentions',
+      features: ['feature 1', 'feature 2'],
       shortDescription: 'this is a short description',
       longDescription: 'this is a long description'
     }, {
@@ -128,10 +131,10 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       name: "frog travel blanket",
       img: "",
       slides: [
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
       ],
       price: 50,
       discount: 0,
@@ -139,7 +142,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       status: 'active',
       category: 'blankets and quilts',
       mainColor: 'red',
-      dimentions: 'dimentions',
+      features: ['feature 1', 'feature 2'],
       shortDescription: 'this is a short description',
       longDescription: 'this is a long description'
     }, {
@@ -147,10 +150,10 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       name: "striped travel blanket",
       img: "",
       slides: [
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
       ],
       price: 50,
       discount: 0,
@@ -158,7 +161,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       status: 'active',
       category: 'blankets and quilts',
       mainColor: 'red',
-      dimentions: 'dimentions',
+      features: ['feature 1', 'feature 2'],
       shortDescription: 'this is a short description',
       longDescription: 'this is a long description'
     }, {
@@ -166,10 +169,10 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       name: "butterflies and polka dots travel blanket",
       img: "",
       slides: [
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
-        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
+        {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
       ],
       price: 50,
       discount: 0,
@@ -177,7 +180,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       status: 'active',
       category: 'blankets and quilts',
       mainColor: 'red',
-      dimentions: 'dimentions',
+      features: ['feature 1', 'feature 2'],
       shortDescription: 'this is a short description',
       longDescription: 'this is a long description'
     }]

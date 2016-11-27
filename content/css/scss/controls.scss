@@ -2,12 +2,12 @@
 
 /*==========BUTTONS==========*/
 .btn {
-  font-size: 0.8em;
+  font-size: 0.6em;
   font-weight: bold;
   cursor: pointer;
-  padding: 0.8em 2.5em;
+  padding: 0.6em 1.6em;
   text-decoration: none;
-  border-radius: 3px;
+  border-radius: 1px;
   border: none;
   border: 0;
   display: inline-block;
@@ -43,6 +43,45 @@
   @extend .btn;
   color: white;
   background: $green;
+}
+
+.btn_red {
+  @extend .btn;
+  color: white;
+  background: $red;
+}
+
+// Small buttons
+.S_btn {
+  font-size: 0.4em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5em 1.2em;
+  text-decoration: none;
+  border-radius: 1px;
+  border: none;
+  border: 0;
+  display: inline-block;
+  transition: all .2s;
+  white-space: nowrap;
+  box-shadow: 1px 1px 3px rgba(41,41,41,0.5);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &:hover {
+      box-shadow: 6px 6px 3px rgba(41,41,41,0.4);
+  }
+}
+
+.btn_white_s {
+  @extend .S_btn;
+  color: #302B2C;
+  background: white;
+  &:hover {
+    color: #302B2C;
+    background: white;
+  }
 }
 
 /*---==forms==---*/

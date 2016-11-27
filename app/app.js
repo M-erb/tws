@@ -47,9 +47,28 @@ twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag'
 
   $scope.storage = $localStorage
   $scope.product = products.products[$stateParams.proIndex]
+  $scope.bag = bag.bag
 
   $scope.pagetitle = ''//$scope.product.name
 
+  //discount maths
+  $scope.savings = $scope.product.discount / 100 * $scope.product.price
+  $scope.disPrice = $scope.product.price - $scope.savings
+
+  //add to bag
+  $scope.addToBag = function() {
+    var product = {
+      proID: $scope.product.id,
+      qty: 1,
+      name: $scope.product.name,
+      img: $scope.product.img,
+      price: $scope.disPrice,
+      link: '/product-directory/product'+[$stateParams.proIndex]
+    }
+    $scope.bag.push(product)
+  }
+
+  //image slider
   $scope.slides = $scope.product.slides
   $scope.currentIndex=0
 

@@ -230,7 +230,82 @@
 
 
 
+.pro_wrap {
+  .pro_title_wrap {
+    margin: 3em 0 1em 0;
+    h1.pro_name {
+      color: $controls;
+      font-size: 1em;
+      text-align: center;
+    }
+  }
+  .pro_info_wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .col {
+      padding: 35px 17.5px 0px 17.5px;
+    }
+    .pro_description {
+      font-size: 0.8em;
+      flex: 3 0 300px;
+      .pro_dis_box {
+        padding: 1.3em;
+        background: #fff;
+        p {
+          margin-bottom: 0.5em;
+        }
+        .feature_box {
+          h3 {
 
+          }
+          ul {
+            list-style-type: disc;
+            margin: 0.5em 0 0 1em;
+          }
+        }
+      }
+    }
+    .pro_checkout {
+      display: flex;
+      justify-content: flex-end;
+      flex: 0 0 194px;
+      .price_box {
+        padding: 1.3em;
+        background: #fff;
+        display: inline-block;
+        align-self: baseline;
+        .pro_price_wrap {
+          margin-bottom: 0.5em;
+          .pro_percent {
+            color: $controls;
+            margin-bottom: 0.25em;
+          }
+          .pro_price {
+            font-size: 1.2em;
+            span {
+              color: $controls;
+              font-size: 0.6em;
+              //text-decoration: line-through;
+              position: relative;
+              &::after {
+                content: '';
+                position: absolute;
+                width: 120%;
+                height: 1.5px;
+                border-radius: 10px;
+                background: #DE3636;
+                top: 50%;
+                left: 0;
+                transform: rotate(-20deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 // slider
 .slider_wrap {
@@ -244,7 +319,9 @@
     position: relative;
     .slide {
       width: 100%;
-      position: absolute;
+      max-width: 700px;
+      margin: 0 auto;
+      display: block;
       transition: opacity ease-in-out 0.3s;
     }
   }
@@ -254,6 +331,7 @@
 	animation-name: bounceOutLeft;
 	animation-duration: 0.8s;
   display: block!important;
+  position: absolute;
 }
 /*next buttons*/
 .slideBtns {

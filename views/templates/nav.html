@@ -27,11 +27,15 @@
   <div class="bag_contents_wrap" ng-show="showBag">
     <div class="bag_contents">
       <a class="bag_item" ng-href="/product-directory/product{{item.link}}" ng-repeat="item in bag">
+        <span class="bag_item_qty">{{item.qty}} x </span>
         <div class="bag_img_holder">
           <img ng-src="content/img/products/{{item.img}}" src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200" alt="image of {{item.name}}" />
         </div>
         <span class="bag_item_name">{{item.name}}</span>
-        <span class="bag_item_qty">x {{item.qty}}</span>
+        <div class="remove_btn">
+          <div></div>
+          <div></div>
+        </div>
       </a>
     </div>
     <div class="bag_controls">

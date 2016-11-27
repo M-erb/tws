@@ -1,12 +1,17 @@
 <header class="header" ng-include src="'views/templates/pages-header.html'"></header>
 
-<main class="page_wrap" style="min-height: 50vh">
-  <h2>{{product.name}}</h2>
+<main class="page_wrap pro_wrap" style="min-height: 50vh">
+  <div class="pro_title_wrap">
+    <h1 class="pro_name">{{product.name}}</h1>
+    <!-- <div>
+      <a class="btn_white_s" href="/product-directory">back</a>
+    </div> -->
+  </div>
 
   <div class="slider_wrap">
-    <div class="slideBtns prev" ng-click="prev()"><span><</span></div>
-    <div class="slideBtns next" ng-click="next()"><span>></span></div>
     <div class="slides_container">
+      <div class="slideBtns prev" ng-click="prev()"><span><</span></div>
+      <div class="slideBtns next" ng-click="next()"><span>></span></div>
       <img
       class="slide ng-class:{'active' : item.visible}"
       ng-repeat="item in slides"
@@ -14,6 +19,36 @@
       src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"
       ng-src="{{item.img}}"/>
   </div>
+
+  <div class="page_wrap">
+    <div class="pro_info_wrap">
+      <div class="pro_description col">
+        <div class="pro_dis_box">
+          <p>{{product.longDescription}}</p>
+          <div class="feature_box">
+            <h3>features</h3>
+            <ul>
+              <li ng-repeat="item in product.features">
+                {{item}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="pro_checkout col">
+        <div class="price_box">
+          <div class="pro_price_wrap">
+            <p class="pro_percent" ng-show="product.discount">{{product.discount}}% off</p>
+            <p class="pro_price">${{disPrice}} <span ng-show="product.discount">${{product.price}}</span></p>
+          </div>
+          <div class="btn_red" ng-click="addToBag()">
+            <span>add to bag</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
 </main>
