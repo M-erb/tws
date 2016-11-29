@@ -42,7 +42,10 @@
             <p class="pro_price">${{disPrice}} <span ng-show="product.discount">${{product.price}}</span></p>
           </div>
           <div class="qty_field_wrap">
+            <span>quantity: </span>
+            <button class="qty_controls" ng-click="minusQTY()"> - </button>
             <input type="number" ng-model="qtyField" />
+            <button class="qty_controls" ng-click="qtyField = qtyField + 1"> + </button>
           </div>
           <div class="btn_red" ng-click="addToBag()">
             <span>add to bag</span>

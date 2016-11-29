@@ -302,6 +302,28 @@
             }
           }
         }
+        .qty_field_wrap {
+          display: flex;
+          justify-content: flex-start;
+          margin-bottom: 0.5em;
+          span {
+            font-size: 0.6em;
+            color: $controls;
+            margin-right: 0.2em;
+          }
+          input {
+            width: 40px;
+            border: 1px solid $controls;
+            border-right: none;
+            border-left: none;
+            padding: 0 5px;
+          }
+          .qty_controls {
+            background: #fff;
+            color: $controls;
+            border: 1px solid $controls;
+          }
+        }
       }
     }
   }

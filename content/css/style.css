@@ -2138,6 +2138,24 @@ textarea.infusion-field-input-container {
               top: 50%;
               left: 0;
               transform: rotate(-20deg); }
+      .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_field_wrap {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 0.5em; }
+        .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_field_wrap span {
+          font-size: 0.6em;
+          color: #b4b4b4;
+          margin-right: 0.2em; }
+        .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_field_wrap input {
+          width: 40px;
+          border: 1px solid #b4b4b4;
+          border-right: none;
+          border-left: none;
+          padding: 0 5px; }
+        .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_field_wrap .qty_controls {
+          background: #fff;
+          color: #b4b4b4;
+          border: 1px solid #b4b4b4; }
 
 .slider_wrap {
   width: 100%;

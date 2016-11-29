@@ -51,9 +51,18 @@ twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag'
 
   $scope.pagetitle = ''//$scope.product.name
 
-  //discount maths
+  //discount maths **should add 'your savings with discount calulations showing'
   $scope.savings = $scope.product.discount / 100 * $scope.product.price
   $scope.disPrice = $scope.product.price - $scope.savings
+
+  //qty controls
+  $scope.minusQTY = function() {
+    if ($scope.qtyField <= 1) {
+      $scope.qtyField = 1
+    }else {
+      $scope.qtyField = $scope.qtyField - 1
+    }
+  }
 
   //add to bag
   $scope.qtyField = 1
@@ -72,6 +81,7 @@ twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag'
     product.price = product.price * product.qty
 
     $scope.bag.push(product)
+    $scope.qtyField = 1
   }
 
   //image slider
@@ -121,6 +131,19 @@ twsApp.controller('navCtrl', ['$scope', '$stateParams','products', 'bag', '$cook
   $scope.storage = $localStorage
   $scope.products = products.products[$stateParams.phaseIndex]
   $scope.bag = bag.bag
+
+  $scope.bagLength = function() {
+    var bagQTYs = []
+    for(var i=0; i < $scope.bag.length; i++) {
+      bagQTYs.push($scope.bag[i].qty)
+    }
+    //for reduce
+    function add(a, b) {
+        return a + b;
+    }
+
+    return bagQTYs.reduce(add, 0);
+  }
 
   $scope.visible = false;
   $scope.mainNavToggle = function() {
