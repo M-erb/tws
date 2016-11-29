@@ -335,16 +335,49 @@
   margin: 0 auto;
   position: relative;
   .slides_container {
-    width: 80%;
+    width: 100%;
+    max-width: 700px;
     height: auto;
     margin: 0 auto;
     position: relative;
     .slide {
       width: 100%;
-      max-width: 700px;
       margin: 0 auto;
       display: block;
       transition: opacity ease-in-out 0.3s;
+    }
+    .slideBtns {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      cursor: pointer;
+      background: rgba(255,255,255,0.2);
+      transition: all 0.2s;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      //temp
+      border: 1px solid transparent;
+      &:hover {
+        border-color: blue;
+      }
+      i.fa {
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 70px;
+        background: rgba(180,180,180,0.3);
+        display: flex;
+        justify-content: center;
+        &:before {
+          align-self: center;
+        }
+      }
+      &:hover i.fa {
+        background: $blue;
+      }
     }
   }
 }
@@ -356,35 +389,180 @@
   position: absolute;
 }
 /*next buttons*/
-.slideBtns {
-  position: absolute;
-  top: 50%;
-  cursor: pointer;
-  width: 60px;
-  height: 60px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  transition: all 0.2s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  &:hover {
-    transform: scale(1.2);
-  }
-  span {
-    display: block;
-    align-self: center;
-    font-size: 1em;
-  }
-}
+
 .next {
   @extend .slideBtns;
-  right: 0.5em;
+  right: 0;
+  i.fa {
+
+  }
 }
 .prev {
-  left: 0.5em;
+  left: 0;
   @extend .slideBtns;
+}
+
+/* for shopping bag page */
+.shopping_bag_page {
+  .bag_contents_wrap {
+    background: #fff;
+    margin: 100px auto 0 auto;
+    width: 60%;
+    min-width: 280px;
+    .bag_contents {
+      position: relative;
+      margin: 0.5em;
+      .empty_bag {
+        text-align: center;
+      }
+    }
+    .bag_item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5em;
+      padding: 0.5em 0.3em;
+      font-size: 1em;
+      color: $controls;
+      border: 1px solid transparent;
+      position: relative;
+      &:hover {
+        border: 1px solid $controls;
+      }
+      .bag_item_link {
+        display: flex;
+        justify-content: flex-start;
+        align-self: center;
+        color: inherit;
+        text-decoration: none;
+        .bag_img_holder {
+          display: flex;
+          justify-content: center;
+          margin: 0 0.2em;
+          img {
+            align-self: center;
+            width: 60px;
+            font-size: 0.3em;
+          }
+        }
+        .bag_item_name {
+          font-size: 0.6em;
+          align-self: center;
+          width: 190px;
+          .bag_item_price {
+            margin-left: 0.3em;
+          }
+        }
+        .bag_item_qty {
+          font-size: 0.6em;
+          align-self: center;
+        }
+      }
+      .remove_btn {
+        align-self: center;
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: flex;
+        justify-content: center;
+        &:hover div {
+          background: $red
+        }
+        div {
+          width: 60%;
+          background: $gray;
+          height: 4px;
+          border-radius: 3px;
+          position: absolute;
+          align-self: center;
+          transition: all 0.3s;
+        }
+        div:first-child {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        div:last-child {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    .bag_info_wrap {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 6% 5% 6%;
+      font-family: lato, sans-serif;
+      font-weight: bold;
+      font-size: 0.7em;
+      span {
+
+      }
+    }
+    .bag_controls {
+      width: 100%;
+      cursor: pointer;
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      .bag_checkout {
+        background: $red;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        padding: 1.5em;
+        font-size: 0.6em;
+        font-family: raleway;
+        font-weight: bold;
+        text-transform: uppercase;
+        flex: 5 1 150px;
+      }
+      .close_bag {
+        flex: 1 1 60px;
+        background: $blue;
+        position: relative;
+        cursor: pointer;
+        .close_btn {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          cursor: pointer;
+          div {
+            width: 100%;
+            background: #fff;
+            height: 1px;
+            border: 3px solid #fff;
+            border-radius: 3px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+          }
+          div:first-child {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+          div:last-child {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
 }

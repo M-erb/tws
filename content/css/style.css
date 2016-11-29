@@ -853,6 +853,8 @@
     .bag_container .bag_contents_wrap .bag_contents {
       position: relative;
       margin: 0.5em; }
+      .bag_container .bag_contents_wrap .bag_contents .empty_bag {
+        text-align: center; }
     .bag_container .bag_contents_wrap .bag_item {
       display: flex;
       justify-content: space-between;
@@ -2162,16 +2164,43 @@ textarea.infusion-field-input-container {
   margin: 0 auto;
   position: relative; }
   .slider_wrap .slides_container {
-    width: 80%;
+    width: 100%;
+    max-width: 700px;
     height: auto;
     margin: 0 auto;
     position: relative; }
     .slider_wrap .slides_container .slide {
       width: 100%;
-      max-width: 700px;
       margin: 0 auto;
       display: block;
       transition: opacity ease-in-out 0.3s; }
+    .slider_wrap .slides_container .slideBtns, .slider_wrap .slides_container .next, .slider_wrap .slides_container .prev {
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.2);
+      transition: all 0.2s;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      border: 1px solid transparent; }
+      .slider_wrap .slides_container .slideBtns:hover, .slider_wrap .slides_container .next:hover, .slider_wrap .slides_container .prev:hover {
+        border-color: blue; }
+      .slider_wrap .slides_container .slideBtns i.fa, .slider_wrap .slides_container .next i.fa, .slider_wrap .slides_container .prev i.fa {
+        position: absolute;
+        top: 50%;
+        width: 40px;
+        height: 70px;
+        background: rgba(180, 180, 180, 0.3);
+        display: flex;
+        justify-content: center; }
+        .slider_wrap .slides_container .slideBtns i.fa:before, .slider_wrap .slides_container .next i.fa:before, .slider_wrap .slides_container .prev i.fa:before {
+          align-self: center; }
+      .slider_wrap .slides_container .slideBtns:hover i.fa, .slider_wrap .slides_container .next:hover i.fa, .slider_wrap .slides_container .prev:hover i.fa {
+        background: #7BD5ED; }
 
 /*enter and leave animations*/
 .slide.ng-hide {
@@ -2181,33 +2210,147 @@ textarea.infusion-field-input-container {
   position: absolute; }
 
 /*next buttons*/
-.slideBtns, .next, .prev {
-  position: absolute;
-  top: 50%;
-  cursor: pointer;
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  transition: all 0.2s;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-  .slideBtns:hover, .next:hover, .prev:hover {
-    transform: scale(1.2); }
-  .slideBtns span, .next span, .prev span {
-    display: block;
-    align-self: center;
-    font-size: 1em; }
-
 .next {
-  right: 0.5em; }
+  right: 0; }
 
 .prev {
-  left: 0.5em; }
+  left: 0; }
+
+/* for shopping bag page */
+.shopping_bag_page .bag_contents_wrap {
+  background: #fff;
+  margin: 100px auto 0 auto;
+  width: 60%;
+  min-width: 280px; }
+  .shopping_bag_page .bag_contents_wrap .bag_contents {
+    position: relative;
+    margin: 0.5em; }
+    .shopping_bag_page .bag_contents_wrap .bag_contents .empty_bag {
+      text-align: center; }
+  .shopping_bag_page .bag_contents_wrap .bag_item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+    padding: 0.5em 0.3em;
+    font-size: 1em;
+    color: #b4b4b4;
+    border: 1px solid transparent;
+    position: relative; }
+    .shopping_bag_page .bag_contents_wrap .bag_item:hover {
+      border: 1px solid #b4b4b4; }
+    .shopping_bag_page .bag_contents_wrap .bag_item .bag_item_link {
+      display: flex;
+      justify-content: flex-start;
+      align-self: center;
+      color: inherit;
+      text-decoration: none; }
+      .shopping_bag_page .bag_contents_wrap .bag_item .bag_item_link .bag_img_holder {
+        display: flex;
+        justify-content: center;
+        margin: 0 0.2em; }
+        .shopping_bag_page .bag_contents_wrap .bag_item .bag_item_link .bag_img_holder img {
+          align-self: center;
+          width: 60px;
+          font-size: 0.3em; }
+      .shopping_bag_page .bag_contents_wrap .bag_item .bag_item_link .bag_item_name {
+        font-size: 0.6em;
+        align-self: center;
+        width: 190px; }
+        .shopping_bag_page .bag_contents_wrap .bag_item .bag_item_link .bag_item_name .bag_item_price {
+          margin-left: 0.3em; }
+      .shopping_bag_page .bag_contents_wrap .bag_item .bag_item_link .bag_item_qty {
+        font-size: 0.6em;
+        align-self: center; }
+    .shopping_bag_page .bag_contents_wrap .bag_item .remove_btn {
+      align-self: center;
+      position: relative;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      justify-content: center; }
+      .shopping_bag_page .bag_contents_wrap .bag_item .remove_btn:hover div {
+        background: #DE3636; }
+      .shopping_bag_page .bag_contents_wrap .bag_item .remove_btn div {
+        width: 60%;
+        background: #595959;
+        height: 4px;
+        border-radius: 3px;
+        position: absolute;
+        align-self: center;
+        transition: all 0.3s; }
+      .shopping_bag_page .bag_contents_wrap .bag_item .remove_btn div:first-child {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg); }
+      .shopping_bag_page .bag_contents_wrap .bag_item .remove_btn div:last-child {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg); }
+  .shopping_bag_page .bag_contents_wrap .bag_info_wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6% 5% 6%;
+    font-family: lato, sans-serif;
+    font-weight: bold;
+    font-size: 0.7em; }
+  .shopping_bag_page .bag_contents_wrap .bag_controls {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap; }
+    .shopping_bag_page .bag_contents_wrap .bag_controls .bag_checkout {
+      background: #DE3636;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+      padding: 1.5em;
+      font-size: 0.6em;
+      font-family: raleway;
+      font-weight: bold;
+      text-transform: uppercase;
+      flex: 5 1 150px; }
+    .shopping_bag_page .bag_contents_wrap .bag_controls .close_bag {
+      flex: 1 1 60px;
+      background: #7BD5ED;
+      position: relative;
+      cursor: pointer; }
+      .shopping_bag_page .bag_contents_wrap .bag_controls .close_bag .close_btn {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        cursor: pointer; }
+        .shopping_bag_page .bag_contents_wrap .bag_controls .close_bag .close_btn div {
+          width: 100%;
+          background: #fff;
+          height: 1px;
+          border: 3px solid #fff;
+          border-radius: 3px;
+          position: absolute;
+          top: 50%;
+          left: 0; }
+        .shopping_bag_page .bag_contents_wrap .bag_controls .close_bag .close_btn div:first-child {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg); }
+        .shopping_bag_page .bag_contents_wrap .bag_controls .close_bag .close_btn div:last-child {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
 
 /*=======--=======-MEDIA QUERIES-======--========*/
 @media screen and (max-width: 650px) {
@@ -2621,7 +2764,7 @@ body {
   background: #595959;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1.6rem;
-  color: #292929;
+  color: #595959;
   width: 100%;
   position: relative;
   z-index: 1; }

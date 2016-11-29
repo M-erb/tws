@@ -1,6 +1,6 @@
 <header class="header" ng-include src="'views/templates/pages-header.html'"></header>
 
-<main class="page_wrap pro_wrap" style="min-height: 50vh">
+<main class="page_wrap pro_wrap">
   <div class="pro_title_wrap">
     <h1 class="pro_name">{{product.name}}</h1>
     <!-- <div>
@@ -10,8 +10,12 @@
 
   <div class="slider_wrap">
     <div class="slides_container">
-      <div class="slideBtns prev" ng-click="prev()"><span><</span></div>
-      <div class="slideBtns next" ng-click="next()"><span>></span></div>
+      <div class="prev" ng-click="prev()">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      </div>
+      <div class="next" ng-click="next()">
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </div>
       <img
       class="slide ng-class:{'active' : item.visible}"
       ng-repeat="item in slides"
@@ -38,8 +42,8 @@
       <div class="pro_checkout col">
         <div class="price_box">
           <div class="pro_price_wrap">
-            <p class="pro_percent" ng-show="product.discount">{{product.discount}}% off</p>
-            <p class="pro_price">${{disPrice}} <span ng-show="product.discount">${{product.price}}</span></p>
+            <p class="pro_percent" ng-show="product.discount">{{product.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</p>
+            <p class="pro_price"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice}} <span ng-show="product.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{product.price}}</span></p>
           </div>
           <div class="qty_field_wrap">
             <span>quantity: </span>

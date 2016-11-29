@@ -65,6 +65,9 @@
     .bag_contents {
       position: relative;
       margin: 0.5em;
+      .empty_bag {
+        text-align: center;
+      }
     }
     .bag_item {
       display: flex;

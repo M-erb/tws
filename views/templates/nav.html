@@ -26,13 +26,16 @@
 
   <div class="bag_contents_wrap" ng-show="showBag">
     <div class="bag_contents">
+      <div class="empty_bag" ng-show="bag.length == 0">
+        <span>nothing yet, get <a href="/product-directory" ng-click="bagToggle()">shopping!</a></span>
+      </div>
       <div class="bag_item" ng-repeat="item in bag">
         <a class="bag_item_link" ng-href="{{item.link}}" ng-click="bagToggle()">
           <span class="bag_item_qty">{{item.qty}} x</span>
           <div class="bag_img_holder">
             <img ng-src="content/img/products/{{item.img}}" src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200" alt="image of {{item.name}}" />
           </div>
-          <span class="bag_item_name">{{item.name}}<span class="bag_item_price">${{item.price}}</span></span>
+          <span class="bag_item_name">{{item.name}}<span class="bag_item_price"><i class="fa fa-usd" aria-hidden="true"></i>{{item.price}}</span></span>
         </a>
         <div class="remove_btn" ng-click="removeFromBag($index)">
           <div></div>
@@ -41,10 +44,11 @@
       </div>
     </div>
     <div class="bag_info_wrap">
-      <span>total:</span><span>${{totalPrice()}}</span>
+      <span>total:</span><span><i class="fa fa-usd" aria-hidden="true"></i>{{totalPrice()}}</span>
     </div>
     <div class="bag_controls">
-      <a class="bag_checkout" ng-href="https://an140.infusionsoft.com/app/manageCart/processBundle?{{checkoutItemsLink()}}">view bag</a>
+      <!-- <a class="bag_checkout" ng-href="https://an140.infusionsoft.com/app/manageCart/processBundle?{{checkoutItemsLink()}}">view bag</a> -->
+      <a class="bag_checkout" href="/shopping-bag" ng-click="bagToggle()">view bag</a>
       <div class="close_bag" ng-click="bagToggle()">
         <div class="close_btn">
           <div></div>

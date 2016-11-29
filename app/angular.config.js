@@ -41,6 +41,12 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
       templateUrl: 'views/product/product-info.html',
       controller: 'productInfoCtrl'
     });
+  $stateProvider
+    .state('shoppingBag', {
+      url: '/shopping-bag',
+      templateUrl: 'views/product/shopping-bag.html',
+      controller: 'bagCtrl'
+    });
 
 
   $urlRouterProvider.otherwise('/');
