@@ -56,15 +56,21 @@ twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag'
   $scope.disPrice = $scope.product.price - $scope.savings
 
   //add to bag
+  $scope.qtyField = 1
   $scope.addToBag = function() {
+    if($scope.qtyField == 0) {
+      $scope.qtyField = 1
+    }
     var product = {
       proID: $scope.product.id,
-      qty: 1,
+      qty: $scope.qtyField,
       name: $scope.product.name,
       img: $scope.product.img,
       price: $scope.disPrice,
       link: '/product-directory/product'+[$stateParams.proIndex]
     }
+    product.price = product.price * product.qty
+
     $scope.bag.push(product)
   }
 
@@ -133,6 +139,23 @@ twsApp.controller('navCtrl', ['$scope', '$stateParams','products', 'bag', '$cook
     }else {
       $scope.showBag = false
     }
+  }
+
+  $scope.totalPrice = function() {
+    var priceList = []
+    for(var i=0; i < $scope.bag.length; i++) {
+      priceList.push($scope.bag[i].price)
+    }
+    //for reduce
+    function add(a, b) {
+        return a + b;
+    }
+
+    return priceList.reduce(add, 0);
+  }
+
+  $scope.removeFromBag = function(item) {
+    $scope.bag.splice(item, 1)
   }
 
   //build infusionsoft checkout link

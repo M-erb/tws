@@ -1,11 +1,4 @@
 twsApp.factory('products',['$localStorage', function($localStorage){
-  var directoryCheck = function() {
-    //house keeping for local storage
-    if ($localStorage.directory == null) {
-      $localStorage.directory = {}
-    }
-  }
-  directoryCheck()
 
   var o = {
     products: [{
@@ -193,22 +186,18 @@ twsApp.factory('products',['$localStorage', function($localStorage){
 twsApp.factory('bag',['$localStorage', function($localStorage){
 
   var o = {
-    bag: [{
-      proID: '72',
-      qty: 1,
-      name: "test product",
-      img: "blue-blanket.png",
-      price: "",
-      link: "0"
-    }, {
-      proID: '76',
-      qty: 2,
-      name: "test product2",
-      img: "blue-blanket.png",
-      price: "",
-      link: "1"
-    }]
+    bag: []
   }
+
+  var bagContentsCheck = function() {
+    //house keeping for local storage
+    if ($localStorage.unpurchasedBag == null) {
+      $localStorage.unpurchasedBag = []
+    }else {
+      o.bag = $localStorage.unpurchasedBag
+    }
+  }
+  bagContentsCheck()
 
   return o;
 }]);

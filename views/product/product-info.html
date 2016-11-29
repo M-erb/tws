@@ -41,6 +41,9 @@
             <p class="pro_percent" ng-show="product.discount">{{product.discount}}% off</p>
             <p class="pro_price">${{disPrice}} <span ng-show="product.discount">${{product.price}}</span></p>
           </div>
+          <div class="qty_field_wrap">
+            <input type="number" ng-model="qtyField" />
+          </div>
           <div class="btn_red" ng-click="addToBag()">
             <span>add to bag</span>
           </div>
