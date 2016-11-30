@@ -41,6 +41,13 @@ twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', 
     'informal'
   ]
 
+  //discount maths **should add 'your savings with discount calulations showing'
+  $scope.disPrice = function(index) {
+    var savings = $scope.products[index].discount / 100 * $scope.products[index].price
+    
+    return $scope.products[index].price - savings
+  }
+
 }]);
 
 twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, bag, $cookies, $localStorage, $sessionStorage, $stateParams){

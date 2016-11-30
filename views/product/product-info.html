@@ -45,8 +45,8 @@
             <p class="pro_percent" ng-show="product.discount">{{product.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</p>
             <p class="pro_price"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice}} <span ng-show="product.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{product.price}}</span></p>
           </div>
+          <span class="qty_label">quantity:</span>
           <div class="qty_field_wrap">
-            <span>quantity: </span>
             <button class="qty_controls" ng-click="minusQTY()"> - </button>
             <input type="number" ng-model="qtyField" />
             <button class="qty_controls" ng-click="qtyField = qtyField + 1"> + </button>

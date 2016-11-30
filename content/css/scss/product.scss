@@ -58,9 +58,33 @@
       .pro_price {
 
       }
+      .price_off {
+        position: absolute;
+        top: 0;
+        right: 100%;
+        width: 100px;
+        height: 100%;
+        color: black;
+        font-size: 0.7em;
+        display: flex;
+        justify-content: center;
+        span {
+          align-self: center;
+          color: $controls;
+          i.fa {
+            font-size: 0.7em;
+          }
+        }
+      }
+    }
+    .price_box.discount {
+      background: $red;
     }
     &:hover .price_box {
       background: $blue;
+    }
+    &:hover .price_box.discount {
+      background: $red;
     }
   }
 }
@@ -280,6 +304,9 @@
           .pro_percent {
             color: $controls;
             margin-bottom: 0.25em;
+            i.fa {
+              font-size: 0.7em;
+            }
           }
           .pro_price {
             font-size: 1.2em;
@@ -302,25 +329,31 @@
             }
           }
         }
+        .qty_label {
+          font-size: 0.6em;
+          color: $controls;
+          margin-bottom: 0.4em;
+          display: block;
+        }
         .qty_field_wrap {
           display: flex;
           justify-content: flex-start;
+          height: 30px;
           margin-bottom: 0.5em;
-          span {
-            font-size: 0.6em;
-            color: $controls;
-            margin-right: 0.2em;
-          }
           input {
             width: 40px;
+            height: 100%;
             border: 1px solid $controls;
             border-right: none;
             border-left: none;
             padding: 0 5px;
           }
           .qty_controls {
+            width: 30px;
+            height: 100%;
             background: #fff;
-            color: $controls;
+            color: inherit;
+            cursor: pointer;
             border: 1px solid $controls;
           }
         }
@@ -352,16 +385,15 @@
       position: absolute;
       top: 0;
       cursor: pointer;
-      background: rgba(255,255,255,0.2);
       transition: all 0.2s;
+      display: flex;
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
-      //temp
-      border: 1px solid transparent;
+      z-index: 20;
       &:hover {
-        border-color: blue;
+
       }
       i.fa {
         position: absolute;
@@ -371,8 +403,15 @@
         background: rgba(180,180,180,0.3);
         display: flex;
         justify-content: center;
+        color: #fff;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        transition: all 0.2s;
         &:before {
           align-self: center;
+          height: 20px;
         }
       }
       &:hover i.fa {
@@ -381,6 +420,22 @@
     }
   }
 }
+/*next buttons*/
+.prev {
+  @extend .slideBtns;
+  left: 0;
+  i.fa {
+
+  }
+}
+.next {
+  @extend .slideBtns;
+  right: 0;
+  i.fa {
+    right: 0;
+  }
+}
+
 /*enter and leave animations*/
 .slide.ng-hide {
 	animation-name: bounceOutLeft;
@@ -388,19 +443,7 @@
   display: block!important;
   position: absolute;
 }
-/*next buttons*/
 
-.next {
-  @extend .slideBtns;
-  right: 0;
-  i.fa {
-
-  }
-}
-.prev {
-  left: 0;
-  @extend .slideBtns;
-}
 
 /* for shopping bag page */
 .shopping_bag_page {

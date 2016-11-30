@@ -55,8 +55,12 @@
       <div class="pro_name">
         <span>{{pro.name}}</span>
       </div>
-      <div class="price_box">
-        <span class="pro_price">${{pro.price}}</span>
+      <div class="price_box ng-class:{'discount' : pro.discount}">
+        <div class="price_off">
+          <span>{{pro.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</span>
+        </div>
+        <span class="pro_price" ng-hide="pro.discount">${{pro.price}}</span>
+        <span class="pro_price" ng-show="pro.discount">${{disPrice($index)}}</span>
       </div>
     </a>
   </div>

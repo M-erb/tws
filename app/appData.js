@@ -34,7 +34,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
       ],
       price: 55,
-      discount: 0,
+      discount: 10,
       collection: 'moms blankets',
       status: 'active',
       category: 'blankets and quilts',
