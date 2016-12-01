@@ -83,9 +83,6 @@
     &:hover .price_box {
       background: $blue;
     }
-    &:hover .price_box.discount {
-      background: $red;
-    }
   }
 }
 
@@ -104,7 +101,7 @@
       left: 0;
       transform: translateX(-100%);
       transition: all 0.4s;
-      background: lighten($gray, 50%);
+      background: lighten($gray, 70%);
       height: 100vh;
       z-index: 8;
       .filters_close_wrap {
@@ -149,6 +146,12 @@
       }
       .filters_tab_controls {
         padding: 1em;
+        .filters_dropdown {
+          margin-bottom: 0.7em;
+        }
+        .btn_wrap {
+          margin-bottom: 0.7em;
+        }
       }
     }
     .filters_tab.show_filters {
@@ -209,7 +212,7 @@
 .input_search {
   display: flex;
   align-self: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.7em;
   input {
     align-self: center;
     border: 2px solid $controls;
@@ -446,22 +449,26 @@
 
 
 /* for shopping bag page */
-.shopping_bag_page {
-  .bag_contents_wrap {
+.checkout_page {
+  margin: 100px auto 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .shopping_bag_wrap {
     background: #fff;
-    margin: 100px auto 0 auto;
-    width: 60%;
-    min-width: 280px;
-    .bag_contents {
-      position: relative;
-      margin: 0.5em;
-      .empty_bag {
-        text-align: center;
-      }
+    flex: 3 1 450px;
+    margin: 10px;
+    padding: 2em;
+    position: relative;
+    align-self: baseline;
+    .empty_bag {
+      text-align: center;
+      transition: all 0.2s;
     }
     .bag_item {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
       margin-bottom: 0.5em;
       padding: 0.5em 0.3em;
       font-size: 1em;
@@ -471,33 +478,90 @@
       &:hover {
         border: 1px solid $controls;
       }
-      .bag_item_link {
+      &:first-child {
+        margin-bottom: 0;
+      }
+      .bag_img_holder {
         display: flex;
-        justify-content: flex-start;
-        align-self: center;
-        color: inherit;
-        text-decoration: none;
-        .bag_img_holder {
-          display: flex;
-          justify-content: center;
-          margin: 0 0.2em;
+        justify-content: center;
+        margin-right: 0.2em;
+        a {
+          display: block;
+          align-self: center;
           img {
-            align-self: center;
-            width: 60px;
-            font-size: 0.3em;
+            width: 70px;
+            font-size: 0.4em;
           }
         }
-        .bag_item_name {
+      }
+      .bag_info_container {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        a.bag_item_name  {
+          display: block;
+          color: $controls;
+          text-decoration: none;
           font-size: 0.6em;
-          align-self: center;
-          width: 190px;
+          transition: none;
+          &:hover {
+            color: $blue;
+            text-decoration: underline;
+          }
+        }
+        .bag_price_qty_wrap {
+          display: flex;
+          font-size: 0.7em;
           .bag_item_price {
-            margin-left: 0.3em;
+            margin-right: 1em;
+                align-self: center;
           }
-        }
-        .bag_item_qty {
-          font-size: 0.6em;
-          align-self: center;
+          .bag_item_qty {
+            align-self: center;
+            font-size: 0.5em;
+            display: flex;
+            span {
+              font-size: 1.5em;
+              color: $controls;
+              display: block;
+              align-self: center;
+              margin-right: 0.4em;
+            }
+            .qty_field_wrap {
+              display: flex;
+              justify-content: flex-start;
+              height: 30px;
+              input {
+                width: 40px;
+                height: 100%;
+                border: 1px solid $controls;
+                border-right: none;
+                border-left: none;
+                padding: 0 5px;
+              }
+              .qty_controls {
+                width: 30px;
+                height: 100%;
+                background: #fff;
+                color: inherit;
+                cursor: pointer;
+                border: 1px solid $controls;
+              }
+            }
+            // input {
+            //   padding: 0.2em;
+            //   border: 1px solid lighten($controls, 10%);
+            //   width: 50px;
+            //   outline: none;
+            //   &:active {
+            //     border-color: $blue;
+            //   }
+            //   &:selection {
+            //     border-color: $blue;
+            //   }
+            // }
+          }
         }
       }
       .remove_btn {
@@ -514,7 +578,7 @@
         }
         div {
           width: 60%;
-          background: $gray;
+          background: $controls;
           height: 4px;
           border-radius: 3px;
           position: absolute;
@@ -535,10 +599,25 @@
         }
       }
     }
+  }
+  .summary_wrap {
+    background: #fff;
+    flex: 1 1 200px;
+    margin: 10px;
+    padding: 2em;
+    align-self: flex-start;
+    .summary_title {
+      color: $controls;
+      font-size: 0.6em;
+      text-align: center;
+      margin-bottom: 14px;
+      width: 100%;
+    }
     .bag_info_wrap {
       display: flex;
       justify-content: space-between;
-      padding: 0 6% 5% 6%;
+      width: 100%;
+      margin-bottom: 14px;
       font-family: lato, sans-serif;
       font-weight: bold;
       font-size: 0.7em;
@@ -546,66 +625,29 @@
 
       }
     }
-    .bag_controls {
+    .savings_info {
+      color: $controls;
+      font-size: 0.6em;
+      text-align: center;
+      margin-bottom: 14px;
       width: 100%;
-      cursor: pointer;
-      display: flex;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      .bag_checkout {
-        background: $red;
-        text-decoration: none;
-        display: block;
-        width: 100%;
-        text-align: center;
-        color: #fff;
-        padding: 1.5em;
-        font-size: 0.6em;
-        font-family: raleway;
-        font-weight: bold;
-        text-transform: uppercase;
-        flex: 5 1 150px;
+      background: lighten($controls, 50%);
+      font-style: italic;
+      i.fa {
+        -webkit-transform: skew(-12deg);
+        -moz-transform: skew(-12deg);
+        -ms-transform: skew(-12deg);
+        transform: skew(-12deg);
       }
-      .close_bag {
-        flex: 1 1 60px;
-        background: $blue;
-        position: relative;
-        cursor: pointer;
-        .close_btn {
-          position: absolute;
-          width: 30px;
-          height: 30px;
-          top: 50%;
-          left: 50%;
-          -webkit-transform: translate(-50%, -50%);
-          -moz-transform: translate(-50%, -50%);
-          -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-          cursor: pointer;
-          div {
-            width: 100%;
-            background: #fff;
-            height: 1px;
-            border: 3px solid #fff;
-            border-radius: 3px;
-            position: absolute;
-            top: 50%;
-            left: 0;
-          }
-          div:first-child {
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-          }
-          div:last-child {
-            -webkit-transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            -ms-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-          }
-        }
-      }
+    }
+    .bag_checkout {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .bag_notes {
+      font-size: 0.5em;
+      color: $controls;
     }
   }
 }

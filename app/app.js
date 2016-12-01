@@ -14,14 +14,12 @@ twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', 
   $scope.products = products.products
   $scope.pagetitle = 'products'
 
-  $scope.searchVisable = false
-  $scope.searchToggle = function() {
-    if ($scope.searchVisable == false) {
-      $scope.searchVisable = true
-    }else {
-      $scope.searchVisable = false
-    }
+  $scope.clearSearch = function() {
+    $scope.inputSearch = ''
+    $scope.categorySearch = ''
+    $scope.collecSearch = ''
   }
+
   $scope.openFilter = false
   $scope.filterToggle = function() {
     if ($scope.openFilter == false) {
@@ -44,7 +42,7 @@ twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', 
   //discount maths **should add 'your savings with discount calulations showing'
   $scope.disPrice = function(index) {
     var savings = $scope.products[index].discount / 100 * $scope.products[index].price
-    
+
     return $scope.products[index].price - savings
   }
 
@@ -83,9 +81,9 @@ twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag'
       name: $scope.product.name,
       img: $scope.product.img,
       price: $scope.disPrice,
+      savings: $scope.savings,
       link: '/product-directory/product'+[$stateParams.proIndex]
     }
-    product.price = product.price * product.qty
 
     $scope.bag.push(product)
     $scope.qtyField = 1
@@ -94,15 +92,12 @@ twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag'
   //image slider
   $scope.slides = $scope.product.slides
   $scope.currentIndex=0
-
   $scope.prev=function(){
     $scope.currentIndex>0?$scope.currentIndex--:$scope.currentIndex=$scope.slides.length-1;
   }
-
   $scope.next=function(){
     $scope.currentIndex<$scope.slides.length-1?$scope.currentIndex++:$scope.currentIndex=0;
   }
-
   $scope.$watch('currentIndex',function(){
     $scope.slides.forEach(function(slide){
       slide.visible=false;
@@ -173,7 +168,7 @@ twsApp.controller('navCtrl', ['$scope', '$stateParams', 'bag', '$cookies', '$loc
   $scope.totalPrice = function() {
     var priceList = []
     for(var i=0; i < $scope.bag.length; i++) {
-      priceList.push($scope.bag[i].price)
+      priceList.push($scope.bag[i].price * $scope.bag[i].qty)
     }
     //for reduce
     function add(a, b) {
@@ -186,15 +181,6 @@ twsApp.controller('navCtrl', ['$scope', '$stateParams', 'bag', '$cookies', '$loc
   $scope.removeFromBag = function(item) {
     $scope.bag.splice(item, 1)
   }
-
-  //build infusionsoft checkout link
-  /*$scope.checkoutItemsLink = function() {
-    var url = []
-    for(var i=0; i < $scope.bag.length; i++) {
-      url.push('productId='+$scope.bag[i].proID+'&productQuantity='+$scope.bag[i].qty+'&')
-    }
-    return url.join('')
-  }*/
 
 }]);
 
@@ -221,7 +207,7 @@ twsApp.controller('bagCtrl', ['$scope', '$stateParams','products', 'bag', '$cook
   $scope.totalPrice = function() {
     var priceList = []
     for(var i=0; i < $scope.bag.length; i++) {
-      priceList.push($scope.bag[i].price)
+      priceList.push($scope.bag[i].price * $scope.bag[i].qty)
     }
     //for reduce
     function add(a, b) {
@@ -231,17 +217,55 @@ twsApp.controller('bagCtrl', ['$scope', '$stateParams','products', 'bag', '$cook
     return priceList.reduce(add, 0);
   }
 
-  $scope.removeFromBag = function(item) {
-    $scope.bag.splice(item, 1)
+  $scope.totalSavings = function() {
+    var savingsList = []
+    for(var i=0; i < $scope.bag.length; i++) {
+      savingsList.push($scope.bag[i].savings * $scope.bag[i].qty)
+    }
+    //for reduce
+    function add(a, b) {
+        return a + b;
+    }
+
+    return savingsList.reduce(add, 0)
+  }
+
+  $scope.removeFromBag = function(i) {
+    $scope.bag.splice(i, 1)
+  }
+
+  $scope.checkQty = function(i) {
+    if($scope.bag[i].qty < 1) {
+      $scope.bag.splice(i, 1)
+    }
+  }
+
+  $scope.minusQTY = function(i) {
+    if($scope.bag[i].qty < 2) {
+      $scope.bag.splice(i, 1)
+      console.log('bag item removed, less than 1 qty')
+    }else {
+      $scope.bag[i].qty = $scope.bag[i].qty - 1
+      console.log('minus 1 from qty')
+    }
   }
 
   //build infusionsoft checkout link
   $scope.checkoutItemsLink = function() {
-    var url = []
-    for(var i=0; i < $scope.bag.length; i++) {
-      url.push('productId='+$scope.bag[i].proID+'&productQuantity='+$scope.bag[i].qty+'&')
+    if (bag.length < 1) {
+      return ''
+    }else {
+      var url = []
+      for(var i=0; i < $scope.bag.length; i++) {
+        url.push('productId='+$scope.bag[i].proID+'&productQuantity='+$scope.bag[i].qty+'&')
+      }
+      
+      url.unshift('https://an140.infusionsoft.com/app/manageCart/processBundle?')
+
+      return url.join('')
     }
-    return url.join('')
   }
+
+  //https://an140.infusionsoft.com/app/manageCart/processBundle
 
 }]);

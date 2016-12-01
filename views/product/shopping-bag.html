@@ -1,35 +1,55 @@
 <header class="header" ng-include src="'views/templates/pages-header.html'"></header>
 
-<main class="page_wrap shopping_bag_page">
-  <div class="bag_contents_wrap">
-    <div class="bag_contents">
+<main class="page_wrap">
+  <div class="checkout_page">
+    <div class="shopping_bag_wrap">
       <div class="empty_bag" ng-show="bag.length == 0">
-        <span>nothing yet, get <a href="/product-directory" ng-click="bagToggle()">shopping!</a></span>
+        <span>nothing here, get <a href="/product-directory">shopping!</a></span>
       </div>
       <div class="bag_item" ng-repeat="item in bag">
-        <a class="bag_item_link" ng-href="{{item.link}}" ng-click="bagToggle()">
-          <span class="bag_item_qty">{{item.qty}} x</span>
-          <div class="bag_img_holder">
+        <div class="bag_img_holder">
+          <a ng-href="{{item.link}}">
             <img ng-src="content/img/products/{{item.img}}" src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200" alt="image of {{item.name}}" />
+          </a>
+        </div>
+        <div class="bag_info_container">
+          <a class="bag_item_name" ng-href="{{item.link}}">
+            <span>{{item.name}}</span>
+          </a>
+          <div class="bag_price_qty_wrap">
+            <span class="bag_item_price"><i class="fa fa-usd" aria-hidden="true"></i>{{item.price}}</span>
+            <div class="bag_item_qty">
+              <span>qty: </span>
+              <div class="qty_field_wrap">
+                <button class="qty_controls" ng-click="minusQTY($index)"> - </button>
+                <input type="number" ng-model="item.qty" ng-change="checkQty($index)"/>
+                <button class="qty_controls" ng-click="item.qty = item.qty + 1"> + </button>
+              </div>
+            </div>
           </div>
-          <span class="bag_item_name">{{item.name}}<span class="bag_item_price">${{item.price}}</span></span>
-        </a>
+        </div>
         <div class="remove_btn" ng-click="removeFromBag($index)">
           <div></div>
           <div></div>
         </div>
       </div>
     </div>
-    <div class="bag_info_wrap">
-      <span>total:</span><span>${{totalPrice()}}</span>
-    </div>
-    <div class="bag_controls">
-      <a class="bag_checkout" ng-href="https://an140.infusionsoft.com/app/manageCart/processBundle?{{checkoutItemsLink()}}">checkout</a>
-      <div class="close_bag" ng-click="bagToggle()">
-        <div class="close_btn">
-          <div></div>
-          <div></div>
-        </div>
+    <div class="summary_wrap">
+      <p class="summary_title">Order Summary</p>
+      <div class="bag_info_wrap">
+        <span>{{bagLength()}} item<span ng-show="{{bagLength() > 1}}">s</span></span>
+        <span><i class="fa fa-usd" aria-hidden="true"></i>{{totalPrice()}}</span>
+      </div>
+      <div class="savings_info" ng-show="totalSavings()">
+        <span>You are saving <i class="fa fa-usd" aria-hidden="true"></i>{{totalSavings()}}</span>
+      </div>
+      <div class="bag_controls">
+        <a class="bag_checkout btn_red ng-class:{'btn_inactive' : bag.length < 1}"
+        ng-href="{{checkoutItemsLink()}}">
+        checkout</a>
+      </div>
+      <div class="bag_notes">
+        <p class="shipping_notes">*shipping is calculated during checkout</p>
       </div>
     </div>
   </div>

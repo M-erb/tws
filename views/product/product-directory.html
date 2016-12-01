@@ -21,6 +21,11 @@
             </option>
           </select>
         </div>
+        <div class="btn_wrap">
+          <div class="btn_blue" ng-click="clearSearch()">
+            Clear Search
+          </div>
+        </div>
       </div>
     </div>
     <div class="filters_bar_container">
@@ -31,11 +36,14 @@
         <div class="collection_label">
           <span>Collections: </span>
         </div>
-        <div class="collection erica">
+        <div class="collection erica" ng-click="collecSearch = 'erica'">
           Ericas
         </div>
-        <div class="collection moms">
+        <div class="collection moms" ng-click="collecSearch = 'moms'">
           Moms
+        </div>
+        <div class="collection all" ng-click="collecSearch = ''">
+          all
         </div>
       </div>
     </div>
@@ -45,7 +53,7 @@
 <main class="page_wrap">
   <div class="pro_container">
     <a class="pro_box" ng-href="/product-directory/product{{$index}}"
-    ng-repeat="pro in products | filter: inputSearch | filter: categorySearch">
+    ng-repeat="pro in products | filter: inputSearch | filter: categorySearch | filter: collecSearch">
       <div class="pro_img">
         <img
         ng-src="content/img/products/{{pro.img}}"
@@ -56,11 +64,11 @@
         <span>{{pro.name}}</span>
       </div>
       <div class="price_box ng-class:{'discount' : pro.discount}">
-        <div class="price_off">
+        <div class="price_off" ng-show="pro.discount">
           <span>{{pro.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</span>
         </div>
-        <span class="pro_price" ng-hide="pro.discount">${{pro.price}}</span>
-        <span class="pro_price" ng-show="pro.discount">${{disPrice($index)}}</span>
+        <span class="pro_price" ng-hide="pro.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{pro.price}}</span>
+        <span class="pro_price" ng-show="pro.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice($index)}}</span>
       </div>
     </a>
   </div>

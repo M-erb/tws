@@ -1,6 +1,10 @@
 @import 'var';
 
 /*==========BUTTONS==========*/
+.btn_wrap {
+  margin-bottom: 0.7em;
+}
+
 .btn {
   font-size: 0.6em;
   font-weight: bold;
@@ -19,7 +23,7 @@
   -ms-user-select: none;
   user-select: none;
   &:hover {
-      box-shadow: 6px 6px 3px rgba(41,41,41,0.4);
+    box-shadow: 6px 6px 3px rgba(41,41,41,0.4);
   }
 }
 
@@ -49,6 +53,9 @@
   @extend .btn;
   color: white;
   background: $red;
+  &:hover {
+    color: #fff;
+  }
 }
 
 // Small buttons
@@ -82,6 +89,12 @@
     color: #302B2C;
     background: white;
   }
+}
+
+.btn_inactive {
+  @extend .btn;
+  color: #fff;
+  background: $controls;
 }
 
 /*---==forms==---*/
