@@ -606,6 +606,9 @@
     margin: 10px;
     padding: 2em;
     align-self: flex-start;
+    .continue_btn_wrap {
+      margin-bottom: 14px;
+    }
     .summary_title {
       color: $controls;
       font-size: 0.6em;

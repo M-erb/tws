@@ -1511,10 +1511,14 @@ footer .social_wrap ul li img {
 .btn_blue {
   color: white;
   background: #7BD5ED; }
+  .btn_blue:hover {
+    color: #fff; }
 
 .btn_green {
   color: white;
   background: #7BD59C; }
+  .btn_green:hover {
+    color: #fff; }
 
 .btn_red {
   color: white;
@@ -2401,6 +2405,8 @@ textarea.infusion-field-input-container {
     margin: 10px;
     padding: 2em;
     align-self: flex-start; }
+    .checkout_page .summary_wrap .continue_btn_wrap {
+      margin-bottom: 14px; }
     .checkout_page .summary_wrap .summary_title {
       color: #b4b4b4;
       font-size: 0.6em;
@@ -2790,7 +2796,7 @@ h1 {
   user-select: none; }
   h1.page_title {
     font-weight: 300;
-    font-size: 260%; }
+    font-size: 200%; }
 
 h2 {
   font-family: lato, sans-serif;
@@ -2846,7 +2852,7 @@ body {
   margin: 0;
   padding: 0;
   background: #595959;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
   color: #595959;
   width: 100%;

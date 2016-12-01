@@ -41,12 +41,18 @@
   @extend .btn;
   color: white;
   background: $blue;
+  &:hover {
+    color: #fff;
+  }
 }
 
 .btn_green {
   @extend .btn;
   color: white;
   background: $green;
+  &:hover {
+    color: #fff;
+  }
 }
 
 .btn_red {
