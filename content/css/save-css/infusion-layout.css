@@ -140,62 +140,6 @@ img, img a {
 	margin: 10px auto 0 auto;
 	}
 
-#contentWide {
-    /* Content wrapper used on checkout pages */
-  position: relative;
-  width: 90%;
-  max-width: 70em;
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  font-family: 'open sans', sans-serif;
-}
-/*order of layout*/
-#CHECKOUT_LINKS_TOP {
-  order: -10;
-  width: 100%;
-}
-#BRIEF_PRODUCT_SUMMARY {
-  order: -9;
-  width: 100%;
-}
-#PAYMENT_PLANS {
-  order: -8;
-  /*width: 270px;*/
-  width: 100%;
-}
-#PROMO_CODE {
-  order: -7;
-}
-#UP_SELLS {
-  order: -6;
-}
-#BILLING_ENTRY {
-  order: -5;
-  width: 480px;
-}
-#SHIPPING_ENTRY {
-  order: -4;
-  width: 450px;
-}
-#PAYMENT_SELECTION {
-  order: -3;
-}
-#CHECKOUT_LINKS {
-  order: 10;
-  width: 90%;
-max-width: 70em;
-margin-left: auto;
-margin-right: auto;
-}
-
-#CUSTOM_HTML {
-  order: 1;
-}
-
 #contentProductDetail {
     /* Content wrapper used on product details page */
 	position: relative;
@@ -402,10 +346,11 @@ input {
 
 .promoCode {
     /* Table that contains promo code field */
-	width: 450px;
+	width: 100%;
+	max-width: 450px;
 	border-collapse: collapse;
 	margin-bottom: 40px;
-	}
+}
 
 .promoCode td {
 	height: 30px;
@@ -523,13 +468,6 @@ input {
 .viewCart td, .viewCartShort td, .payPlan td, .summaryCart td, .billingTable, .shippingInfo td, .billingInfo td, .paymentInfo td, .paymentMethodTable td {
 	padding: 10px 10px 10px 15px;
 	vertical-align: top;
-	}
-
-.payPlan {
-	/* Table on view cart page that contains available pay plans */
-	width: 270px;
-	border-collapse: collapse;
-	text-align: left;
 	}
 
 .tableContainer {
@@ -877,7 +815,7 @@ a:hover {
   cursor: pointer;
 }
 
-.cartButton, .continueButton, .formButton {
+.cartButton, .continueButton, .formButton, .codeButton  {
   font-size: 0.8em;
   font-weight: bold;
   font-family: 'open sans', sans-serif;
@@ -897,7 +835,6 @@ a:hover {
   user-select: none;
   color: white;
   background: #7BD5ED;
-	margin-top: 10px;
 }
 
 #checkoutButtonDup, #checkoutButton, #reviewOrderButton {
@@ -1399,119 +1336,68 @@ h1.page_title {
 }
 
 
-/*====================================*/
-/*=============RESPONSIVE=============*/
-/*====================================*/
-/*@media screen
-	and (max-width: 800px)
-	and (min-width: 10px) {
-  #wrapper {
-    width: 98%;
-	padding: 1% 1% 1% 1%;
-  }
-  #companyLogoTopBanner {
-    width: 150px;
-    margin: 0 auto;
-  }
-  #contentWide {
-    width: 100%;
-  }
-  .promoCode {
-    width: 100%;
-  }
-  #UP_SELLS {
-    width: 100%;
-  }
-  #upsellContainer {
-    max-width: 90%;
-    margin: 0 auto 0 auto;
-    text-align: center;
-  }
+#contentWide {
+    /* Content wrapper used on checkout pages */
+  position: relative;
+  width: 90%;
+  max-width: 70em;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font-family: 'open sans', sans-serif;
 }
-@media screen
-	and (max-width: 700px)
-	and (min-width: 10px) {
-  .checkoutLinksTop a {
-    font-size: 110%;
-  }
-  .paymentMethodTable {
-    float: none;
-    max-width: 98%;
-  }
-  .cellLow {
-    width: 98%;
-  }
-  td.pay1 {
-    width: 120px;
-  }
-  td.pay2 {
-    width: 120px;
-  }
-  .checkout {
-    max-width: 120px;
-  }
-  .checkoutLinksBottom a {
-    font-size: 110%;
-  }
+/*order of layout*/
+#CHECKOUT_LINKS_TOP {
+  order: -10;
+  width: 100%;
 }
-@media screen
-	and (max-width: 550px)
-	and (min-width: 10px) {
-  .paymentMethodTable {
-    height: 300px;
-  }
-  .paymentMethodTable tr {
-    display: block;
-  }
-  .paymentMethodTable .leftAlign {
-    display: block;
-  }
-  .cellLow td{
-    display: block;
-    margin: 5% 5%;
-  }
-  .checkoutLinksBottom a {
-    font-size: 130%;
-  }
+#BRIEF_PRODUCT_SUMMARY {
+  order: -9;
+  width: 100%;
 }
-@media screen
-	and (max-width: 500px)
-	and (min-width: 10px) {
-  #BILLING_ENTRY table {
-    width: 98%;
-    padding: 0;
-    margin: 5% 0 0 0;
-  }
-  #SHIPPING_ENTRY table {
-    width: 98%;
-    padding: 0;
-    margin: 5% 0 0 0;
-  }
-  #PAYMENT_SELECTION table {
-    width: 98%;
-    padding: 0;
-    margin: 5% 0 0 0;
-  }
-  .checkoutLinksBottom {
-    width: 99%;
-    margin: 0 auto;
-    margin-top: 10%;
-  }
+#PAYMENT_PLANS {
+  order: -8;
 }
-@media screen
-	and (max-width: 450px)
-	and (min-width: 10px) {
-  .checkoutLinksTop {
-    top: 10px;
-  }
-  th.rightAlign {
-    text-align: center;
-  }
-  .viewCart td, .viewCartShort td, .payPlan td, .summaryCart td, .billingTable, .shippingInfo td, .billingInfo td, .paymentInfo td, .paymentMethodTable td {
-    padding: 5px 5px 5px 8px;
-  }
+.payPlan {
+	/* Table on view cart page that contains available pay plans */
+	width: 270px;
+	border-collapse: collapse;
+	text-align: left;
+	margin-right: 30px;
+}
 
-}*/
+#PROMO_CODE {
+  order: -7;
+}
+#UP_SELLS {
+  order: -6;
+	width: 100%;
+}
+#CUSTOM_HTML {
+  order: -6;
+	width: 100%;
+}
+#BILLING_ENTRY {
+  order: -5;
+  width: 480px;
+}
+#SHIPPING_ENTRY {
+  order: -4;
+  width: 450px;
+}
+#PAYMENT_SELECTION {
+  order: -3;
+}
+#CHECKOUT_LINKS {
+  order: 10;
+  width: 90%;
+max-width: 70em;
+margin-left: auto;
+margin-right: auto;
+}
 
 /*=======--=======-MEDIA QUERIES-======--========*/
 @media screen and (min-width: 600px) {
