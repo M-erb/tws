@@ -252,14 +252,14 @@ twsApp.controller('bagCtrl', ['$scope', '$stateParams','products', 'bag', '$cook
 
   //build infusionsoft checkout link
   $scope.checkoutItemsLink = function() {
-    if (bag.length < 1) {
+    if ($scope.bag.length < 1) {
+      //$scope.bagEmptyMessage = true
       return ''
     }else {
       var url = []
       for(var i=0; i < $scope.bag.length; i++) {
         url.push('productId='+$scope.bag[i].proID+'&productQuantity='+$scope.bag[i].qty+'&')
       }
-      
       url.unshift('https://an140.infusionsoft.com/app/manageCart/processBundle?')
 
       return url.join('')

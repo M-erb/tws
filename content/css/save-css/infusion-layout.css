@@ -312,9 +312,9 @@ input {
 
 .qtyField {
      /* Quantity field in cart */
-	padding: 4px 4px 4px 6px;
+	padding: 10px;
 	height: 14px;
-	width: 25px;
+	width: 35px;
 	display: block;
 	text-align: right;
 	margin: 0 auto;
@@ -506,6 +506,7 @@ tbody {
 	border-collapse: collapse;
 	margin: 0 0 20px 0;
 	text-align: left;
+	background: #fff;
 }
 
 .tabular {
@@ -522,7 +523,6 @@ td.pay1 {
 td.pay2 {
     /* First column in .paymentMethodTable */
     width: 231px;
-    padding-bottom: 20px;
     }
 
 td.pay3 {
@@ -879,12 +879,8 @@ a:hover {
 #footer {
 	position: relative;
 	margin-top: 40px;
-	padding-top: 30px;
 	width: 100%;
-	height: 50px;
-	text-align: center;
-	clear: both;
-	}
+}
 
 
 
@@ -1335,13 +1331,111 @@ h1.page_title {
     display: none;
 }
 
+/*----===FOOTER===-----*/
+footer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #595959;
+    padding-top: 2em;
+    padding-bottom: 5em;
+		font-family: 'open sans', sans-serif;
+}
+
+footer .dots_wrap {
+  opacity: .3;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+}
+/*Nav list*/
+.footer_list {
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+.footer_list p {
+    display: none;
+}
+
+.footer_list li {
+	font-size: 15px;
+  display: inline-block;
+  font-family: lato;
+  padding: 0px 8px;
+  margin-right: -8px;
+}
+
+/*removes the padding on the first and last item*/
+.footer_list li:first-child {
+    padding-left: 0;
+}
+.footer_list li:last-child {
+    padding-right: 0;
+}
+
+/*Adds separating lines to nav menu*/
+.footer_list li ~ li {
+    border-left: 2px solid #47AFC2;
+}
+
+/*Removes link decorations*/
+.footer_list li a {
+    text-decoration: none;
+    color: white;
+}
+
+/*Address style*/
+#center_wrap #footer_logo {
+    display: none;
+}
+#company_address {
+    font-size: 60%;
+    color: darkgray;
+    width: 80%;
+    text-align: center;
+    margin: 20px auto;
+}
+#company_address i {
+    color: white;
+    margin-right: 2%;
+}
+
+footer .social_wrap ul li img {
+    width: 20px;
+    height: auto;
+}
+
+/*footer links*/
+#footer_links {
+    margin-bottom: 10%;
+}
+
+#copyright {
+    font-size: 12px;
+    color: darkgray;
+    padding: 8px 0 8px calc(2% + 18px);
+    background: #292929;
+    z-index: 10;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/*TEMP!!!!*/
+#footer_links li:nth-child(n+3) a {
+    color: gray;
+    text-decoration: line-through;
+}
+
+
 
 #contentWide {
     /* Content wrapper used on checkout pages */
   position: relative;
   width: 90%;
   max-width: 70em;
-  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -1391,6 +1485,12 @@ h1.page_title {
 #PAYMENT_SELECTION {
   order: -3;
 }
+.cellLow {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
 #CHECKOUT_LINKS {
   order: 10;
   width: 90%;
@@ -1400,6 +1500,113 @@ margin-right: auto;
 }
 
 /*=======--=======-MEDIA QUERIES-======--========*/
+@media screen and (max-width: 600px) {
+	.viewCart tbody {
+		display: flex;
+		flex-direction: column;
+	}
+	.viewCart tr:first-child {
+		/*cart table headers being removed*/
+    display: none;
+	}
+	.viewCart td {
+    border: 0 none;
+    display: block;
+    align-self: stretch;
+    width: 100px;
+	}
+	.viewCart td:last-child {
+		/*individual product total combined QTY price*/
+    display: none;
+	}
+	.viewCart .subtotal td:last-child {
+		/*to bring back the total order price*/
+    display: block;
+	}
+	.viewCart tr {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    flex-wrap: wrap;
+	}
+	.viewCart tr td:nth-child(2) {
+		/*make name accross top of cart listing*/
+    order: -1;
+    width: 100%;
+		position: relative;
+	}
+	.viewCart .subtotal td:nth-child(2) {
+		/*make name accross top of cart listing*/
+    display: none;
+	}
+	.subtotal {
+    background-color: #fff;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+		border-bottom: 0 none!important;
+	}
+	.viewCart tr td:nth-child(2) a {
+		/*moves remove button*/
+    position: absolute;
+    top: 10px;
+    right: 10px;
+		line-height: 0;
+		color: transparent;
+    width: 30px;
+    height: 30px;
+	}
+	.viewCart tr td:nth-child(2) a::before {
+		/*part of the X btn*/
+		content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 60%;
+    height: 4px;
+		background: #b4b4b4;
+		border-radius: 3px;
+		transform: translateY(-50%) rotate(45deg);
+	}
+	.viewCart tr td:nth-child(2) a::after {
+		/*part of the X btn*/
+		content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 60%;
+    height: 4px;
+		background: #b4b4b4;
+		border-radius: 3px;
+		transform: translateY(-50%) rotate(-45deg);;
+	}
+	.viewCart tr td:nth-child(2) a:hover .viewCart tr td:nth-child(2) a::before {
+		background: #DE3636;
+	}
+
+	#BILLING_ENTRY {
+		width: auto;
+	}
+	.billingTable {
+		width: auto;
+		margin-right: 30px
+	}
+	#SHIPPING_ENTRY {
+		width: auto;
+	}
+	.shippingTable {
+		width: auto;
+	}
+	.checkout {
+		width: 125px;
+	}
+	.checkoutBottom {
+		width: 125px;
+	}
+	.checkoutTop {
+		width: 125px;
+	}
+}
 @media screen and (min-width: 600px) {
   .logo {
       width: 150px;
@@ -1463,8 +1670,8 @@ margin-right: auto;
 
   /*Footer!!*/
   footer {
-    padding-top: 2em;
-    padding-bottom: 15em;
+    padding-top: 4em;
+    padding-bottom: 24em;
   }
   /*Nav list*/
   .footer_list {
@@ -1537,6 +1744,45 @@ margin-right: auto;
       color: white;
       margin-right: 2%;
   }
+
+	/*social media buttons*/
+	.social_wrap {
+	    position: relative;
+	    display: block;
+	    margin: 5% 0 4% 0;
+	    z-index: 6;
+	}
+	.social_wrap ul {
+	    display: flex;
+	    width: 100%;
+	    justify-content: center;
+	}
+	.social_wrap ul li{
+	    display: inline-block;
+	    margin: 0 2%;
+	}
+
+	/*TEMP - to remove extra social buttons*/
+	.social_wrap ul li:nth-child(n+4) {
+	    display: none;
+	}
+
+	.social_wrap ul li img {
+	    width: 35px;
+	    height: auto;
+	    opacity: .6;
+	    -webkit-transition: all .5s;
+	    -moz-transition: all .5s;
+	    -ms-transition: all .5s;
+	    -o-transition: all .5s;
+	    transition: all .5s;
+	    border: 2px solid transparent;
+	    border-radius: 50%;
+	}
+	.social_wrap ul li img:hover {
+	    opacity: 1;
+	    border: 2px solid white;
+	}
 
   /*footer nav*/
   #footer_nav {
