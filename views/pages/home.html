@@ -69,41 +69,17 @@ $(function() {
             <p>Welcome to tied with strings! A place where we love graphic design, crafts, being together as a family, and, most importantly, getting to know and serve you. We strive to bring you some of your favorite things all wrapped in paper and tied with strings directly from our family to yours. Contact us if you have any comments, questions, or requests.We are excited to get to know you and hear from you! <a href="about-us.html">Find out more about us</a></p>
         </div>
     </div>
-    <div class="middle_section">
-        <div class="mid_wrapper">
-            <div id="social_box">
-                <ul id="headline">
-                    <li><h3>imagine.</h3></li>
-                    <li><h3>create.</h3></li>
-                    <li><h3>inspire.</h3></li>
-                </ul>
-                <div class="social_wrap">
-                    <ul>
-                        <li><a href="mailto:contactus@tiedwithstrings.com"><img src="content/img/icons/email.png" alt="email icon"></a></li>
-                        <li><a href="https://www.facebook.com/tiedwithstrings" target="_blank"><img src="content/img/icons/fb.png" alt="facebook icon"></a></li>
-                        <li><a href="https://www.pinterest.com/twstrings/" target="_blank"><img src="content/img/icons/pinterest.png" alt="pinterest icon"></a></li>
-                        <li><a href="https://instagram.com/twstrings/" target="_blank"><img src="content/img/icons/instagram.png" alt="instagram icon"></a></li>
-                        <li><a href="#0" target="_blank"><img src="content/img/icons/etsy.png" alt="etsy icon"></a></li>
-                    </ul>
-                </div>
-                <p>sign up to for our blog newsletter and hear about our first product collection when it is released.</p>
-                <div class="newsletter_box">
-                    <form id="newsletter_form" accept-charset="UTF-8" action="https://an140.infusionsoft.com/app/form/process/bd747cd44142b35d313964c70bd13b55" class="infusion-form" method="POST">
-                        <input name="inf_form_xid" type="hidden" value="bd747cd44142b35d313964c70bd13b55" />
-                        <input name="inf_form_name" type="hidden" value="TWStrings Newsletter" />
-                        <input name="infusionsoft_version" type="hidden" value="1.44.0.40" />
-
-                        <input class="infusion-field-input-container required" id="inf_field_FirstName" name="inf_field_FirstName" type="text" placeholder="first name *" onblur="requiredField(this)" required/>
-                        <input class="infusion-field-input-container" id="inf_field_LastName" name="inf_field_LastName" type="text" placeholder="last name"/>
-                        <input class="infusion-field-input-container required" id="inf_field_Email" name="inf_field_Email" type="email" placeholder="email *" onblur="requiredField(this)" required/>
-                        <button class="newsletter_submit" type="submit">
-                            <i class="fa fa-envelope newsletter_icon"></i>
-                        </button>
-                    </form>
-                    <script type="text/javascript" src="https://an140.infusionsoft.com/app/webTracking/getTrackingCode?trackingId=ce1c56f581c3fcee728d109870c1eb9a"></script>
-                </div>
-            </div>
+    <div class="home_product_wrap">
+      <div class="carousel_container">
+        <div class="carousel_wrap">
+          <div class="carousel_item" ng-repeat="item in products | limitTo: 6">
+            <img
+            ng-src="content/img/products/blankets/{{item.img}}"
+            src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"
+            alt="image of {{item.name}}"/>
+          </div>
         </div>
+      </div>
     </div>
     <div class="background_section2 section">
         <div class="blog">

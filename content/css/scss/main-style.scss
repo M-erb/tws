@@ -82,7 +82,9 @@ img {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-	display: block; max-width: 100%;
+	display: block;
+	max-width: 100%;
+	font-size: 0.4em;
 }
 
 body {
@@ -184,17 +186,4 @@ main {
 
 * {
 	transition: opacity ease-in-out 0.3s;
-}
-
-
-
-
-@media only screen and (min-width:771px){
-
-}
-@media only screen and (max-width:770px){
-
-}
-@media only screen and (max-width:400px){
-
 }

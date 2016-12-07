@@ -4,7 +4,6 @@ twsApp.controller('homeCtrl', ['$scope', 'products', '$cookies', '$localStorage'
 
   $scope.products = products.products
   $scope.storage = $localStorage;
-  //$scope.pageClass = 'home';
 
 }]);
 

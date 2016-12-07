@@ -26,7 +26,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
     }, {
       id: '94',
       name: "blue hedgehog baby quilt",
-      img: "",
+      img: "hedgehog-blanket-front.png",
       slides: [
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
