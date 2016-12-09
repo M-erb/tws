@@ -297,53 +297,57 @@
     .pro_checkout {
       display: flex;
       justify-content: flex-end;
-      flex: 0 0 194px;
+      flex: 0 0 238px;
       .price_box {
         padding: 1.3em;
         background: #fff;
         display: inline-block;
         align-self: baseline;
+        width: 100%;
         .pro_price_wrap {
-          margin-bottom: 0.5em;
+          margin-bottom: 14px;
           .pro_percent {
             color: $controls;
-            margin-bottom: 0.25em;
+            margin-bottom: 6px;
             i.fa {
               font-size: 0.7em;
+              position: relative;
+              top: -0.4em;
             }
           }
           .pro_price {
             font-size: 1.2em;
-            span {
-              color: $controls;
-              font-size: 0.6em;
-              //text-decoration: line-through;
-              position: relative;
-              &::after {
-                content: '';
-                position: absolute;
-                width: 120%;
-                height: 1.5px;
-                border-radius: 10px;
-                background: #DE3636;
-                top: 50%;
-                left: 0;
-                transform: rotate(-20deg);
-              }
+            margin-bottom: 4px;
+          }
+          .pro_original {
+            color: $controls;
+            font-size: 0.6em;
+            position: relative;
+            &::after {
+              content: '';
+              position: absolute;
+              width: 32%;
+              height: 1.5px;
+              border-radius: 10px;
+              background: #DE3636;
+              opacity: 0.4;
+              top: 50%;
+              left: 25px;
+              transform: rotate(-36deg);
             }
           }
         }
         .qty_label {
           font-size: 0.6em;
           color: $controls;
-          margin-bottom: 0.4em;
+          margin-bottom: 14px;
           display: block;
         }
         .qty_field_wrap {
           display: flex;
           justify-content: flex-start;
           height: 30px;
-          margin-bottom: 0.5em;
+          margin-bottom: 14px;
           input {
             width: 40px;
             height: 100%;
@@ -360,7 +364,37 @@
             cursor: pointer;
             border: 1px solid $controls;
           }
+          &.no_qty {
+            input {
+              background: lighten($controls, 10%);
+              color: darken($controls, 10%);
+              cursor: default;
+            }
+            .qty_controls {
+              background: lighten($controls, 10%);
+              color: darken($controls, 10%);
+              cursor: default;
+            }
+          }
         }
+        .qty_field_wrap.no_qty {
+
+        }
+        .qty_avail {
+          font-size: 0.6em;
+          color: $controls;
+          margin-bottom: 14px;
+        }
+        .qty_message {
+          font-size: 0.7em;
+          color: $controls;
+          margin-bottom: 14px;
+        }
+      }
+      .btn_red.no_qty {
+        background: lighten($controls, 10%);
+        color: darken($controls, 10%);
+        cursor: default;
       }
     }
   }

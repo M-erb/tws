@@ -2186,45 +2186,50 @@ textarea.infusion-field-input-container {
   .pro_wrap .pro_info_wrap .pro_checkout {
     display: flex;
     justify-content: flex-end;
-    flex: 0 0 194px; }
+    flex: 0 0 238px; }
     .pro_wrap .pro_info_wrap .pro_checkout .price_box {
       padding: 1.3em;
       background: #fff;
       display: inline-block;
-      align-self: baseline; }
+      align-self: baseline;
+      width: 100%; }
       .pro_wrap .pro_info_wrap .pro_checkout .price_box .pro_price_wrap {
-        margin-bottom: 0.5em; }
+        margin-bottom: 14px; }
         .pro_wrap .pro_info_wrap .pro_checkout .price_box .pro_price_wrap .pro_percent {
           color: #b4b4b4;
-          margin-bottom: 0.25em; }
+          margin-bottom: 6px; }
           .pro_wrap .pro_info_wrap .pro_checkout .price_box .pro_price_wrap .pro_percent i.fa {
-            font-size: 0.7em; }
+            font-size: 0.7em;
+            position: relative;
+            top: -0.4em; }
         .pro_wrap .pro_info_wrap .pro_checkout .price_box .pro_price_wrap .pro_price {
-          font-size: 1.2em; }
-          .pro_wrap .pro_info_wrap .pro_checkout .price_box .pro_price_wrap .pro_price span {
-            color: #b4b4b4;
-            font-size: 0.6em;
-            position: relative; }
-            .pro_wrap .pro_info_wrap .pro_checkout .price_box .pro_price_wrap .pro_price span::after {
-              content: '';
-              position: absolute;
-              width: 120%;
-              height: 1.5px;
-              border-radius: 10px;
-              background: #DE3636;
-              top: 50%;
-              left: 0;
-              transform: rotate(-20deg); }
+          font-size: 1.2em;
+          margin-bottom: 4px; }
+        .pro_wrap .pro_info_wrap .pro_checkout .price_box .pro_price_wrap .pro_original {
+          color: #b4b4b4;
+          font-size: 0.6em;
+          position: relative; }
+          .pro_wrap .pro_info_wrap .pro_checkout .price_box .pro_price_wrap .pro_original::after {
+            content: '';
+            position: absolute;
+            width: 32%;
+            height: 1.5px;
+            border-radius: 10px;
+            background: #DE3636;
+            opacity: 0.4;
+            top: 50%;
+            left: 25px;
+            transform: rotate(-36deg); }
       .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_label {
         font-size: 0.6em;
         color: #b4b4b4;
-        margin-bottom: 0.4em;
+        margin-bottom: 14px;
         display: block; }
       .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_field_wrap {
         display: flex;
         justify-content: flex-start;
         height: 30px;
-        margin-bottom: 0.5em; }
+        margin-bottom: 14px; }
         .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_field_wrap input {
           width: 40px;
           height: 100%;
@@ -2239,6 +2244,26 @@ textarea.infusion-field-input-container {
           color: inherit;
           cursor: pointer;
           border: 1px solid #b4b4b4; }
+        .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_field_wrap.no_qty input {
+          background: #cecece;
+          color: #9b9b9b;
+          cursor: default; }
+        .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_field_wrap.no_qty .qty_controls {
+          background: #cecece;
+          color: #9b9b9b;
+          cursor: default; }
+      .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_avail {
+        font-size: 0.6em;
+        color: #b4b4b4;
+        margin-bottom: 14px; }
+      .pro_wrap .pro_info_wrap .pro_checkout .price_box .qty_message {
+        font-size: 0.7em;
+        color: #b4b4b4;
+        margin-bottom: 14px; }
+    .pro_wrap .pro_info_wrap .pro_checkout .btn_red.no_qty {
+      background: #cecece;
+      color: #9b9b9b;
+      cursor: default; }
 
 .slider_wrap {
   width: 100%;

@@ -44,17 +44,28 @@
         <div class="price_box">
           <div class="pro_price_wrap">
             <p class="pro_percent" ng-show="product.discount">{{product.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</p>
-            <p class="pro_price"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice}} <span ng-show="product.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{product.price}}</span></p>
+            <p class="pro_price"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice.toFixed(2)}}</p>
+            <p class="pro_original" ng-show="product.discount">org: <i class="fa fa-usd" aria-hidden="true"></i>{{product.price.toFixed(2)}}</p>
           </div>
-          <span class="qty_label">quantity:</span>
-          <div class="qty_field_wrap">
-            <button class="qty_controls" ng-click="minusQTY()"> - </button>
-            <input type="number" ng-model="qtyField" />
-            <button class="qty_controls" ng-click="qtyField = qtyField + 1"> + </button>
+          <div class="qty_field_wrap ng-class:{'no_qty' : product.qtyAvailable <= 1}">
+            <button class="qty_controls" ng-click="minusQTY()" ng-disabled="product.qtyAvailable <= 1"> - </button>
+            <input type="number" ng-model="qtyField" ng-disabled="product.qtyAvailable <= 1"/>
+            <button class="qty_controls" ng-click="plusQTY()" ng-disabled="product.qtyAvailable <= 1"> + </button>
           </div>
-          <a href="#bag_btn" class="btn_red" ng-click="addToBag(); bagToggle()">
+          <div class="qty_avail">
+            <span ng-show="product.qtyAvailable > 1">Available: {{product.qtyAvailable}}</span>
+            <span ng-show="product.qtyAvailable == 1">Only one available</span>
+            <span ng-show="product.qtyAvailable < 1">No more in stock</span>
+          </div>
+          <div class="qty_message" ng-show="exceedQtyAvail">
+            <span>There are no more than {{product.qtyAvailable}} available</span>
+          </div>
+          <a href="#bag_btn" class="btn_red" ng-hide="product.qtyAvailable <= 1" ng-click="addToBag(); bagToggle()">
             <span>add to bag</span>
           </a>
+          <div class="btn_red no_qty" ng-show="product.qtyAvailable <= 1">
+            <span>add to bag</span>
+          </div>
         </div>
       </div>
     </div>

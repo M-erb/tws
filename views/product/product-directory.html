@@ -67,8 +67,8 @@
           <div class="price_off" ng-show="pro.discount">
             <span>{{pro.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</span>
           </div>
-          <span class="pro_price" ng-hide="pro.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{pro.price}}</span>
-          <span class="pro_price" ng-show="pro.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice($index)}}</span>
+          <span class="pro_price" ng-hide="pro.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{pro.price.toFixed(2)}}</span>
+          <span class="pro_price" ng-show="pro.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice($index).toFixed(2)}}</span>
         </div>
       </a>
     </div>

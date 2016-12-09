@@ -40,7 +40,7 @@
           <div class="bag_img_holder">
             <img ng-src="content/img/products/blankets/{{item.img}}" src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200" alt="image of {{item.name}}" />
           </div>
-          <span class="bag_item_name">{{item.name}}<span class="bag_item_price"><i class="fa fa-usd" aria-hidden="true"></i>{{item.price}}</span></span>
+          <span class="bag_item_name">{{item.name}}<span class="bag_item_price"><i class="fa fa-usd" aria-hidden="true"></i>{{item.price.toFixed(2)}}</span></span>
         </a>
         <div class="remove_btn" ng-click="removeFromBag($index)">
           <div></div>

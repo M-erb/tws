@@ -57,14 +57,6 @@ twsApp.controller('productInfoCtrl', ['$scope', '$rootScope', '$stateParams','pr
   $scope.product = products.products[$stateParams.proIndex]
   $scope.bag = bag.bag
 
-  $scope.bagToggle = function() {
-    if ($rootScope.showBag == false) {
-      $rootScope.showBag = true
-    }else {
-      $rootScope.showBag = false
-    }
-  }
-
   $scope.pagetitle = ''//$scope.product.name
 
   //discount maths **should add 'your savings with discount calulations showing'
@@ -79,6 +71,15 @@ twsApp.controller('productInfoCtrl', ['$scope', '$rootScope', '$stateParams','pr
       $scope.qtyField = $scope.qtyField - 1
     }
   }
+  $scope.exceedQtyAvail = false
+  $scope.plusQTY = function() {
+    if($scope.qtyField >= $scope.product.qtyAvailable) {
+      $scope.qtyField = $scope.product.qtyAvailable
+      $scope.exceedQtyAvail = true
+    } else {
+      $scope.qtyField = $scope.qtyField + 1
+    }
+  }
 
   //add to bag
   $scope.qtyField = 1
@@ -91,6 +92,7 @@ twsApp.controller('productInfoCtrl', ['$scope', '$rootScope', '$stateParams','pr
     var newProduct = {
       proID: $scope.product.id,
       qty: $scope.qtyField,
+      qtyAvailable: $scope.product.qtyAvailable,
       name: $scope.product.name,
       img: $scope.product.img,
       price: $scope.disPrice,
@@ -173,7 +175,7 @@ twsApp.controller('navCtrl', ['$scope', '$rootScope', '$stateParams', 'bag', '$c
   $scope.mainNavToggle = function() {
     if ($scope.visible == false) {
       $scope.visible = true
-      $scope.showBag = false
+      $rootScope.showBag = false
     }else {
       $scope.visible = false
     }
@@ -197,8 +199,10 @@ twsApp.controller('navCtrl', ['$scope', '$rootScope', '$stateParams', 'bag', '$c
     function add(a, b) {
         return a + b;
     }
+    var addedPrice = priceList.reduce(add, 0)
+    //add
 
-    return priceList.reduce(add, 0);
+    return addedPrice.toFixed(2)
   }
 
   $scope.totalSavings = function() {
@@ -289,13 +293,23 @@ twsApp.controller('bagCtrl', ['$scope', '$stateParams','products', 'bag', '$cook
     }
   }
 
+  // QTY controls
   $scope.minusQTY = function(i) {
     if($scope.bag[i].qty < 2) {
       $scope.bag.splice(i, 1)
-      console.log('bag item removed, less than 1 qty')
     }else {
       $scope.bag[i].qty = $scope.bag[i].qty - 1
-      console.log('minus 1 from qty')
+    }
+  }
+  $scope.exceedQtyAvail = false
+  $scope.plusQTY = function(i) {
+    if($scope.bag[i].qty >= $scope.bag[i].qtyAvailable) {
+      $scope.bag[i].qty = $scope.bag[i].qtyAvailable
+      $scope.exceedQtyAvail = true
+      console.log('cannot exceed qtyAvailable statement')
+    } else {
+      $scope.bag[i].qty = $scope.bag[i].qty + 1
+      console.log('plus one to QTY')
     }
   }
 
