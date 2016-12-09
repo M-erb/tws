@@ -4,7 +4,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
     products: [{
       id: '98',
       name: "hibiscus travel blanket",
-      img: "",
+      img: "hedgehog-blanket-front.png",
       slides: [
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
@@ -45,7 +45,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
     }, {
       id: '92',
       name: "baby girl tied patchwork quilt",
-      img: "",
+      img: "hedgehog-blanket-front.png",
       slides: [
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
@@ -64,7 +64,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
     }, {
       id: '88',
       name: "tied patchwork neutral baby quilt",
-      img: "blanket.png",//TEST image
+      img: "elephant-flower-blanket-front.png",
       slides: [
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
@@ -103,7 +103,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
     }, {
       id: '86',
       name: "trucks and cars travel blanket",
-      img: "",
+      img: "road-car-blanket.png",
       slides: [
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
@@ -122,7 +122,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
     }, {
       id: '80',
       name: "frog travel blanket",
-      img: "",
+      img: "bear-with-balloons-blanket.png",
       slides: [
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
@@ -141,7 +141,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
     }, {
       id: '76',
       name: "striped travel blanket",
-      img: "",
+      img: "bear-with-balloons-blanket.png",
       slides: [
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
@@ -160,7 +160,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
     }, {
       id: '72',
       name: "butterflies and polka dots travel blanket",
-      img: "",
+      img: "bear-with-balloons-blanket.png",
       slides: [
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
         {img: "https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=600%C3%97200&w=600&h=400"},
@@ -199,5 +199,5 @@ twsApp.factory('bag',['$localStorage', function($localStorage){
   }
   bagContentsCheck()
 
-  return o;
+  return o
 }]);

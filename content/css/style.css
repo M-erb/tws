@@ -5,6 +5,13 @@
 @import "https://fonts.googleapis.com/css?family=Raleway:100,300";
 @import "https://fonts.googleapis.com/css?family=Poiret+One";
 @import "https://fonts.googleapis.com/css?family=Open+Sans";
+@import url("https://fonts.googleapis.com/css?family=Satisfy");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Allura");
+@import url("https://fonts.googleapis.com/css?family=Delius+Swash+Caps");
+@import "https://fonts.googleapis.com/css?family=Raleway:100,300";
+@import "https://fonts.googleapis.com/css?family=Poiret+One";
+@import "https://fonts.googleapis.com/css?family=Open+Sans";
 /*--Home page header--*/
 @import url("https://fonts.googleapis.com/css?family=Satisfy");
 @import url("https://fonts.googleapis.com/css?family=Lato");
@@ -687,38 +694,81 @@
 
 .home_product_wrap {
   min-height: 500px;
-  position: relative; }
+  position: relative;
+  margin: 14px 0; }
+  .home_product_wrap h2 {
+    margin-bottom: 0.5em; }
 
 .carousel_container {
   position: relative;
   background: #fff;
-  width: 100%;
-  height: 200px; }
+  width: 100%; }
   .carousel_container .carousel_wrap {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    width: auto;
-    animation-name: carousel_side;
-    animation-duration: 30s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    background: #fff; }
+    -webkit-animation: carousel 40s linear infinite;
+    animation: carousel 40s linear infinite;
+    will-change: transform;
+    height: 280px;
+    text-align: left;
+    white-space: nowrap; }
     .carousel_container .carousel_wrap .carousel_item {
-      width: 200px;
-      padding: 18px;
+      height: 280px;
+      width: 280px;
+      padding: 20px;
+      display: inline-block;
+      position: relative;
       background: #fff; }
+      .carousel_container .carousel_wrap .carousel_item:hover img {
+        opacity: 0.3;
+        filter: blur(2px); }
+      .carousel_container .carousel_wrap .carousel_item .pro_name_box {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0; }
+        .carousel_container .carousel_wrap .carousel_item .pro_name_box span {
+          color: #8c8c8c;
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+          text-align: center;
+          display: block;
+          padding: 1em;
+          white-space: normal;
+          transition: opacity 0.2s;
+          opacity: 0;
+          will-change: opacity; }
+        .carousel_container .carousel_wrap .carousel_item .pro_name_box:hover span {
+          opacity: 1; }
     .carousel_container .carousel_wrap:hover {
       animation-play-state: paused; }
+    .carousel_container .carousel_wrap img {
+      position: absolute;
+      width: 240px; }
 
-@keyframes carousel_side {
+@-webkit-keyframes carousel {
   0% {
-    transform: translateX(0%); }
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
   50% {
-    transform: translateX(25%); }
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
   100% {
-    transform: translateX(0%); } }
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
+@keyframes carousel {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  50% {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%); }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); } }
 /*cart and search nav style*/
 .bag_container {
   position: absolute;
@@ -1078,6 +1128,7 @@
   -ms-transform: translateX(10px);
   -o-transform: translateX(10px);
   transform: translateX(10px);
+  transition: all 0.2s;
   /*Adds shadow effect - makes it so it can be seen easier*/
   text-shadow: 0px 3px 5px rgba(50, 50, 50, 0.7), 2px 2px 5px rgba(50, 50, 50, 0.7), 0px 1px 0px rgba(50, 50, 50, 0.4); }
 
@@ -1101,7 +1152,14 @@
   line-height: .5;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  transition: all 0.2s; }
+
+.cd-stretchy-nav ul a:hover {
+  transform: scale(1.1); }
+  .cd-stretchy-nav ul a:hover::after {
+    opacity: 1;
+    transform: scale(1); }
 
 /*font awesome nav icons*/
 .cd-stretchy-nav ul #home::after {
@@ -1861,9 +1919,10 @@ textarea.infusion-field-input-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  position: relative; }
+  position: relative;
+  margin-top: 16px; }
   .pro_container .pro_box {
-    margin: 1em;
+    margin: 16px;
     box-shadow: 3px 3px 10px -5px #595959;
     text-decoration: none;
     color: #fff;
@@ -1893,7 +1952,7 @@ textarea.infusion-field-input-container {
         text-align: center;
         width: 100%;
         transform: translateY(-50%);
-        color: #a6a6a6;
+        color: #8c8c8c;
         padding: 0.5em;
         opacity: 0;
         transition: opacity 0.2s; }
@@ -2333,7 +2392,8 @@ textarea.infusion-field-input-container {
     padding: 2em;
     align-self: flex-start; }
     .checkout_page .summary_wrap .continue_btn_wrap {
-      margin-bottom: 14px; }
+      margin-bottom: 14px;
+      text-align: center; }
     .checkout_page .summary_wrap .summary_title {
       color: #b4b4b4;
       font-size: 0.6em;
@@ -2859,6 +2919,6 @@ main {
   position: absolute; }
 
 * {
-  transition: opacity ease-in-out 0.3s; }
+  transition: opacity ease-in-out 0.2s; }
 
 /*# sourceMappingURL=style.css.map */

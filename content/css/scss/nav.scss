@@ -402,6 +402,7 @@
   -ms-transform: translateX(10px);
   -o-transform: translateX(10px);
   transform: translateX(10px);
+  transition: all 0.2s;
     /*Adds shadow effect - makes it so it can be seen easier*/
     text-shadow: 0px 3px 5px rgba(50,50,50,.7), 2px 2px 5px rgba(50,50,50,.7), 0px 1px 0px rgba(50,50,50,.4);
 }
@@ -429,6 +430,15 @@
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: all 0.2s;
+}
+
+.cd-stretchy-nav ul a:hover {
+  transform: scale(1.1);
+  &::after {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /*font awesome nav icons*/

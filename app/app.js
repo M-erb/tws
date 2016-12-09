@@ -5,6 +5,10 @@ twsApp.controller('homeCtrl', ['$scope', 'products', '$cookies', '$localStorage'
   $scope.products = products.products
   $scope.storage = $localStorage;
 
+  $scope.randSort = function() {
+    return 10;
+  };
+
 }]);
 
 twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, $cookies, $localStorage, $sessionStorage, $stateParams){
@@ -47,11 +51,19 @@ twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', 
 
 }]);
 
-twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, products, bag, $cookies, $localStorage, $sessionStorage, $stateParams){
+twsApp.controller('productInfoCtrl', ['$scope', '$rootScope', '$stateParams','products', 'bag', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $rootScope, $stateParams, products, bag, $cookies, $localStorage, $sessionStorage, $stateParams){
 
   $scope.storage = $localStorage
   $scope.product = products.products[$stateParams.proIndex]
   $scope.bag = bag.bag
+
+  $scope.bagToggle = function() {
+    if ($rootScope.showBag == false) {
+      $rootScope.showBag = true
+    }else {
+      $rootScope.showBag = false
+    }
+  }
 
   $scope.pagetitle = ''//$scope.product.name
 
@@ -74,7 +86,9 @@ twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag'
     if($scope.qtyField == 0) {
       $scope.qtyField = 1
     }
-    var product = {
+
+
+    var newProduct = {
       proID: $scope.product.id,
       qty: $scope.qtyField,
       name: $scope.product.name,
@@ -83,8 +97,18 @@ twsApp.controller('productInfoCtrl', ['$scope', '$stateParams','products', 'bag'
       savings: $scope.savings,
       link: '/product-directory/product'+[$stateParams.proIndex]
     }
+    var alreadyInBagCheck = false
+    for(var i=0; i < $scope.bag.length; i++) {
+      if($scope.bag[i].proID === newProduct.proID) {
+        $scope.bag[i].qty = $scope.bag[i].qty + newProduct.qty
+        alreadyInBagCheck = true
+        break
+      }
+    }
 
-    $scope.bag.push(product)
+    if(alreadyInBagCheck == false) {
+      $scope.bag.push(newProduct)
+    }
     $scope.qtyField = 1
   }
 
@@ -127,7 +151,7 @@ twsApp.controller('aboutCtrl', ['$scope', '$cookies', '$localStorage', '$session
 
 }]);
 
-twsApp.controller('navCtrl', ['$scope', '$stateParams', 'bag', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $stateParams, bag, $cookies, $localStorage, $sessionStorage, $stateParams){
+twsApp.controller('navCtrl', ['$scope', '$rootScope', '$stateParams', 'bag', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $rootScope, $stateParams, bag, $cookies, $localStorage, $sessionStorage, $stateParams){
 
   $scope.storage = $localStorage
   $scope.bag = bag.bag
@@ -155,12 +179,12 @@ twsApp.controller('navCtrl', ['$scope', '$stateParams', 'bag', '$cookies', '$loc
     }
   }
 
-  $scope.showBag = false
+  $rootScope.showBag = false
   $scope.bagToggle = function() {
-    if ($scope.showBag == false) {
-      $scope.showBag = true
+    if ($rootScope.showBag == false) {
+      $rootScope.showBag = true
     }else {
-      $scope.showBag = false
+      $rootScope.showBag = false
     }
   }
 
@@ -175,6 +199,32 @@ twsApp.controller('navCtrl', ['$scope', '$stateParams', 'bag', '$cookies', '$loc
     }
 
     return priceList.reduce(add, 0);
+  }
+
+  $scope.totalSavings = function() {
+    var savingsList = []
+    for(var i=0; i < $scope.bag.length; i++) {
+      savingsList.push($scope.bag[i].savings * $scope.bag[i].qty)
+    }
+    //for reduce
+    function add(a, b) {
+        return a + b;
+    }
+
+    return savingsList.reduce(add, 0)
+  }
+
+  $scope.bagLength = function() {
+    var bagQTYs = []
+    for(var i=0; i < $scope.bag.length; i++) {
+      bagQTYs.push($scope.bag[i].qty)
+    }
+    //for reduce
+    function add(a, b) {
+        return a + b;
+    }
+
+    return bagQTYs.reduce(add, 0);
   }
 
   $scope.removeFromBag = function(item) {

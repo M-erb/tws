@@ -5,7 +5,7 @@
     <span aria-hidden="true"></span>
   </a>
   <ul>
-    <li><a href="/" class="active" id="home" ng-click="mainNavToggle()"><span>home</span></a></li>
+    <li><a href="/" id="home" ng-click="mainNavToggle()"><span>home</span></a></li>
     <li><a href="/product-directory" id="products" ng-click="mainNavToggle()"><span>products</span></a></li>
     <li><a href="https://tiedwithstrings.com/blog/" id="blog" ng-click="mainNavToggle()"><span>blog</span></a></li>
     <li><a href="/policy" id="policy" ng-click="mainNavToggle()"><span>our policies</span></a></li>
@@ -38,7 +38,7 @@
         <a class="bag_item_link" ng-href="{{item.link}}" ng-click="bagToggle()">
           <span class="bag_item_qty">{{item.qty}} x</span>
           <div class="bag_img_holder">
-            <img ng-src="content/img/products/{{item.img}}" src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200" alt="image of {{item.name}}" />
+            <img ng-src="content/img/products/blankets/{{item.img}}" src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200" alt="image of {{item.name}}" />
           </div>
           <span class="bag_item_name">{{item.name}}<span class="bag_item_price"><i class="fa fa-usd" aria-hidden="true"></i>{{item.price}}</span></span>
         </a>
@@ -49,7 +49,8 @@
       </div>
     </div>
     <div class="bag_info_wrap">
-      <span>total:</span><span><i class="fa fa-usd" aria-hidden="true"></i>{{totalPrice()}}</span>
+      <span>{{bagLength()}} item<span ng-show="bagLength() > 1 || bagLength() == 0">s</span></span>
+      <span><i class="fa fa-usd" aria-hidden="true"></i>{{totalPrice()}}</span>
     </div>
     <div class="bag_controls">
       <!-- <a class="bag_checkout" ng-href="https://an140.infusionsoft.com/app/manageCart/processBundle?{{checkoutItemsLink()}}">view bag</a> -->

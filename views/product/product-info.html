@@ -1,3 +1,4 @@
+<div id="bag_btn"></div>
 <header class="header" ng-include src="'views/templates/pages-header.html'"></header>
 
 <main class="page_wrap pro_wrap">
@@ -51,16 +52,29 @@
             <input type="number" ng-model="qtyField" />
             <button class="qty_controls" ng-click="qtyField = qtyField + 1"> + </button>
           </div>
-          <div class="btn_red" ng-click="addToBag()">
+          <a href="#bag_btn" class="btn_red" ng-click="addToBag(); bagToggle()">
             <span>add to bag</span>
-          </div>
+          </a>
         </div>
       </div>
     </div>
   </div>
-
-
-
 </main>
 
 <footer ng-include src="'views/templates/footer.html'"></footer>
+<script>
+$(function() {
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
+</script>
