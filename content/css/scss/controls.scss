@@ -48,8 +48,17 @@
 
 .btn_green {
   @extend .btn;
-  color: white;
+  color: $gray;
   background: $green;
+  &:hover {
+    color: #fff;
+  }
+}
+
+.btn_gray {
+  @extend .btn;
+  color: white;
+  background: $light_gray;
   &:hover {
     color: #fff;
   }

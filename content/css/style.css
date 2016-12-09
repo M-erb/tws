@@ -529,7 +529,10 @@
 
 .hello p a {
   color: #606060;
-  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.4); }
+  display: block;
+  width: 150px;
+  text-indent: 0;
+  text-shadow: none; }
 
 /*section background style*/
 .background_section1 {
@@ -614,7 +617,11 @@
     line-height: 1.1; }
     .blog p a {
       margin-bottom: 40px;
-      display: block; }
+      color: #606060;
+      display: block;
+      width: 120px;
+      text-indent: 0;
+      text-shadow: none; }
     .blog p .post_title {
       font-family: Allura;
       font-size: 190%;
@@ -769,6 +776,29 @@
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0); } }
+.flex_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .flex_container .flex_item {
+    flex: 1 1 300px;
+    padding: 2em;
+    margin: 1em; }
+
+.contact_page .flex_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+  .contact_page .flex_container .flex_item {
+    flex: 1 1 300px;
+    padding: 2em;
+    margin: 1em;
+    background: #fff; }
+
+.contact_form_wrap form {
+  width: 90%;
+  margin: 0 auto; }
+
 /*cart and search nav style*/
 .bag_container {
   position: absolute;
@@ -1466,7 +1496,7 @@ footer .social_wrap ul li img {
 .btn_wrap {
   margin-bottom: 0.7em; }
 
-.btn, .btn_white, .btn_blue, .btn_green, .btn_red, .btn_inactive {
+.btn, .btn_white, .btn_blue, .btn_green, .btn_gray, .btn_red, .btn_inactive {
   font-size: 0.6em;
   font-weight: bold;
   cursor: pointer;
@@ -1483,7 +1513,7 @@ footer .social_wrap ul li img {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .btn:hover, .btn_white:hover, .btn_blue:hover, .btn_green:hover, .btn_red:hover, .btn_inactive:hover {
+  .btn:hover, .btn_white:hover, .btn_blue:hover, .btn_green:hover, .btn_gray:hover, .btn_red:hover, .btn_inactive:hover {
     box-shadow: 6px 6px 3px rgba(41, 41, 41, 0.4); }
 
 .btn_white {
@@ -1500,9 +1530,15 @@ footer .social_wrap ul li img {
     color: #fff; }
 
 .btn_green {
-  color: white;
+  color: #595959;
   background: #7BD59C; }
   .btn_green:hover {
+    color: #fff; }
+
+.btn_gray {
+  color: white;
+  background: #B2B2B2; }
+  .btn_gray:hover {
     color: #fff; }
 
 .btn_red {
@@ -2435,22 +2471,15 @@ textarea.infusion-field-input-container {
     padding: 5% 0; } }
 @media screen and (min-width: 480px) {
   .hello {
-    top: calc(-10vw + 500px); }
+    top: calc(-10vw + 280px); }
 
   .background_section1 {
-    background: url("../img/tws-collage-bannerSM.jpg") no-repeat;
+    background: url("../img/tws-collage-bannerLG.jpg") no-repeat;
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed;
-    padding-bottom: calc(-10vw + 1200px); }
+    background-attachment: fixed; }
 
   /*slanted background*/
-  .background_section1::after {
-    width: 1200%;
-    height: 130%;
-    bottom: -200px;
-    left: 50%; }
-
   .blog {
     bottom: calc(-15vw + 600px); }
 
@@ -2491,7 +2520,11 @@ textarea.infusion-field-input-container {
     font-size: 140%; }
 
   .policy_area h4 {
-    font-size: 120%; } }
+    font-size: 120%; }
+
+  .contact_form_wrap form {
+    width: 50%;
+    margin: 0 auto; } }
 @media screen and (min-width: 650px) {
   /*smaller home page images*/
   .background_section1 {
@@ -2599,10 +2632,6 @@ textarea.infusion-field-input-container {
     font-size: 90px;
     line-height: .7; }
 
-  /*style for both*/
-  .background_section1::after {
-    bottom: -130px; }
-
   /*Footer!!*/
   footer {
     padding-top: 2em;
@@ -2692,9 +2721,6 @@ textarea.infusion-field-input-container {
   .background_section1 {
     background-image: url("../img/tws-collage-banner.jpg") !important; }
 
-  .hello {
-    top: calc(-10vw + 450px); }
-
   .background_section2 {
     background-image: url("../img/table_projectXL.jpg") !important; }
 
@@ -2714,9 +2740,6 @@ textarea.infusion-field-input-container {
     padding: 0 0 0 5px;
     display: inline-block;
     margin: 0; }
-
-  .wrapper {
-    width: 70%; }
 
   .page_title {
     margin: 70px 0 5% 0; }
@@ -2740,14 +2763,7 @@ textarea.infusion-field-input-container {
     height: 800px; }
 
   .background_section1 {
-    padding-bottom: 1080px;
     background: url("../img/tws-collage-banner.jpg"); }
-
-  .background_section1::after {
-    bottom: -400px; }
-
-  .hello {
-    top: calc(-10vw + 700px); }
 
   .background_section2 {
     background: url("../img/table_projectXL.jpg"); }

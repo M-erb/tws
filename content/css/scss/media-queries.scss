@@ -6,23 +6,16 @@
 }
 @media screen and (min-width: 480px) {
 	.hello {
-    top: calc(-10vw + 500px);
+    top: calc(-10vw + 280px);
 	}
 	.background_section1 {
-	    background: url('../img/tws-collage-bannerSM.jpg') no-repeat;
+	    background: url("../img/tws-collage-bannerLG.jpg") no-repeat;
 	    background-size: cover;
 	    background-position: center center;
 	    background-attachment: fixed;
-	    padding-bottom: calc(-10vw + 1200px);
 	}
 
 	/*slanted background*/
-	.background_section1::after {
-	    width: 1200%;
-	    height: 130%;
-	    bottom: -200px;
-	    left: 50%;
-	}
 	.blog {
 	    bottom: calc(-15vw + 600px);
 	}
@@ -69,6 +62,10 @@
     }
     .policy_area h4 {
         font-size: 120%;
+    }
+    .contact_form_wrap form {
+      width: 50%;
+      margin: 0 auto;
     }
 }
 @media screen and (min-width: 650px) {
@@ -186,10 +183,6 @@
         font-size: 90px;
         line-height: .7;
     }
-    /*style for both*/
-    .background_section1::after {
-        bottom: -130px;
-    }
 
     /*Footer!!*/
     footer {
@@ -293,9 +286,6 @@
     .background_section1 {
 				background-image: url("../img/tws-collage-banner.jpg") !important;
     }
-    .hello {
-        top: calc(-10vw + 450px);
-    }
     .background_section2 {
 				background-image: url("../img/table_projectXL.jpg") !important;
     }
@@ -315,9 +305,6 @@
         padding: 0 0 0 5px;
         display: inline-block;
         margin: 0;
-    }
-    .wrapper {
-        width: 70%;
     }
     .page_title {
         margin: 70px 0 5% 0;
@@ -344,14 +331,7 @@
 		height: 800px;
 	}
 	.background_section1 {
-			padding-bottom: 1080px;
 			background: url("../img/tws-collage-banner.jpg");
-	}
-	.background_section1::after {
-		bottom:-400px;
-	}
-	.hello {
-		top: calc(-10vw + 700px);
 	}
 	.background_section2 {
 		background: url("../img/table_projectXL.jpg");
