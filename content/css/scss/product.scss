@@ -271,8 +271,9 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin: 16px;
     .col {
-      padding: 35px 17.5px 0px 17.5px;
+      margin: 16px;
     }
     .pro_description {
       font-size: 0.8em;
@@ -493,7 +494,7 @@
   .shopping_bag_wrap {
     background: #fff;
     flex: 3 1 450px;
-    margin: 10px;
+    margin: 16px;
     padding: 2em;
     position: relative;
     align-self: baseline;
@@ -626,7 +627,7 @@
   .summary_wrap {
     background: #fff;
     flex: 1 1 200px;
-    margin: 10px;
+    margin: 16px;
     padding: 2em;
     align-self: flex-start;
     .continue_btn_wrap {
