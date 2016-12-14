@@ -37,13 +37,19 @@
           <div class="collection_label">
             <span>Collections: </span>
           </div>
-          <div class="collection erica" ng-click="collecSearch = 'erica'">
+          <div
+          class="collection erica ng-class:{'active_collec' : collecSearch == 'erica'}"
+          ng-click="collecSearch = 'erica'">
             Ericas
           </div>
-          <div class="collection moms" ng-click="collecSearch = 'moms'">
+          <div
+          class="collection moms ng-class:{'active_collec' : collecSearch == 'moms'}" 
+          ng-click="collecSearch = 'moms'">
             Moms
           </div>
-          <div class="collection all" ng-click="collecSearch = ''">
+          <div
+          class="collection all ng-class:{'active_collec' : collecSearch == ''}"
+          ng-click="collecSearch = ''">
             all
           </div>
         </div>

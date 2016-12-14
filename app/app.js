@@ -16,6 +16,7 @@ twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', 
   $scope.storage = $localStorage
   $scope.products = products.products
   $scope.pagetitle = 'products'
+  $scope.collecSearch = ''
 
   $scope.clearSearch = function() {
     $scope.inputSearch = ''
@@ -87,8 +88,6 @@ twsApp.controller('productInfoCtrl', ['$scope', '$rootScope', '$stateParams','pr
     if($scope.qtyField == 0) {
       $scope.qtyField = 1
     }
-
-
     var newProduct = {
       proID: $scope.product.id,
       qty: $scope.qtyField,
@@ -107,7 +106,6 @@ twsApp.controller('productInfoCtrl', ['$scope', '$rootScope', '$stateParams','pr
         break
       }
     }
-
     if(alreadyInBagCheck == false) {
       $scope.bag.push(newProduct)
     }

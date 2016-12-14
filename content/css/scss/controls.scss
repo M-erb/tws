@@ -59,8 +59,12 @@
   @extend .btn;
   color: white;
   background: $light_gray;
+  background: -webkit-linear-gradient($gray , lighten($gray, 11%));
+  background: linear-gradient($gray , lighten($gray, 11%));
+  box-shadow: 6px 6px 3px rgba(41,41,41,0.4);
   &:hover {
     color: #fff;
+    box-shadow: 9px 9px 3px rgba(41,41,41,0.4);
   }
 }
 

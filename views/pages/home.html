@@ -61,39 +61,39 @@ $(function() {
 <div id="hello" class="separation"></div>
 
 <div id="main_page_wrap">
-    <div class="background_section1 section">
-        <div class="hello">
-            <div class="section_title_wrapper">
-                <h2>hello!</h2>
-            </div>
-            <p>Welcome to tied with strings! A place where we love graphic design, crafts, being together as a family, and, most importantly, getting to know and serve you. We strive to bring you some of your favorite things all wrapped in paper and tied with strings directly from our family to yours. Contact us if you have any comments, questions, or requests.We are excited to get to know you and hear from you! <a href="/about-us" class="btn_gray">Find out more</a></p>
-        </div>
-    </div>
-    <div class="home_product_wrap">
-      <div class="page_wrap">
-        <h2>check'em out</h2>
+  <div class="background_section1 section">
+    <div class="hello">
+      <div class="section_title_wrapper">
+        <h2>hello!</h2>
       </div>
-      <div class="carousel_container">
-        <div class="carousel_wrap">
-          <a ng-href="/product-directory/product{{$index}}" class="carousel_item" ng-repeat="item in products | orderBy: randSort">
-            <img
-            ng-src="content/img/products/blankets/{{item.img}}"
-            src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"
-            alt="image of {{item.name}}"/>
-            <div class="pro_name_box">
-              <span>{{item.name}}</span>
-            </div>
-          </a>
-        </div>
+      <p>Welcome to tied with strings! A place where we love graphic design, crafts, being together as a family, and, most importantly, getting to know and serve you. We strive to bring you some of your favorite things all wrapped in paper and tied with strings directly from our family to yours. Contact us if you have any comments, questions, or requests.We are excited to get to know you and hear from you! <a href="/about-us" class="btn_gray">Find out more</a></p>
+    </div>
+  </div>
+  <div class="home_product_wrap">
+    <div class="page_wrap">
+      <h2>check'em out</h2>
+    </div>
+    <div class="carousel_container">
+      <div class="carousel_wrap">
+        <a ng-href="/product-directory/product{{$index}}" class="carousel_item" ng-repeat="item in products | orderBy: randSort">
+          <img
+          ng-src="content/img/products/blankets/{{item.img}}"
+          src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"
+          alt="image of {{item.name}}"/>
+          <div class="pro_name_box">
+            <span>{{item.name}}</span>
+          </div>
+        </a>
       </div>
     </div>
-    <div class="background_section2 section">
-        <div class="blog">
-            <p><span class="post_title">So this is what they call nesting…</span>Life has been really busy over the past month. We have been working on starting and finishing up a bunch of projects around our home. And, of course, we have been putting them off for the last 3 years saying that we will get to them and now, of course, we are finally deciding to do all of them while I am in my third trimester of pregnancy. I don’t know who’s brilliant idea it was to do that…  *clears throat and looks away*…. I guess it was mine. But...</p>
-            <p><a href="https://tiedwithstrings.com/blog/so-this-is-what-they-call-nesting/" class="btn_gray" target="_blank">read more</a></p>
-                <h2><a href="https://tiedwithstrings.com/blog/" target="_blank">blog!</a></h2>
-        </div>
+  </div>
+  <div class="background_section2 section">
+    <div class="blog">
+      <p><span class="post_title">So this is what they call nesting…</span>Life has been really busy over the past month. We have been working on starting and finishing up a bunch of projects around our home. And, of course, we have been putting them off for the last 3 years saying that we will get to them and now, of course, we are finally deciding to do all of them while I am in my third trimester of pregnancy. I don’t know who’s brilliant idea it was to do that…  *clears throat and looks away*…. I guess it was mine. But...</p>
+      <p><a href="https://tiedwithstrings.com/blog/so-this-is-what-they-call-nesting/" class="btn_gray" target="_blank">read more</a></p>
+        <h2><a href="https://tiedwithstrings.com/blog/" target="_blank">blog!</a></h2>
     </div>
+  </div>
 </div>
 <div class="separation"></div>
 <footer ng-include src="'views/templates/footer.html'"></footer>

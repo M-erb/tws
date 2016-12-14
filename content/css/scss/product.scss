@@ -90,6 +90,9 @@
 .filters_wrap {
   position: relative;
   width: 100%;
+  border: 8px solid $blue;
+  border-right: 0 none;
+  border-left: 0 none;
   .filters_bar {
     background: #fff;
     padding: 1em 0;
@@ -109,6 +112,7 @@
         background: $gray;
         height: 70px;
         position: relative;
+        border-right: 8px solid #fff;
         .close_btn {
           position: absolute;
           width: 30px;
@@ -147,6 +151,12 @@
       }
       .filters_tab_controls {
         padding: 1em;
+        border: 8px solid #7BD5ED;
+        border-right: 8px solid #7BD5ED;
+        border-top: 0 none;
+        border-left: 0 none;
+        height: 100%;
+        background: #fff;
         .filters_dropdown {
           margin-bottom: 0.7em;
         }
@@ -196,6 +206,11 @@
           padding: 0.3em;
           margin: 0 0.3em;
           cursor: pointer;
+          transition: background 0.2s;
+        }
+        .collection.active_collec {
+          background: $blue;
+          color: #fff;
         }
         .collection_label {
           color: $controls;
@@ -483,7 +498,12 @@
   position: absolute;
 }
 
-
+.pro_page_wrap {
+  width: 100%;
+  max-width: 764px;
+  margin: 0 auto;
+  position: relative;
+}
 /* for shopping bag page */
 .checkout_page {
   margin: 100px auto 0 auto;
