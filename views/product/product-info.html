@@ -22,7 +22,7 @@
       ng-repeat="item in slides"
       ng-show="item.visible"
       src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"
-      ng-src="{{item.img}}"/>
+      ng-src="content/img/products/{{item.img}}"/>
     </div>
   </div>
 
@@ -30,6 +30,9 @@
     <div class="pro_info_wrap">
       <div class="pro_description col">
         <div class="pro_dis_box">
+          <div class="bread_crumbs">
+            <span><a href="/products">Products</a> > {{product.name}}</span>
+          </div>
           <p>{{product.longDescription}}</p>
           <div class="feature_box">
             <h3>features</h3>
@@ -39,6 +42,7 @@
               </li>
             </ul>
           </div>
+          <p class="sku">sku: {{product.sku}}</p>
         </div>
       </div>
       <div class="pro_checkout col">
@@ -61,10 +65,10 @@
           <div class="qty_message" ng-show="exceedQtyAvail">
             <span>There are no more than {{product.qtyAvailable}} available</span>
           </div>
-          <a href="#bag_btn" class="btn_red" ng-hide="product.qtyAvailable <= 1" ng-click="addToBag(); bagToggle()">
+          <a href="#bag_btn" class="btn_red" ng-hide="product.qtyAvailable < 1" ng-click="addToBag(); bagToggle()">
             <span>add to bag</span>
           </a>
-          <div class="btn_red no_qty" ng-show="product.qtyAvailable <= 1">
+          <div class="btn_red no_qty" ng-show="product.qtyAvailable < 1">
             <span>add to bag</span>
           </div>
         </div>

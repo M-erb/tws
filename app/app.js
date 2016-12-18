@@ -102,12 +102,14 @@ twsApp.controller('productInfoCtrl', ['$scope', '$rootScope', '$stateParams','pr
     for(var i=0; i < $scope.bag.length; i++) {
       if($scope.bag[i].proID === newProduct.proID) {
         $scope.bag[i].qty = $scope.bag[i].qty + newProduct.qty
+        $scope.product.qtyAvailable = $scope.product.qtyAvailable - newProduct.qty
         alreadyInBagCheck = true
         break
       }
     }
     if(alreadyInBagCheck == false) {
       $scope.bag.push(newProduct)
+      $scope.product.qtyAvailable = $scope.product.qtyAvailable - newProduct.qty
     }
     $scope.qtyField = 1
   }
@@ -151,10 +153,11 @@ twsApp.controller('aboutCtrl', ['$scope', '$cookies', '$localStorage', '$session
 
 }]);
 
-twsApp.controller('navCtrl', ['$scope', '$rootScope', '$stateParams', 'bag', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $rootScope, $stateParams, bag, $cookies, $localStorage, $sessionStorage, $stateParams){
+twsApp.controller('navCtrl', ['$scope', '$rootScope', '$stateParams', 'bag', 'products', '$cookies', '$localStorage', '$sessionStorage', '$stateParams', function($scope, $rootScope, $stateParams, bag, products, $cookies, $localStorage, $sessionStorage, $stateParams){
 
   $scope.storage = $localStorage
   $scope.bag = bag.bag
+  $scope.products = products.products
 
   $scope.bagLength = function() {
     var bagQTYs = []
@@ -230,6 +233,12 @@ twsApp.controller('navCtrl', ['$scope', '$rootScope', '$stateParams', 'bag', '$c
   }
 
   $scope.removeFromBag = function(item) {
+    for(var i=0; i < $scope.products.length; i++) {
+      if($scope.bag[item].proID == $scope.products[i].id) {
+        $scope.products[i].qtyAvailable = $scope.products[i].qtyAvailable + $scope.bag[item].qty
+        break
+      }
+    }
     $scope.bag.splice(item, 1)
   }
 
@@ -281,8 +290,14 @@ twsApp.controller('bagCtrl', ['$scope', '$stateParams','products', 'bag', '$cook
     return savingsList.reduce(add, 0)
   }
 
-  $scope.removeFromBag = function(i) {
-    $scope.bag.splice(i, 1)
+  $scope.removeFromBag = function(item) {
+    for(var i=0; i < $scope.products.length; i++) {
+      if($scope.bag[item].proID == $scope.products[i].id) {
+        $scope.products[i].qtyAvailable = $scope.products[i].qtyAvailable + $scope.bag[item].qty
+        break
+      }
+    }
+    $scope.bag.splice(item, 1)
   }
 
   $scope.checkQty = function(i) {

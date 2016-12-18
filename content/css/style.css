@@ -543,16 +543,6 @@
   background-attachment: inherit;
   padding-bottom: calc(-10vw + 1000px); }
 
-.background_section1::before {
-  content: '';
-  position: absolute;
-  background: white;
-  opacity: .4;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; }
-
 /*slanted background*/
 .background_section1::after {
   content: '';
@@ -636,15 +626,6 @@
   background-attachment: fixed;
   background-color: gray;
   padding-top: calc(-10vw + 1400px); }
-
-.background_section2::before {
-  content: '';
-  position: absolute;
-  background: white;
-  opacity: .4;
-  top: 0;
-  width: 100%;
-  height: 100%; }
 
 /*slanted background*/
 .background_section2::after {
@@ -795,16 +776,66 @@
 .contact_page .flex_container {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-bottom: 10px; }
   .contact_page .flex_container .flex_item {
     flex: 1 1 300px;
     padding: 2em;
     margin: 1em;
     background: #fff; }
+  .contact_page .flex_container .flex_item.contact_form_wrap {
+    background: transparent;
+    padding-top: 0; }
 
-.contact_form_wrap form {
-  width: 90%;
+.contact_page .flex_container {
+  font-size: calc(0.9rem + 0.4vmax); }
+
+.team_wrap {
+  padding: 2em;
+  margin: 1em;
+  background: #fff;
+  width: 100%;
+  max-width: 570px;
   margin: 0 auto; }
+
+.area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: calc(0.9rem + 0.4vmax); }
+  .area img {
+    width: 100px;
+    border-radius: 50%;
+    align-self: center;
+    margin: 10px; }
+  .area p {
+    align-self: center;
+    flex: 1 1 200px;
+    text-align: center; }
+  .area:nth-child(2) {
+    margin: 1.3em 0; }
+
+.poliy_page {
+  background: #fff;
+  font-size: calc(0.9rem + 0.4vmax);
+  padding: 2em; }
+  .poliy_page .policy_area {
+    margin-bottom: 1.5em;
+    line-height: 1.1; }
+    .poliy_page .policy_area h4 {
+      margin-bottom: 0.6em;
+      font-weight: bold; }
+    .poliy_page .policy_area p {
+      margin-bottom: 0.3em; }
+    .poliy_page .policy_area h5 {
+      font-weight: bold;
+      margin: 1em 0 0.3em 0; }
+    .poliy_page .policy_area ul {
+      list-style: disc;
+      margin-left: 1.6em;
+      margin-bottom: 0.3em; }
+      .poliy_page .policy_area ul li {
+        line-height: 1.4; }
 
 /*cart and search nav style*/
 .bag_container {
@@ -2200,15 +2231,29 @@ textarea.infusion-field-input-container {
     margin: 16px; }
   .pro_wrap .pro_info_wrap .pro_description {
     font-size: 0.8em;
-    flex: 3 0 300px; }
+    flex: 3 0 300px;
+    font-size: calc(0.4em + 1vmin); }
     .pro_wrap .pro_info_wrap .pro_description .pro_dis_box {
       padding: 1.3em;
       background: #fff; }
+      .pro_wrap .pro_info_wrap .pro_description .pro_dis_box .bread_crumbs {
+        margin-bottom: 1em;
+        color: #b4b4b4;
+        font-style: italic;
+        font-size: 0.7em; }
       .pro_wrap .pro_info_wrap .pro_description .pro_dis_box p {
-        margin-bottom: 0.5em; }
+        margin-bottom: 0.5em;
+        font-size: 1em; }
       .pro_wrap .pro_info_wrap .pro_description .pro_dis_box .feature_box ul {
         list-style-type: disc;
         margin: 0.5em 0 0 1em; }
+        .pro_wrap .pro_info_wrap .pro_description .pro_dis_box .feature_box ul li {
+          margin-bottom: 0.4em;
+          font-size: 0.8em; }
+      .pro_wrap .pro_info_wrap .pro_description .pro_dis_box .sku {
+        margin: 2em 0 0 0;
+        color: #b4b4b4;
+        font-size: 0.7em; }
   .pro_wrap .pro_info_wrap .pro_checkout {
     display: flex;
     justify-content: flex-end;
@@ -2350,8 +2395,7 @@ textarea.infusion-field-input-container {
 
 /*enter and leave animations*/
 .slide.ng-hide {
-  animation-name: bounceOutLeft;
-  animation-duration: 0.8s;
+  opacity: 0;
   display: block !important;
   position: absolute; }
 
@@ -2574,14 +2618,7 @@ textarea.infusion-field-input-container {
     font-size: 90px; }
 
   .page_title {
-    font-size: 140%; }
-
-  .policy_area h4 {
-    font-size: 120%; }
-
-  .contact_form_wrap form {
-    width: 50%;
-    margin: 0 auto; } }
+    font-size: 140%; } }
 @media screen and (min-width: 650px) {
   /*smaller home page images*/
   .background_section1 {
@@ -2801,15 +2838,8 @@ textarea.infusion-field-input-container {
   .page_title {
     margin: 70px 0 5% 0; }
 
-  .policy_area {
-    margin: 0 0 3% 0; }
-
   header .page_title {
     margin: 0; }
-
-  .policy_area h4 {
-    padding: 1%;
-    margin: 0 0 3% 0; }
 
   .collection_wrap {
     width: 100%;
@@ -2823,13 +2853,7 @@ textarea.infusion-field-input-container {
     background: url("../img/tws-collage-banner.jpg"); }
 
   .background_section2 {
-    background: url("../img/table_projectXL.jpg"); }
-
-  .background_section2::after {
-    top: -390px; }
-
-  .blog {
-    bottom: calc(-15vw + 690px); } }
+    background: url("../img/table_projectXL.jpg"); } }
 p {
   font-family: lato, sans-serif; }
 

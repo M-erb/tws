@@ -60,13 +60,6 @@
     .page_title {
         font-size: 140%;
     }
-    .policy_area h4 {
-        font-size: 120%;
-    }
-    .contact_form_wrap form {
-      width: 50%;
-      margin: 0 auto;
-    }
 }
 @media screen and (min-width: 650px) {
     /*smaller home page images*/
@@ -309,16 +302,8 @@
     .page_title {
         margin: 70px 0 5% 0;
     }
-
-    .policy_area {
-        margin: 0 0 3% 0;
-    }
     header .page_title {
         margin: 0;
-    }
-    .policy_area h4 {
-        padding: 1%;
-        margin: 0 0 3% 0;
     }
 		.collection_wrap {
 				width: 100%;
@@ -335,11 +320,5 @@
 	}
 	.background_section2 {
 		background: url("../img/table_projectXL.jpg");
-	}
-	.background_section2::after {
-		top:-390px;
-	}
-	.blog {
-	  bottom: calc(-15vw + 690px);
 	}
 }
