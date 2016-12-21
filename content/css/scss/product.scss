@@ -277,7 +277,7 @@
   .pro_title_wrap {
     margin: 0 0 1em 0;
     h1.pro_name {
-      color: $controls;
+      color: #fff;
       font-size: 1em;
       text-align: center;
     }
@@ -293,7 +293,7 @@
     .pro_description {
       font-size: 0.8em;
       flex: 3 0 300px;
-      font-size: calc(0.4em + 1vmin);
+      font-size: calc(0.9rem + 0.4vmax);
       .pro_dis_box {
         padding: 1.3em;
         background: #fff;
@@ -712,6 +712,51 @@
     .bag_notes {
       font-size: 0.5em;
       color: $controls;
+    }
+  }
+}
+
+.filters_tab_controls {
+  .collection_container {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .filters_wrap .filters_bar .filters_bar_container .collection_container {
+    display: none;
+    visibility: hidden;
+  }
+
+  .filters_tab_controls {
+    .collection_container {
+      display: block;
+      visibility: visible;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-self: center;
+      .collection {
+        border: 2px solid $controls;
+        border-radius: 3px;
+        color: $controls;
+        padding: 0.3em;
+        margin: 0 0.3em;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .collection.active_collec {
+        background: $blue;
+        color: #fff;
+      }
+      .collection_label {
+        color: $controls;
+        font-size: 0.8em;
+        display: flex;
+        span {
+          align-self: center;
+        }
+      }
     }
   }
 }

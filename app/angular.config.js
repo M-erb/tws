@@ -31,7 +31,7 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
 
   $stateProvider
     .state('productDirectory', {
-      url: '/product-directory',
+      url: '/products',
       templateUrl: 'views/product/product-directory.html',
       controller: 'productDirectoryCtrl'
     });

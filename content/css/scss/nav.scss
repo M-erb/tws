@@ -684,3 +684,172 @@ keyframes
     border-radius: 10px;
   }
 }
+
+
+@media screen and (max-width: 430px) {
+  .bag_container {
+    .bag_contents_wrap {
+      background: #fff;
+      position: absolute;
+      top: 120%;
+      right: -20px;
+      width: 100vw;
+      min-width: 282px;
+      .bag_contents {
+        position: relative;
+        margin: 0.5em;
+        .empty_bag {
+          text-align: center;
+        }
+      }
+      .bag_item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5em;
+        padding: 0.5em 0.3em;
+        font-size: 1em;
+        color: $controls;
+        border: 1px solid transparent;
+        position: relative;
+        &:hover {
+          border: 1px solid $controls;
+        }
+        .bag_item_link {
+          display: flex;
+          justify-content: flex-start;
+          align-self: center;
+          color: inherit;
+          text-decoration: none;
+          .bag_img_holder {
+            display: flex;
+            justify-content: center;
+            margin: 0 0.2em;
+            img {
+              align-self: center;
+              width: 60px;
+              font-size: 0.3em;
+            }
+          }
+          .bag_item_name {
+            font-size: 0.6em;
+            align-self: center;
+            width: 190px;
+            .bag_item_price {
+              margin-left: 0.3em;
+            }
+          }
+          .bag_item_qty {
+            font-size: 0.6em;
+            align-self: center;
+          }
+        }
+        .remove_btn {
+          align-self: center;
+          position: relative;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          transition: all 0.2s;
+          display: flex;
+          justify-content: center;
+          &:hover div {
+            background: $red
+          }
+          div {
+            width: 60%;
+            background: $controls;
+            height: 4px;
+            border-radius: 3px;
+            position: absolute;
+            align-self: center;
+            transition: all 0.3s;
+          }
+          div:first-child {
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+          div:last-child {
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      .bag_info_wrap {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 6% 5% 6%;
+        font-family: lato, sans-serif;
+        font-weight: bold;
+        font-size: 0.7em;
+        span {
+
+        }
+      }
+      .bag_controls {
+        width: 100%;
+        cursor: pointer;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        .bag_checkout {
+          background: $red;
+          text-decoration: none;
+          display: block;
+          width: 100%;
+          text-align: center;
+          color: #fff;
+          padding: 1.5em;
+          font-size: 0.6em;
+          font-family: raleway;
+          font-weight: bold;
+          text-transform: uppercase;
+          flex: 5 1 150px;
+        }
+        .close_bag {
+          flex: 1 1 60px;
+          background: $blue;
+          position: relative;
+          cursor: pointer;
+          .close_btn {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            div {
+              width: 100%;
+              background: #fff;
+              height: 1px;
+              border: 3px solid #fff;
+              border-radius: 3px;
+              position: absolute;
+              top: 50%;
+              left: 0;
+            }
+            div:first-child {
+              -webkit-transform: rotate(45deg);
+              -moz-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+            div:last-child {
+              -webkit-transform: rotate(-45deg);
+              -moz-transform: rotate(-45deg);
+              -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

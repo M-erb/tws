@@ -22,6 +22,20 @@
               </option>
             </select>
           </div>
+          <div class="collection_container">
+            <div class="collection_label">
+              <span>Collections: </span>
+            </div>
+            <div class="collection erica ng-class:{'active_collec' : collecSearch == 'erica'}" ng-click="collecSearch = 'erica'">
+              Ericas
+            </div>
+            <div class="collection moms ng-class:{'active_collec' : collecSearch == 'moms'}" ng-click="collecSearch = 'moms'">
+              Moms
+            </div>
+            <div class="collection all ng-class:{'active_collec' : collecSearch == ''}"= ng-click="collecSearch = ''">
+              all
+            </div>
+          </div>
           <div class="btn_wrap">
             <div class="btn_blue" ng-click="clearSearch()">
               Clear Search
@@ -63,7 +77,7 @@
         <div class="pro_img">
           <img
           ng-src="content/img/products/{{pro.img}}"
-          src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"
+          src="content/img/logo/full-color/tws_logo_small150.jpg"
           alt="image of {{pro.name}}"/>
         </div>
         <div class="pro_name">

@@ -335,6 +335,7 @@
     background: #B2B2B2;
     width: 28px;
     height: 28px;
+    display: none;
 }
 .dot24 {
     top: 86%;
@@ -695,24 +696,42 @@
   }
 }
 
-.carousel_container {
-  position: relative;
-  background: #fff;
-  width: 100%;
-  .carousel_wrap {
-    -webkit-animation: carousel 40s linear infinite;
-    animation: carousel 40s linear infinite;
-    will-change: transform;
-    height: 280px;
-    text-align: left;
-    white-space: nowrap;
-    .carousel_item {
-      height: 280px;
+.flex_container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .flex_item {
+    flex: 1 1 300px;
+    padding: 2em;
+    margin: 1em;
+  }
+}
+
+.home_product_wrap {
+  .bckgr {
+    background: #fff;
+  }
+  .home_pro_flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
+    .pro_item {
+      flex: 0 0 280px;
       width: 280px;
+      height: 280px;
       padding: 20px;
+      margin: 0;
       display: inline-block;
       position: relative;
       background: #fff;
+      img {
+        width: 280px;
+        height: 280px;
+      }
       &:hover img {
         opacity: 0.3;
         filter: blur(2px);
@@ -744,55 +763,6 @@
         }
       }
     }
-    &:hover {
-      animation-play-state: paused;
-    }
-    img {
-      position: absolute;
-      width: 240px;
-    }
-  }
-}
-
-@-webkit-keyframes carousel {
-    0% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0)
-    }
-    50% {
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%)
-    }
-    100% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0)
-    }
-}
-
-@keyframes carousel {
-    0% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0)
-    }
-    50% {
-        -webkit-transform: translateX(-100%);
-        transform: translateX(-100%)
-    }
-    100% {
-        -webkit-transform: translateX(0);
-        transform: translateX(0)
-    }
-}
-
-
-.flex_container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  .flex_item {
-    flex: 1 1 300px;
-    padding: 2em;
-    margin: 1em;
   }
 }
 

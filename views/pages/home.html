@@ -7,7 +7,7 @@ $(function() {
         if (target.length) {
           $('html, body').animate({
             scrollTop: target.offset().top
-          }, 1000);
+          }, 500);
           return false;
         }
       }
@@ -73,9 +73,9 @@ $(function() {
     <div class="page_wrap">
       <h2>check'em out</h2>
     </div>
-    <div class="carousel_container">
-      <div class="carousel_wrap">
-        <a ng-href="/product-directory/product{{$index}}" class="carousel_item" ng-repeat="item in products | orderBy: randSort">
+    <div class="bckgr">
+      <div class="home_pro_flex">
+        <a ng-href="/product-directory/product{{$index}}" class="pro_item" ng-repeat="item in products | orderBy: randSort | limitTo: 4">
           <img
           ng-src="content/img/products/{{item.img}}"
           src="https://placeholdit.imgix.net/~text?txtsize=19&bg=ffffff&txt=200%C3%97200&w=200&h=200"
