@@ -58,7 +58,14 @@ twsApp.controller('productInfoCtrl', ['$scope', '$rootScope', '$stateParams','pr
   $scope.product = products.products[$stateParams.proIndex]
   $scope.bag = bag.bag
 
-  $scope.pagetitle = ''//$scope.product.name
+  $rootScope.showBag = false
+  $scope.bagToggle = function() {
+    if ($rootScope.showBag == false) {
+      $rootScope.showBag = true
+    }else {
+      $rootScope.showBag = false
+    }
+  }
 
   //discount maths **should add 'your savings with discount calulations showing'
   $scope.savings = $scope.product.discount / 100 * $scope.product.price

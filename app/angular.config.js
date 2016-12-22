@@ -47,9 +47,15 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
       templateUrl: 'views/product/shopping-bag.html',
       controller: 'bagCtrl'
     });
+  $stateProvider
+    .state('notfound', {
+      url: '/404',
+      templateUrl: 'views/templates/404.html',
+      controller: 'homeCtrl'
+    });
 
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/404');
 }]);
 
 twsApp.run(['$rootScope', '$location', '$stateParams', '$anchorScroll', function($rootScope, $location, $stateParams, $anchorScroll){

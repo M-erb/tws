@@ -32,7 +32,7 @@
   <div class="bag_contents_wrap" ng-show="showBag">
     <div class="bag_contents">
       <div class="empty_bag" ng-show="bag.length == 0">
-        <span>nothing here, get <a href="/product-directory" ng-click="bagToggle()">shopping!</a></span>
+        <span>nothing here, get <a href="/products" ng-click="bagToggle()">shopping!</a></span>
       </div>
       <div class="bag_item" ng-repeat="item in bag">
         <a class="bag_item_link" ng-href="{{item.link}}" ng-click="bagToggle()">

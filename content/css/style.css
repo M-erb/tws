@@ -817,6 +817,21 @@
       .poliy_page .policy_area ul li {
         line-height: 1.4; }
 
+main.error_page {
+  color: #fff;
+  min-height: 40vh; }
+  main.error_page h1 {
+    font-size: 280%;
+    margin-bottom: 1%; }
+  main.error_page .error_body {
+    margin: 5%; }
+    main.error_page .error_body p {
+      padding: 10px 0;
+      font-size: 1.1em; }
+      main.error_page .error_body p span {
+        font-size: 160%;
+        letter-spacing: 0.04em; }
+
 /*cart and search nav style*/
 .bag_container {
   position: absolute;
@@ -2199,7 +2214,6 @@ textarea.infusion-field-input-container {
       transform: translateX(-100%);
       transition: all 0.4s;
       background: white;
-      height: 100vh;
       z-index: 8; }
       .filters_wrap .filters_bar .filters_tab .filters_close_wrap {
         background: #595959;
@@ -2695,15 +2709,13 @@ textarea.infusion-field-input-container {
   .filters_tab_controls .collection_container {
     display: block;
     visibility: visible;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-self: center; }
+    margin-bottom: 0.7em; }
     .filters_tab_controls .collection_container .collection {
       border: 2px solid #b4b4b4;
       border-radius: 3px;
       color: #b4b4b4;
       padding: 0.3em;
-      margin: 0 0.3em;
+      margin: 0.3em 0;
       cursor: pointer;
       transition: background 0.2s; }
     .filters_tab_controls .collection_container .collection.active_collec {
@@ -2711,10 +2723,7 @@ textarea.infusion-field-input-container {
       color: #fff; }
     .filters_tab_controls .collection_container .collection_label {
       color: #b4b4b4;
-      font-size: 0.8em;
-      display: flex; }
-      .filters_tab_controls .collection_container .collection_label span {
-        align-self: center; } }
+      font-size: 0.7em; } }
 /*=======--=======-MEDIA QUERIES-======--========*/
 @media screen and (max-width: 650px) {
   #social_box {
@@ -3014,25 +3023,22 @@ header a {
 
 a {
   font-family: lato, sans-serif;
-  color: #8ECEDB;
-  -webkit-transition: color .4s;
-  -moz-transition: color .4s;
-  transition: color .4s; }
+  color: #7BD5ED; }
 
 a:hover {
-  color: #47AFC2; }
+  color: #7BD5ED; }
 
 h1 {
   font-size: 260%;
   font-weight: 800;
-  font-family: lato, sans-serif;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+  font-family: lato, sans-serif; }
   h1.page_title {
     font-weight: 300;
-    font-size: 200%; }
+    font-size: 200%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
 
 h2 {
   font-family: lato, sans-serif;

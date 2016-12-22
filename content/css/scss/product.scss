@@ -106,7 +106,6 @@
       transform: translateX(-100%);
       transition: all 0.4s;
       background: lighten($gray, 70%);
-      height: 100vh;
       z-index: 8;
       .filters_close_wrap {
         background: $gray;
@@ -733,15 +732,13 @@
     .collection_container {
       display: block;
       visibility: visible;
-      justify-content: center;
-      flex-wrap: wrap;
-      align-self: center;
+      margin-bottom: 0.7em;
       .collection {
         border: 2px solid $controls;
         border-radius: 3px;
         color: $controls;
         padding: 0.3em;
-        margin: 0 0.3em;
+        margin: 0.3em 0;
         cursor: pointer;
         transition: background 0.2s;
       }
@@ -751,11 +748,7 @@
       }
       .collection_label {
         color: $controls;
-        font-size: 0.8em;
-        display: flex;
-        span {
-          align-self: center;
-        }
+        font-size: 0.7em;
       }
     }
   }

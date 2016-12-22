@@ -17,25 +17,22 @@ header a {
 }
 a {
 	font-family: lato, sans-serif;
-	color: #8ECEDB;
-	-webkit-transition: color .4s;
-	-moz-transition: color .4s;
-	transition: color .4s;
+	color: #7BD5ED;
 }
 a:hover {
-	color: #47AFC2;
+	color: #7BD5ED;
 }
 h1 {
 	font-size: 260%;
 	font-weight: 800;
 	font-family: lato, sans-serif;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 	&.page_title {
 		font-weight: 300;
 		font-size: 200%;
+	  -webkit-user-select: none;
+	  -moz-user-select: none;
+	  -ms-user-select: none;
+	  user-select: none;
 	}
 }
 h2 {

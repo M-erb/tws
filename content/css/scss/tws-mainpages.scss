@@ -848,3 +848,23 @@
     }
   }
 }
+
+main.error_page {
+  color: #fff;
+  min-height: 40vh;
+  h1 {
+    font-size: 280%;
+    margin-bottom: 1%;
+  }
+  .error_body {
+    margin: 5%;
+    p {
+      padding: 10px 0;
+      font-size: 1.1em;
+      span {
+        font-size: 160%;
+        letter-spacing: 0.04em;
+      }
+    }
+  }
+}
