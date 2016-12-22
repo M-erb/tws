@@ -19,5 +19,5 @@ Tied With Strings is a website built using Angular.js and is an online store for
 ## To Fix
 1. ~~responsive bag preview~~
 2. ~~Adjust product info text size(make bigger for mobile screens, same as policy page)~~
-3. responsive shopping bag page
+3. ~~responsive shopping bag page~~
 4. ~~Responsive collection filters~~

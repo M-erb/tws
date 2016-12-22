@@ -82,7 +82,7 @@
   height: auto;
   margin: 10px auto;
   position: relative;
-  z-index: 3; }
+  z-index: 10; }
 
 /*first line of title*/
 .title1 {
@@ -2724,6 +2724,37 @@ textarea.infusion-field-input-container {
     .filters_tab_controls .collection_container .collection_label {
       color: #b4b4b4;
       font-size: 0.7em; } }
+@media screen and (max-width: 480px) {
+  .checkout_page {
+    justify-content: center; }
+
+  .checkout_page .shopping_bag_wrap {
+    flex: 3 1 450px;
+    margin: 16px 0;
+    padding: 1em; }
+  .checkout_page .bag_item {
+    display: block !important; }
+    .checkout_page .bag_item .remove_btn {
+      position: absolute !important;
+      top: 0;
+      right: 0; }
+    .checkout_page .bag_item .bag_img_holder {
+      margin-right: 0 !important; }
+    .checkout_page .bag_item .bag_info_container a.bag_item_name {
+      text-align: center;
+      margin-bottom: 0.6em; }
+    .checkout_page .bag_item .bag_info_container .bag_price_qty_wrap {
+      display: block !important;
+      margin: 0; }
+      .checkout_page .bag_item .bag_info_container .bag_price_qty_wrap .bag_item_price {
+        margin-right: 0 !important;
+        margin-bottom: 0.6em;
+        display: block;
+        text-align: center; }
+      .checkout_page .bag_item .bag_info_container .bag_price_qty_wrap .bag_item_qty span {
+        display: none !important; }
+      .checkout_page .bag_item .bag_info_container .bag_price_qty_wrap .bag_item_qty .qty_field_wrap {
+        margin: 0 auto; } }
 /*=======--=======-MEDIA QUERIES-======--========*/
 @media screen and (max-width: 650px) {
   #social_box {

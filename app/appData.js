@@ -336,16 +336,24 @@ twsApp.factory('products',['$localStorage', function($localStorage){
 
 twsApp.factory('bag',['$localStorage', function($localStorage){
 
-  var o = {
+  const o = {
     bag: []
   }
 
-  var bagContentsCheck = function() {
+  const bagContentsCheck = function() {
     //house keeping for local storage
+    const currentDate = new Date()
+    console.log(currentDate)
+    console.log('DoM: '+currentDate.getDate())
+    console.log('Month: '+currentDate.getMonth())
+    console.log('Year: '+currentDate.getFullYear())
     if ($localStorage.unpurchasedBag == null) {
       $localStorage.unpurchasedBag = []
     }else {
       o.bag = $localStorage.unpurchasedBag
+    }
+    if ($localStorage.bagExpiration == null) {
+      $localStorage.unpurchasedBag = []
     }
   }
   bagContentsCheck()
