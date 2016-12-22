@@ -753,3 +753,52 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .checkout_page {
+    justify-content: center;
+  }
+  .checkout_page {
+    .shopping_bag_wrap {
+      flex: 3 1 450px;
+      margin: 16px 0;
+      padding: 1em;
+    }
+    .bag_item {
+      display: block!important;
+      .remove_btn {
+        position: absolute!important;
+        top: 0;
+        right: 0;
+      }
+      .bag_img_holder {
+        margin-right: 0!important;
+      }
+      .bag_info_container {
+        a.bag_item_name {
+          //.checkout_page .shopping_bag_wrap .bag_item .bag_info_container a.bag_item_name
+          text-align: center;
+          margin-bottom: 0.6em;
+        }
+        .bag_price_qty_wrap {
+          display: block!important;
+          margin: 0;
+          .bag_item_price {
+            margin-right: 0!important;
+            margin-bottom: 0.6em;
+            display: block;
+            text-align: center;
+          }
+          .bag_item_qty {
+            span {
+              display: none!important;
+            }
+            .qty_field_wrap {
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
