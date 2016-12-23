@@ -529,12 +529,10 @@
   line-height: 1.1;
   font-size: calc(0.6em + 2vmin); }
 
-.hello p a {
-  display: block;
-  width: 150px;
-  text-indent: 0;
-  font-size: 15px !important;
-  margin-top: 1em; }
+.read_more_btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px calc(5% + 10px) 0 0; }
 
 /*section background style*/
 .background_section1 {
@@ -599,20 +597,11 @@
   .blog p {
     text-align: right;
     color: white;
-    margin: 0;
-    position: relative;
-    margin: 0 calc(6% + 10px) 10px 0;
+    margin: 0 calc(5% + 10px) 0 0;
     text-shadow: 2px 2px 3px rgba(89, 89, 89, 0.9);
     bottom: calc(6vw - 80px);
-    position: relative;
     z-index: 20;
     line-height: 1.1; }
-    .blog p a {
-      margin-bottom: 40px;
-      display: block;
-      width: 120px;
-      text-indent: 0;
-      text-shadow: none; }
     .blog p .post_title {
       font-family: Allura;
       font-size: 190%;
@@ -622,7 +611,7 @@
 
 .background_section2 {
   background: url("../img/table_projectSM.jpg") no-repeat;
-  background-size: 700px;
+  background-size: cover;
   background-position: center bottom;
   background-attachment: fixed;
   background-color: gray;
@@ -2771,7 +2760,7 @@ textarea.infusion-field-input-container {
 
   /*slanted background*/
   .blog {
-    bottom: calc(-15vw + 600px); }
+    bottom: calc(-15vw + 590px); }
 
   .background_section2 {
     background: url("../img/table_projectSM.jpg") no-repeat;
@@ -2827,10 +2816,13 @@ textarea.infusion-field-input-container {
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-    padding-top: calc(-10vw + 1200px); }
+    padding-top: calc(-10vw + 1100px); }
 
   .background_section2::after {
-    top: -250px; } }
+    top: -100px; }
+
+  .blog {
+    bottom: calc(-15vw + 420px); } }
 @media screen and (min-width: 700px) {
   /*Positions the headline to be "inline"*/
   #headline {
@@ -3008,7 +3000,11 @@ textarea.infusion-field-input-container {
     background-image: url("../img/tws-collage-banner.jpg") !important; }
 
   .background_section2 {
-    background-image: url("../img/table_projectXL.jpg") !important; }
+    background-image: url("../img/table_projectXL.jpg") !important;
+    padding-top: calc(-10vw + 1000px); }
+
+  .blog {
+    bottom: calc(-15vw + 390px); }
 
   /*newletter sign-up form*/
   #newsletter_form {

@@ -119,6 +119,8 @@ twsApp.controller('productInfoCtrl', ['$scope', '$rootScope', '$stateParams','pr
       $scope.product.qtyAvailable = $scope.product.qtyAvailable - newProduct.qty
     }
     $scope.qtyField = 1
+    const currentDate = new Date().getTime()
+    $localStorage.lastLogDate = currentDate
   }
 
   //image slider

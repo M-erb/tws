@@ -501,12 +501,10 @@
   line-height: 1.1;
   font-size: calc(0.6em + 2vmin);
 }
-.hello p a {
-  display: block;
-  width: 150px;
-  text-indent: 0;
-  font-size: 15px !important;
-  margin-top: 1em;
+.read_more_btn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px calc(5% + 10px) 0 0;
 }
 
 
@@ -588,21 +586,11 @@
   p{
     text-align: right;
     color: white;
-    margin: 0;
-    position: relative;
-    margin: 0 calc(6% + 10px) 10px 0;
+    margin: 0 calc(5% + 10px) 0 0;
     text-shadow: 2px 2px 3px rgba(89,89,89, .9);
     bottom: calc(6vw - 80px);
-    position: relative;
     z-index: 20;
     line-height: 1.1;
-    a {
-      margin-bottom: 40px;
-      display: block;
-      width: 120px;
-      text-indent: 0;
-      text-shadow: none;
-    }
     .post_title {
     	font-family: Allura;
     	font-size: 190%;
@@ -615,7 +603,7 @@
 
 .background_section2 {
     background: url('../img/table_projectSM.jpg') no-repeat;
-    background-size: 700px;
+    background-size: cover;
     background-position: center bottom;
     background-attachment: fixed;
     background-color: gray;

@@ -16,9 +16,10 @@
 	}
 
 	/*slanted background*/
-	.blog {
-	    bottom: calc(-15vw + 600px);
-	}
+  .blog {
+    bottom: calc(-15vw + 590px);
+  }
+
 	.background_section2 {
 	    background: url('../img/table_projectSM.jpg') no-repeat;
 	    background-size: cover;
@@ -80,11 +81,14 @@
         background-size: cover;
         background-position: center center;
         background-attachment: fixed;
-				padding-top: calc(-10vw + 1200px);
+				padding-top: calc(-10vw + 1100px);
     }
 		.background_section2::after {
-			top:-250px;
+			top:-100px;
 		}
+    .blog {
+  	    bottom: calc(-15vw + 420px);
+  	}
 
 }
 @media screen and (min-width: 700px) {
@@ -284,6 +288,10 @@
     }
     .background_section2 {
 				background-image: url("../img/table_projectXL.jpg") !important;
+        padding-top: calc(-10vw + 1000px);
+    }
+    .blog {
+      bottom: calc(-15vw + 390px);
     }
     /*newletter sign-up form*/
     #newsletter_form {

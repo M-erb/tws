@@ -342,18 +342,26 @@ twsApp.factory('bag',['$localStorage', function($localStorage){
 
   const bagContentsCheck = function() {
     //house keeping for local storage
-    const currentDate = new Date()
-    console.log(currentDate)
-    console.log('DoM: '+currentDate.getDate())
-    console.log('Month: '+currentDate.getMonth())
-    console.log('Year: '+currentDate.getFullYear())
+    const miliDay = 86400000
+    const days = 2
+    const currentDate = new Date().getTime()
+
+    if($localStorage.lastLogDate == null) {
+      $localStorage.lastLogDate = currentDate
+    }else if(howLong(currentDate, $localStorage.lastLogDate) > days * miliDay) {
+      $localStorage.unpurchasedBag = []
+      console.log('bag expired')
+    }else {
+      console.log('bag not expired')
+    }
+    function howLong(today, past) {
+      return today - past
+    }
+
     if ($localStorage.unpurchasedBag == null) {
       $localStorage.unpurchasedBag = []
     }else {
       o.bag = $localStorage.unpurchasedBag
-    }
-    if ($localStorage.bagExpiration == null) {
-      $localStorage.unpurchasedBag = []
     }
   }
   bagContentsCheck()
