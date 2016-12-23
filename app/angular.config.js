@@ -22,12 +22,6 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
       templateUrl: 'views/pages/contact-us.html',
       controller: 'contactCtrl'
     });
-  $stateProvider
-    .state('aboutUS', {
-      url: '/about-us',
-      templateUrl: 'views/pages/about-us.html',
-      controller: 'aboutCtrl'
-    });
 
   $stateProvider
     .state('productDirectory', {

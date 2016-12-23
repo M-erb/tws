@@ -1647,7 +1647,7 @@ footer .social_wrap ul li img {
   width: 100%; }
 
 /*TEMP!!!!*/
-#footer_links li:nth-child(n+3) a {
+#footer_links li a.c_out {
   color: gray;
   text-decoration: line-through; }
 
