@@ -3,6 +3,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
   var o = {
     products: [{
       id: '110',
+      index: 1,
       name: "Neutral Tied Patchwork Quilt",
       img: "patchwork-tied-blanket.png",
       slides: [
@@ -30,6 +31,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       longDescription: 'Gender neutral tied baby quilt featuring turtles, monkeys, dinosaurs, teddy bears, letters, and pink minky fabric. This quilt is very fun for baby because it has a variety of fabric types, colors, and patterns. Perfect for playtime, naptime, or anything in between.'
     }, {
       id: '114',
+      index: 2,
       name: "Teal Tied Patchwork Quilt",
       img: "tied-neutral-blanket-front.png",
       slides: [
@@ -57,6 +59,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       longDescription: 'Soft and cute baby quilt featuring butterflies, precious moments angels, polka dots, teddy bears, flowers, monkeys, foxes, birds, and trees on the front and a fun teal watercolor tie-dyed style snuggle flannel on the back. This quilt is very fun for baby because it has a variety of fabric types, colors, and patterns. Perfect for playtime, naptime, or anything in between.'
     }, {
       id: '116',
+      index: 3,
       name: "Blue Hedgehog Baby Blanket",
       img: "hedgehog-blanket-front.png",
       slides: [
@@ -84,6 +87,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       longDescription: "Soft and cute baby quilt with hedgehog and leaf features sewn on top. The ridges of the hedgehog's back and the feet of the hedgehog are not fully attached to the quilt so that a baby can grab onto them, chew on them, and experience the different textures, colors, and patterns. Perfect for playtime, naptime, tummy time or anything in between at home or on the go."
     }, {
       id: '118',
+      index: 4,
       name: "Colorful Bear with Balloons Blanket",
       img: "bear-with-balloons-blanket.png",
       slides: [
@@ -111,6 +115,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
       longDescription: 'Soft and cute baby blanket with bear and balloon features sewn on top of a light pink and green polka dot fabric. On back, there is a cute teddy bear and star fabric. Babies can experience the different textures, colors, and patterns. Perfect for playtime, naptime, tummy time or anything in between at home or on the go.'
     }, {
         id: '120',
+        index: 5,
         name: "Green Brown Bears and Paws Blanket",
         img: "green-bear-blanket-front.png",
         slides: [
@@ -137,6 +142,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
         longDescription: 'Soft and cute baby blanket with bear features sewn on top of green, brown, and white polka dot background. Bear paw hand stitching holds the two sides of the blanket together. On the back of the blanket, there is very soft brown bear paw print fleece fabric. The ears of the bear are not fully attached to the quilt so that a baby can grab onto them, chew on them, and experience the different textures, colors, and patterns. Perfect for playtime, naptime, tummy time or anything in between at home or on the go.'
       }, {
           id: '122',
+          index: 6,
           name: "Pink and Grey Elephant Blanket",
           img: "elephant-blanket.png",
           slides: [
@@ -164,6 +170,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
           longDescription: 'Soft and cute baby blanket with elephant features sewn on top of a pink, brown, and white polka dot background. Adorable patterns along with alphabet animals and letters can be found on back.The ears of the elephants are not fully attached to the quilt so that a baby can grab onto them, chew on them, and experience the different textures, colors, and patterns. Perfect for playtime, naptime, tummy time or anything in between at home or on the go.'
         }, {
             id: '124',
+            index: 7,
             name: "Polka Dot Elephant Blanket",
             img: "elephant-flower-blanket-front.png",
             slides: [
@@ -190,6 +197,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
             longDescription: 'Soft and cute baby blanket with elephant and flower features sewn on top of pink polka dot background. Fun number and letter blocks, purple and grey elephants, striped giraffes, owls and flowers on back. The polka dot ears of the elephants and petals of the flowers are not fully attached to the quilt so that a baby can grab onto them, chew on them, and experience the different textures, colors, and patterns. Perfect for playtime, naptime, tummy time or anything in between at home or on the go.'
           }, {
               id: '126',
+              index: 8,
               name: "Extra Soft Monkey and Bees Blanket",
               img: "monkey-bee-blanket.png",
               slides: [
@@ -217,6 +225,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
               longDescription: 'Very soft, very colorful and very cute baby blanket with monkey and bee features sewn on top with bee flight path stitching. Background patchwork fabrics of minky fabric, soft and fluffy fabric, snuggle flannel lions and chevron, and fleece on the front and fun, colorful animals on back. Different textures, colors, and patterns for baby to look at, chew on, and grab. Perfect for playtime, naptime, tummy time or anything in between at home or on the go.'
             }, {
                 id: '128',
+                index: 9,
                 name: "My Little Friends Blanket",
                 img: "my-little-friends-blanket.png",
                 slides: [
@@ -244,6 +253,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
                 longDescription: 'Simple "My Little Friends" soft and cute baby blanket. Different colors, animals, and patterns for baby to look at and touch on the front and back of the blanket. Perfect for playtime, naptime, tummy time or anything in between at home or on the go.'
               }, {
                   id: '130',
+                  index: 10,
                   name: "Fun Chevron Road and Cars Blanket",
                   img: "road-car-blanket.png",
                   slides: [
@@ -271,6 +281,7 @@ twsApp.factory('products',['$localStorage', function($localStorage){
                   longDescription: 'Soft and cute baby blanket with a grey road and grey and dark teal car features sewn on top of a fun chevron pattern with light teal and grey cars on back. Different textures, colors, and patterns for baby to look at and touch. Perfect for playtime, naptime, tummy time or anything in between at home or on the go.'
                 }, {
                     id: '112',
+                    index: 11,
                     name: "Under the Sea Colorful Whale Blanket",
                     img: "whale-blanket-front.png",
                     slides: [
@@ -296,7 +307,58 @@ twsApp.factory('products',['$localStorage', function($localStorage){
                     ],
                     shortDescription: 'Soft and cute baby blanket with grey and blue whale features with colorful patterned fins and spouts of water',
                     longDescription: 'Soft and cute baby blanket with grey and blue whale features with colorful patterned fins and spouts of water sewn on top of a cute pink and green polka dot fabric. A fun and colorful under the sea fabric makes up the back of the blanket. Different textures, colors, and patterns for baby to look at and touch. Perfect for playtime, naptime, tummy time or anything in between at home or on the go.'
-                  }]
+                  }, {
+                      id: '999',
+                      index: 12,
+                      name: "Custom Wedding Announcement",
+                      img: "whale-blanket-front.png",
+                      slides: [
+                        {img: "whale-blanket-front.png"}
+                      ],
+                      price: '',
+                      discount: 0,
+                      status: 'coming soon',
+                      sku: 'CA001',
+                      qtyAvailable: 0,
+                      collection: 'ericas',
+                      category: 'wedding',
+                      shortDescription: 'Looky lookie',
+                      longDescription: 'Custom Wedding Announcement just for you.'
+                  }, {
+                      id: '999',
+                      index: 13,
+                      name: "Custom Graduation Announcement",
+                      img: "whale-blanket-front.png",
+                      slides: [
+                        {img: "whale-blanket-front.png"}
+                      ],
+                      price: '',
+                      discount: 0,
+                      status: 'coming soon',
+                      sku: 'CA002',
+                      qtyAvailable: 0,
+                      collection: 'ericas',
+                      category: 'Graduation',
+                      shortDescription: 'Looky lookie',
+                      longDescription: 'Custom Graduation Announcement just for you.'
+                  }, {
+                      id: '999',
+                      index: 14,
+                      name: "Custom Graphic Design Work",
+                      img: "whale-blanket-front.png",
+                      slides: [
+                        {img: "whale-blanket-front.png"}
+                      ],
+                      price: '',
+                      discount: 0,
+                      status: 'coming soon',
+                      sku: 'CA003',
+                      qtyAvailable: 0,
+                      collection: 'ericas',
+                      category: 'Design work',
+                      shortDescription: 'Looky lookie',
+                      longDescription: 'Custom Graphic Design just for you.'
+                    }]
   }
 
   /*

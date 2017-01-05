@@ -9,7 +9,7 @@
     </div> -->
   </div>
 
-  <div class="slider_wrap">
+  <div class="slider_wrap" ng-hide="product.status == 'coming soon'">
     <div class="slides_container">
       <div class="prev" ng-click="prev()">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
@@ -31,10 +31,10 @@
       <div class="pro_description col">
         <div class="pro_dis_box">
           <div class="bread_crumbs">
-            <span><a href="/products" ng-click="bagToggle()">Products</a> > {{product.name}}</span>
+            <span><a href="/products">Products</a> > {{product.name}}</span>
           </div>
           <p>{{product.longDescription}}</p>
-          <div class="feature_box">
+          <div class="feature_box" ng-hide="product.status == 'coming soon'">
             <h3>features</h3>
             <ul>
               <li ng-repeat="item in product.features">
@@ -42,10 +42,14 @@
               </li>
             </ul>
           </div>
+          <div class="feature_box" ng-show="product.status == 'coming soon'">
+            <h3>Coming Soon</h3>
+            <p>We are still working on putting these items together, but we would still love to work with you now on a custom project. Have anything in mind? Fill out the form below and we will get back to you fast.</p>
+          </div>
           <p class="sku">sku: {{product.sku}}</p>
         </div>
       </div>
-      <div class="pro_checkout col">
+      <div class="pro_checkout col" ng-hide="product.status == 'coming soon'">
         <div class="price_box">
           <div class="pro_price_wrap">
             <p class="pro_percent" ng-show="product.discount">{{product.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</p>
@@ -74,6 +78,28 @@
         </div>
       </div>
     </div>
+
+    <div ng-show="product.status == 'coming soon'">
+      <form class="infuse_form" accept-charset="UTF-8" action="https://an140.infusionsoft.com/app/form/process/19569fedd6f8f6be5e79cde33dd5e7f8" class="infusion-form" method="POST">
+        <input name="inf_form_xid" type="hidden" value="19569fedd6f8f6be5e79cde33dd5e7f8">
+        <input name="inf_form_name" type="hidden" value="TWS Questions Comments Requests">
+        <input name="infusionsoft_version" type="hidden" value="1.44.0.46">
+
+        <input class="infusion-field-input-container" id="inf_field_FirstName" name="inf_field_FirstName" type="text" placeholder="first name*" onblur="requiredField(this)" required>
+        <input class="infusion-field-input-container" id="inf_field_LastName" name="inf_field_LastName" type="text" placeholder="last name">
+        <input class="infusion-field-input-container" id="inf_field_Email" name="inf_field_Email" type="email" placeholder="email*" onblur="requiredField(this)" required>
+        <div class="text_areas">
+            <textarea cols="5" rows="5" class="infusion-field-input-container"  id="inf_custom_Comments" name="inf_custom_Comments" placeholder="your message...*" onblur="requiredField(this)" required></textarea>
+        </div>
+
+        <button class="infusion-submit" type="submit">
+            submit <i class="fa fa-bolt"></i>
+        </button>
+      </form>
+      <script type="text/javascript" src="https://an140.infusionsoft.com/app/webTracking/getTrackingCode?trackingId=ce1c56f581c3fcee728d109870c1eb9a"></script>
+    </div>
+
+
   </div>
 </main>
 
