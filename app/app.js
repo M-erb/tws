@@ -1,4 +1,4 @@
-var twsApp = angular.module('twsApp', ['ngAnimate','ui.router','ngCookies','ngStorage']);
+var twsApp = angular.module('twsApp', ['ngAnimate','ui.router','ngCookies','ngStorage','angularytics']);
 
 twsApp.controller('homeCtrl', ['$scope', 'products', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
 

@@ -1,8 +1,9 @@
-twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$localStorageProvider', '$uiViewScrollProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $localStorageProvider, $uiViewScrollProvider){
+twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$localStorageProvider', '$uiViewScrollProvider', 'AngularyticsProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $localStorageProvider, $uiViewScrollProvider, AngularyticsProvider){
 
   $uiViewScrollProvider.useAnchorScroll();
   $locationProvider.html5Mode(true);
   $localStorageProvider.setKeyPrefix('');
+  AngularyticsProvider.setEventHandlers(['Console', 'GoogleUniversal']);
 
   $stateProvider
     .state('home', {
@@ -52,9 +53,11 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
   $urlRouterProvider.otherwise('/404');
 }]);
 
-twsApp.run(['$rootScope', '$location', '$stateParams', '$anchorScroll', function($rootScope, $location, $stateParams, $anchorScroll){
+twsApp.run(['$rootScope', '$location', '$stateParams', '$anchorScroll', 'Angularytics', function($rootScope, $location, $stateParams, $anchorScroll, Angularytics){
 
   $rootScope.$on('$stateChangeSuccess', function() {
    document.body.scrollTop = document.documentElement.scrollTop = 0;
   });
+
+  Angularytics.init();
 }]);
