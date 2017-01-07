@@ -2159,6 +2159,12 @@ textarea.infusion-field-input-container {
         padding: 0.5em;
         opacity: 0;
         transition: opacity 0.2s; }
+      .pro_container .pro_box .pro_name .sold_out {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.4em;
+        background: #DE3636; }
       .pro_container .pro_box .pro_name:hover span {
         opacity: 1; }
     .pro_container .pro_box .price_box {
@@ -2462,6 +2468,13 @@ textarea.infusion-field-input-container {
       color: #9b9b9b;
       cursor: default; }
 
+.pro_controls {
+  margin: 32px auto 0 auto;
+  width: 100%;
+  max-width: 764px; }
+  .pro_controls .pro_control_wrap {
+    margin: 0 32px; }
+
 .slider_wrap {
   width: 100%;
   margin: 0 auto;
@@ -2523,7 +2536,8 @@ textarea.infusion-field-input-container {
 .slide.ng-hide {
   opacity: 0;
   display: block !important;
-  position: absolute; }
+  position: absolute;
+  z-index: -5; }
 
 .pro_page_wrap {
   width: 100%;

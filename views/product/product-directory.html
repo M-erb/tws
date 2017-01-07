@@ -83,6 +83,7 @@
         </div>
         <div class="pro_name">
           <span ng-class="{'show_name' : pro.status == 'coming soon'}">{{pro.name}}</span>
+          <div ng-show="pro.status == 'sold'" class="show_name sold_out">sold out</div>
         </div>
         <div class="price_box ng-class:{'discount' : pro.discount}">
           <div class="price_off" ng-show="pro.discount">

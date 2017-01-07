@@ -181,9 +181,9 @@ twsApp.factory('products',['$localStorage', function($localStorage){
             ],
             price: 45,
             discount: 0,
-            status: 'active',
+            status: 'sold',
             sku: 'BB07',
-            qtyAvailable: 1,
+            qtyAvailable: 0,
             collection: 'moms',
             category: 'Baby Blankets',
             features: [
@@ -292,9 +292,9 @@ twsApp.factory('products',['$localStorage', function($localStorage){
                     ],
                     price: 45,
                     discount: 0,
-                    status: 'active',
+                    status: 'sold',
                     sku: 'BB011',
-                    qtyAvailable: 1,
+                    qtyAvailable: 0,
                     collection: 'moms',
                     category: 'Baby Blankets',
                     features: [

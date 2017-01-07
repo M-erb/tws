@@ -50,6 +50,13 @@
         opacity: 0;
         transition: opacity 0.2s;
       }
+      .sold_out {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.4em;
+        background: $red;
+      }
       &:hover span {
         opacity: 1;
       }
@@ -437,6 +444,16 @@
   }
 }
 
+// Button bar
+.pro_controls {
+  margin: 32px auto 0 auto;
+  width: 100%;
+  max-width: 764px;
+  .pro_control_wrap {
+    margin: 0 32px;
+  }
+}
+
 // slider
 .slider_wrap {
   width: 100%;
@@ -516,6 +533,7 @@
 	opacity: 0;
   display: block!important;
   position: absolute;
+  z-index: -5;
 }
 
 .pro_page_wrap {
