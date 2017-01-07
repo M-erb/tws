@@ -15,6 +15,7 @@ Tied With Strings is a website built using Angular.js and is an online store for
 10. Add products to mySql database and use php to pull it
 11. Add API for adding orders to Infusionsoft instead of using shopping cart
 12. ~~move read more buttons on home page to the right~~ **_-DONE_**
+13. Add thank you page for when order is done
 
 ## To Fix
 1. ~~responsive bag preview~~ **_-fixed_**
