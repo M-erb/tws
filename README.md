@@ -11,11 +11,11 @@ Tied With Strings is a website built using Angular.js and is an online store for
 6. ~~update and add product into database~~ **_-DONE_**
 7. ~~Add a 404 error page~~ **_-DONE_**
 8. ~~Add expiration function to localstorage's shopping bag~~ **_-DONE_**
-9. Erica's collection w/ form to give interest/ order early
+9. ~~Erica's collection w/ form to give interest/ order early~~ **_-DONE_**
 10. Add products to mySql database and use php to pull it
 11. Add API for adding orders to Infusionsoft instead of using shopping cart
 12. ~~move read more buttons on home page to the right~~ **_-DONE_**
-13. Add thank you page for when order is done
+13. ~~Add thank you page for when order is done~~ **_-DONE_**
 
 ## To Fix
 1. ~~responsive bag preview~~ **_-fixed_**
