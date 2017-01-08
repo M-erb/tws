@@ -48,6 +48,12 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
       templateUrl: 'views/templates/404.html',
       controller: 'homeCtrl'
     });
+  $stateProvider
+    .state('thankyou-order', {
+      url: '/thankyou-order',
+      templateUrl: 'views/pages/thankyou-order.html',
+      controller: 'homeCtrl'
+    });
 
 
   $urlRouterProvider.otherwise('/404');

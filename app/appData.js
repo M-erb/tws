@@ -405,7 +405,7 @@ twsApp.factory('bag',['$localStorage', function($localStorage){
   const bagContentsCheck = function() {
     //house keeping for local storage
     const miliDay = 86400000
-    const days = 2
+    const days = 1
     const currentDate = new Date().getTime()
 
     if($localStorage.lastLogDate == null) {

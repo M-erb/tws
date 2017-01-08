@@ -56,7 +56,12 @@ q:before, q:after {content: '';content: none;}
 img, img a {
     border: 0 none;
 	}
-
+#FULL_PRODUCT_SUMMARY > h1 {
+	visibility: hidden;
+	line-height: 0;
+	margin: 0;
+	padding: 0;
+}
 #wrapper {
 	/* Wraps around everything and sets the total width of the storefront */
 	position: relative;
@@ -602,6 +607,7 @@ td .rightCell {
 	text-align: left;
 	margin: 0 20px 20px 0;
 	float: left;
+	background: #fff;
 	}
 
 .billingInfo {
@@ -611,6 +617,7 @@ td .rightCell {
 	margin: 0 20px 20px 0;
 	text-align: left;
 	float: left;
+  background: #fff;
 	}
 
 .paymentInfo {
@@ -632,10 +639,10 @@ td .rightCell {
 
 .checkoutLinks {
     /* Container for 'Checkout' and 'Continue Shopping' buttons */
-    width: 300px;
-    margin: 17px 20px 40px 0;
+		width: 90%;
+    max-width: 70em;
+		margin: 30px auto;
     text-align: right;
-    float: right;
     clear: both;
     }
 
@@ -816,11 +823,11 @@ a:hover {
 }
 
 .cartButton, .continueButton, .formButton, .codeButton  {
-  font-size: 0.8em;
+  font-size: 1em;
   font-weight: bold;
   font-family: 'open sans', sans-serif;
   cursor: pointer;
-  padding: 0.6em 1.6em;
+  padding: 10px 25px;
   text-decoration: none;
   border-radius: 1px;
   border: none;
@@ -1423,14 +1430,6 @@ footer .social_wrap ul li img {
     width: 100%;
 }
 
-/*TEMP!!!!*/
-#footer_links li:nth-child(n+3) a {
-    color: gray;
-    text-decoration: line-through;
-}
-
-
-
 #contentWide {
     /* Content wrapper used on checkout pages */
   position: relative;
@@ -1501,7 +1500,7 @@ margin-right: auto;
 
 /*=======--=======-MEDIA QUERIES-======--========*/
 @media screen and (max-width: 600px) {
-	.viewCart tbody {
+	.viewCart tbody, .summaryCart tbody {
 		display: flex;
 		flex-direction: column;
 	}
@@ -1509,7 +1508,11 @@ margin-right: auto;
 		/*cart table headers being removed*/
     display: none;
 	}
-	.viewCart td {
+	.summaryCart tr:first-child {
+		/*cart table headers being removed*/
+    display: none;
+	}
+	.viewCart td, .summaryCart td {
     border: 0 none;
     display: block;
     align-self: stretch;
@@ -1519,11 +1522,19 @@ margin-right: auto;
 		/*individual product total combined QTY price*/
     display: none;
 	}
+	.summaryCart td:last-child {
+		/*individual product total combined QTY price*/
+    display: none;
+	}
 	.viewCart .subtotal td:last-child {
 		/*to bring back the total order price*/
     display: block;
 	}
-	.viewCart tr {
+	.summaryCart .subtotal td:last-child {
+		/*to bring back the total order price*/
+    display: block;
+	}
+	.viewCart tr, .summaryCart tr {
     display: flex;
     border-bottom: 1px solid #ccc;
     width: 100%;
@@ -1535,7 +1546,17 @@ margin-right: auto;
     width: 100%;
 		position: relative;
 	}
+	.summaryCart tr td:nth-child(2) {
+		/*make name accross top of cart listing*/
+    order: -1;
+    width: 100%;
+		position: relative;
+	}
 	.viewCart .subtotal td:nth-child(2) {
+		/*make name accross top of cart listing*/
+    display: none;
+	}
+	.summaryCart .subtotal td:nth-child(2) {
 		/*make name accross top of cart listing*/
     display: none;
 	}

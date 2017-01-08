@@ -1,5 +1,13 @@
 @import 'var';
 
+.thankyou_order {
+  color: #fff;
+  margin: calc(0.6em + 2vmin) 0;
+  & *:first-child {
+    margin-bottom: 0.8em
+  }
+}
+
 /*--Home page header--*/
 .home_header {
   width: 100%;

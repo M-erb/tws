@@ -333,3 +333,8 @@
 		background: url("../img/table_projectXL.jpg");
 	}
 }
+@media screen and (max-width: 480px) {
+  .scroll_down {
+    animation: none;
+  }
+}

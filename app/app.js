@@ -338,7 +338,6 @@ twsApp.controller('bagCtrl', ['$scope', '$stateParams','products', 'bag', '$cook
   //build infusionsoft checkout link
   $scope.checkoutItemsLink = function() {
     if ($scope.bag.length < 1) {
-      //$scope.bagEmptyMessage = true
       return ''
     }else {
       var url = []
@@ -350,7 +349,10 @@ twsApp.controller('bagCtrl', ['$scope', '$stateParams','products', 'bag', '$cook
       return url.join('')
     }
   }
-
+  $scope.deleteBag = function() {
+    console.log('deleted')
+    $localStorage.unpurchasedBag = []
+  }
   //https://an140.infusionsoft.com/app/manageCart/processBundle
 
 }]);

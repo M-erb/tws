@@ -50,14 +50,13 @@
       </div>
       <div class="bag_controls">
         <a class="bag_checkout btn_red ng-class:{'btn_inactive' : bag.length < 1}"
-        ng-href="{{checkoutItemsLink()}}">
+        ng-href="{{checkoutItemsLink()}}"
+        ng-click="deleteBag()">
         checkout</a>
-        <div class="empty_bag_responce" ng-show="bagEmptyMessage">
-          <span>bag is empty</span>
-        </div>
       </div>
       <div class="bag_notes">
         <p class="shipping_notes">*shipping is calculated during checkout</p>
+        <a href="/thankyou-order">test</a>
       </div>
     </div>
   </div>

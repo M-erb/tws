@@ -319,8 +319,16 @@ a:hover {
 ===============================================================*/
 
 .errorMessage {
-	color: #dd4949;
-	}
+	display: block;
+  color: #dd4949;
+  width: 90%;
+  max-width: 70em;
+  margin: 30px auto;
+  padding: 20px;
+	position: relative;
+	background: #fff;
+	z-index: 100;
+}
 
 input {
     outline:none;
