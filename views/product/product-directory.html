@@ -79,19 +79,19 @@
           ng-src="content/img/products/{{pro.img}}"
           src="content/img/logo/full-color/tws_logo_small150.jpg"
           alt="image of {{pro.name}}"
-          ng-hide="pro.status == 'coming soon'"/>
+          ng-show="showImgsContitions(pro.index - 1)"/>
         </div>
         <div class="pro_name">
-          <span ng-class="{'show_name' : pro.status == 'coming soon'}">{{pro.name}}</span>
+          <span ng-class="{'show_name' : pro.status == 'coming soon' || pro.status == 'coming soon w imgs'}">{{pro.name}}</span>
           <div ng-show="pro.status == 'sold'" class="show_name sold_out">sold out</div>
         </div>
         <div class="price_box ng-class:{'discount' : pro.discount}">
           <div class="price_off" ng-show="pro.discount">
             <span>{{pro.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</span>
           </div>
-          <span class="pro_price" ng-hide="pro.discount || pro.status == 'coming soon'"><i class="fa fa-usd" aria-hidden="true"></i>{{pro.price.toFixed(2)}}</span>
+          <span class="pro_price" ng-hide="pro.discount || pro.status == 'coming soon'|| pro.status == 'coming soon w imgs'"><i class="fa fa-usd" aria-hidden="true"></i>{{pro.price.toFixed(2)}}</span>
           <span class="pro_price" ng-show="pro.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice($index).toFixed(2)}}</span>
-          <span class="pro_price" ng-show="pro.status == 'coming soon'">Coming Soon</span>
+          <span class="pro_price" ng-show="pro.status == 'coming soon' || pro.status == 'coming soon w imgs'">Coming Soon</span>
         </div>
       </a>
     </div>

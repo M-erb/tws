@@ -65,5 +65,5 @@ twsApp.run(['$rootScope', '$location', '$stateParams', '$anchorScroll', 'Angular
    document.body.scrollTop = document.documentElement.scrollTop = 0;
   });
 
-  Angularytics.init();
+  // Angularytics.init();
 }]);

@@ -40,7 +40,7 @@
             <span><a href="/products">Products</a> > {{product.name}}</span>
           </div>
           <p>{{product.longDescription}}</p>
-          <div class="feature_box" ng-hide="product.status == 'coming soon'">
+          <div class="feature_box" ng-hide="product.status == 'coming soon' || product.status == 'coming soon w imgs'">
             <h3>features</h3>
             <ul>
               <li ng-repeat="item in product.features">
@@ -48,14 +48,14 @@
               </li>
             </ul>
           </div>
-          <div class="feature_box" ng-show="product.status == 'coming soon'">
+          <div class="feature_box" ng-show="product.status == 'coming soon' || product.status == 'coming soon w imgs'">
             <h3>Coming Soon</h3>
             <p>We are still working on putting these items together, but we would still love to work with you now on a custom project. Have anything in mind? Fill out the form below and we will get back to you fast.</p>
           </div>
           <p class="sku">sku: {{product.sku}}</p>
         </div>
       </div>
-      <div class="pro_checkout col" ng-hide="product.status == 'coming soon'">
+      <div class="pro_checkout col" ng-hide="product.status == 'coming soon' || product.status == 'coming soon w imgs'">
         <div class="price_box">
           <div class="pro_price_wrap">
             <p class="pro_percent" ng-show="product.discount">{{product.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</p>
@@ -85,7 +85,7 @@
       </div>
     </div>
 
-    <div ng-show="product.status == 'coming soon'">
+    <div ng-show="product.status == 'coming soon' || product.status == 'coming soon w imgs'">
       <form class="infuse_form" accept-charset="UTF-8" action="https://an140.infusionsoft.com/app/form/process/19569fedd6f8f6be5e79cde33dd5e7f8" class="infusion-form" method="POST">
         <input name="inf_form_xid" type="hidden" value="19569fedd6f8f6be5e79cde33dd5e7f8">
         <input name="inf_form_name" type="hidden" value="TWS Questions Comments Requests">
