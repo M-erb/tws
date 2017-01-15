@@ -8,6 +8,7 @@ twsApp.controller('homeCtrl', ['$scope', 'products', '$cookies', '$localStorage'
   $scope.randSort = function() {
     return 10;
   };
+  console.log(angular.toJson($scope.products))
 
 }]);
 
