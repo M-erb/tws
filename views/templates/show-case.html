@@ -1,0 +1,67 @@
+<header class="header" ng-include src="'views/templates/pages-header.html'"></header>
+
+<main class="show_case_page">
+  <div class="page_wrap">
+    <h2>Judy + Johnathan</h2>
+  </div>
+  <div class="mini_page_section">
+    <div class="page_wrap">
+      <h3>front</h3>
+      <ul class="img_group_wrap">
+        <li ng-repeat="i in front">
+          <img ng-click="i.show = true" class="card_img" src="content/img/logo/full-color/tws_logo_small150.jpg" ng-src="{{::i.img}}" alt="" />
+          <div class="item_name">
+            <p ng-hide="front.length <= 1">{{::i.name}}</p>
+          </div>
+          <div class="light_box" ng-show="i.show">
+            <div class="light_box_inner">
+              <div class="close_btn" ng-click="i.show = false">
+                <div></div>
+                <div></div>
+              </div>
+              <img ng-click="i.show = false" class="img_in_lightbox" src="content/img/logo/full-color/tws_logo_small150.jpg" ng-src="{{::i.img}}" alt="" />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mini_page_section">
+    <div class="page_wrap">
+      <h3>back</h3>
+      <ul class="img_group_wrap">
+        <li ng-repeat="i in back">
+          <img ng-click="i.show = true" class="card_img" src="content/img/logo/full-color/tws_logo_small150.jpg" ng-src="{{::i.img}}" alt="" />
+          <div class="item_name" ng-click="i.show = true">
+            <p ng-hide="back.length <= 1">{{::i.name}}</p>
+          </div>
+          <div class="light_box" ng-show="i.show">
+            <div class="light_box_inner">
+              <div class="close_btn" ng-click="i.show = false">
+                <div></div>
+                <div></div>
+              </div>
+              <img ng-click="i.show = false" class="img_in_lightbox" src="content/img/logo/full-color/tws_logo_small150.jpg" ng-src="{{::i.img}}" alt="" />
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mini_page_section">
+    <div class="page_wrap text_block">
+      <p>These are some samples that I put together for you. Let me know if</p>
+        <p>you like any of them how they are</p>
+      <p class="between">or</p>
+      <p>you like parts of them</p>
+      <p class="between">or possibily</p>
+      <p>you want me to rethink the direction</p>
+      <p>Again, don't worry about offending me. This is all about creating something for you to help celebrate your marriage!</p>
+    </div>
+  </div>
+
+</main>
+
+<footer ng-include src="'views/templates/footer.html'"></footer>

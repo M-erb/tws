@@ -151,21 +151,21 @@ twsApp.controller('productInfoCtrl', ['$scope', '$rootScope', '$stateParams','pr
 
 }]);
 
-twsApp.controller('contactCtrl', ['$scope', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
+twsApp.controller('contactCtrl', ['$scope', '$cookies', '$localStorage', '$sessionStorage', function($scope, $cookies, $localStorage, $sessionStorage){
 
   $scope.storage = $localStorage;
   $scope.pagetitle = 'contact us';
 
 }]);
 
-twsApp.controller('policyCtrl', ['$scope', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
+twsApp.controller('policyCtrl', ['$scope', '$cookies', '$localStorage', '$sessionStorage', function($scope, $cookies, $localStorage, $sessionStorage){
 
   $scope.storage = $localStorage;
   $scope.pagetitle = 'policies';
 
 }]);
 
-twsApp.controller('aboutCtrl', ['$scope', '$cookies', '$localStorage', '$sessionStorage', function($scope, products, $cookies, $localStorage, $sessionStorage){
+twsApp.controller('aboutCtrl', ['$scope', '$cookies', '$localStorage', '$sessionStorage', function($scope, $cookies, $localStorage, $sessionStorage){
 
   $scope.storage = $localStorage;
   $scope.pagetitle = 'about us';
@@ -364,5 +364,38 @@ twsApp.controller('bagCtrl', ['$scope', '$stateParams','products', 'bag', '$cook
     $localStorage.unpurchasedBag = []
   }
   //https://an140.infusionsoft.com/app/manageCart/processBundle
+
+}]);
+
+twsApp.controller('showcaseCtrl', ['$scope', '$localStorage', '$sessionStorage', function($scope, $localStorage, $sessionStorage){
+
+  $scope.storage = $localStorage;
+  $scope.pagetitle = 'Amos wedding samples';
+
+  $scope.front = [
+    {
+      name: 'A',
+      img: '/content/img/clients/amos/amos_weddinginvite_samples.jpg'
+    }
+  ];
+
+  $scope.back = [
+    {
+      name: 'A',
+      img: '/content/img/clients/amos/amos_weddinginvite_samples2.jpg'
+    },
+    {
+      name: 'B',
+      img: '/content/img/clients/amos/amos_weddinginvite_samples3.jpg'
+    },
+    {
+      name: 'C',
+      img: '/content/img/clients/amos/amos_weddinginvite_samples4.jpg'
+    },
+    {
+      name: 'D',
+      img: '/content/img/clients/amos/amos_weddinginvite_samples5.jpg'
+    }
+  ];
 
 }]);

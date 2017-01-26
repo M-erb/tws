@@ -5,6 +5,7 @@
 @import 'controls';
 @import 'product';
 @import 'animate.css';
+@import 'custom';
 
 @import 'media-queries';
 @import 'reset.css';
@@ -132,6 +133,11 @@ main {
 	position: relative;
 }
 
+.mini_page_section {
+  width: 100%;
+  padding: 1em 0;
+}
+
 .full_page_section {
   width: 100%;
   min-height: 100vh;
@@ -177,7 +183,7 @@ main {
 .ng-hide {
 	transition: opacity ease-in-out 0.1s;
 	opacity: 0;
-	display: block!important;
+	// display: block!important;
 	position: absolute;
 }
 

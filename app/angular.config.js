@@ -23,7 +23,7 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
       templateUrl: 'views/pages/contact-us.html',
       controller: 'contactCtrl'
     });
-
+// shopping cart
   $stateProvider
     .state('productDirectory', {
       url: '/products',
@@ -43,16 +43,24 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
       controller: 'bagCtrl'
     });
   $stateProvider
+    .state('thankyou-order', {
+      url: '/thankyou-order',
+      templateUrl: 'views/pages/thankyou-order.html',
+      controller: 'homeCtrl'
+    });
+
+// misc
+  $stateProvider
     .state('notfound', {
       url: '/404',
       templateUrl: 'views/templates/404.html',
       controller: 'homeCtrl'
     });
   $stateProvider
-    .state('thankyou-order', {
-      url: '/thankyou-order',
-      templateUrl: 'views/pages/thankyou-order.html',
-      controller: 'homeCtrl'
+    .state('showcase', {
+      url: '/amos-invite-samples',
+      templateUrl: 'views/templates/show-case.html',
+      controller: 'showcaseCtrl'
     });
 
 
@@ -65,5 +73,5 @@ twsApp.run(['$rootScope', '$location', '$stateParams', '$anchorScroll', 'Angular
    document.body.scrollTop = document.documentElement.scrollTop = 0;
   });
 
-  // Angularytics.init();
+  Angularytics.init();
 }]);
