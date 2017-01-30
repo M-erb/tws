@@ -2781,7 +2781,7 @@ textarea.infusion-field-input-container {
       margin-bottom: 0.3em;
       display: block; }
     .show_case_page .text_block p.between {
-      margin: 0.6em 0; }
+      margin: 0.6em 0 3em 0; }
   .show_case_page .page_wrap {
     position: static; }
   .show_case_page h2 {

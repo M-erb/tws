@@ -1,7 +1,7 @@
 twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$localStorageProvider', '$uiViewScrollProvider', 'AngularyticsProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $localStorageProvider, $uiViewScrollProvider, AngularyticsProvider){
 
   $uiViewScrollProvider.useAnchorScroll();
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
   $localStorageProvider.setKeyPrefix('');
   AngularyticsProvider.setEventHandlers(['Console', 'GoogleUniversal']);
 

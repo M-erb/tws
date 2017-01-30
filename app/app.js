@@ -382,19 +382,11 @@ twsApp.controller('showcaseCtrl', ['$scope', '$localStorage', '$sessionStorage',
   $scope.back = [
     {
       name: 'A',
-      img: '/content/img/clients/amos/amos_weddinginvite_samples2.jpg'
+      img: '/content/img/clients/amos/amos_weddinginvite_treesamples2.jpg'
     },
     {
       name: 'B',
-      img: '/content/img/clients/amos/amos_weddinginvite_samples3.jpg'
-    },
-    {
-      name: 'C',
-      img: '/content/img/clients/amos/amos_weddinginvite_samples4.jpg'
-    },
-    {
-      name: 'D',
-      img: '/content/img/clients/amos/amos_weddinginvite_samples5.jpg'
+      img: '/content/img/clients/amos/amos_weddinginvite_treesamples3.jpg'
     }
   ];
 
