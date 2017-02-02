@@ -413,6 +413,57 @@ textarea.infusion-field-input-container {
     border: 2px solid #7BD5ED;
     background: rgba(89,89,89,.8);
 }
+
+.infusion-field-onwhite {
+    background: transparent;
+    padding: 10px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 15px 0px;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: all .5s;
+    font-family: lato, sans-serif;
+    font-size: 18px;
+		box-sizing: border-box;
+}
+
+/*removing text shadow for Chrome's auto fill styles*/
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    text-shadow: none;
+}
+
+.infusion-field-onwhite::-webkit-input-placeholder {
+    color: rgba(41,41,41,.3);
+    text-shadow: none;
+}
+.infusion-field-onwhite::-moz-placeholder {
+    color: rgba(41,41,41,.3);
+    text-shadow: none;
+}
+.infusion-field-onwhite:-ms-input-placeholder {
+    color: rgba(41,41,41,.3);
+    text-shadow: none;
+}
+.infusion-field-onwhite:-moz-placeholder {
+    color: rgba(41,41,41,.3);
+    text-shadow: none;
+}
+
+textarea.infusion-field-onwhite {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    font-size: 75%;
+}
+
+.infusion-field-onwhite:focus {
+    outline: none;
+    border: 2px solid #7BD5ED;
+    background: rgba(89,89,89,.2);
+}
+
 .infusion-submit {
     background: none;
     border: none;

@@ -55,33 +55,57 @@
           <p class="sku">sku: {{product.sku}}</p>
         </div>
       </div>
-      <div class="pro_checkout col" ng-hide="product.status == 'coming soon' || product.status == 'coming soon w imgs'">
+      <div class="pro_checkout col" ng-hide="product.status == 'coming soon' || product.status == 'coming soon w imgs'"
+      ng-if="product.collection != 'ericas custom announcements and invitations'">
         <div class="price_box">
-          <div class="pro_price_wrap">
-            <p class="pro_percent" ng-show="product.discount">{{product.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</p>
-            <p class="pro_price"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice.toFixed(2)}}</p>
-            <p class="pro_original" ng-show="product.discount">org: <i class="fa fa-usd" aria-hidden="true"></i>{{product.price.toFixed(2)}}</p>
-          </div>
-          <div class="qty_field_wrap ng-class:{'no_qty' : product.qtyAvailable <= 1}">
-            <button class="qty_controls" ng-click="minusQTY()" ng-disabled="product.qtyAvailable <= 1"> - </button>
-            <input type="number" ng-model="qtyField" ng-disabled="product.qtyAvailable <= 1"/>
-            <button class="qty_controls" ng-click="plusQTY()" ng-disabled="product.qtyAvailable <= 1"> + </button>
-          </div>
-          <div class="qty_avail">
-            <span ng-show="product.qtyAvailable > 1">Available: {{product.qtyAvailable}}</span>
-            <span ng-show="product.qtyAvailable == 1">Only one available</span>
-            <span ng-show="product.qtyAvailable < 1">No more in stock</span>
-          </div>
-          <div class="qty_message" ng-show="exceedQtyAvail">
-            <span>There are no more than {{product.qtyAvailable}} available</span>
-          </div>
-          <a href="#bag_btn" class="btn_red" ng-hide="product.qtyAvailable < 1" ng-click="addToBag(); bagToggle()">
-            <span>add to bag</span>
-          </a>
-          <div class="btn_red no_qty" ng-show="product.qtyAvailable < 1">
-            <span>add to bag</span>
+          <div>
+            <div class="pro_price_wrap">
+              <p class="pro_percent" ng-show="product.discount">{{product.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</p>
+              <p class="pro_price"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice.toFixed(2)}}</p>
+              <p class="pro_original" ng-show="product.discount">org: <i class="fa fa-usd" aria-hidden="true"></i>{{product.price.toFixed(2)}}</p>
+            </div>
+            <div class="qty_field_wrap ng-class:{'no_qty' : product.qtyAvailable <= 1}">
+              <button class="qty_controls" ng-click="minusQTY()" ng-disabled="product.qtyAvailable <= 1"> - </button>
+              <input type="number" ng-model="qtyField" ng-disabled="product.qtyAvailable <= 1"/>
+              <button class="qty_controls" ng-click="plusQTY()" ng-disabled="product.qtyAvailable <= 1"> + </button>
+            </div>
+            <div class="qty_avail">
+              <span ng-show="product.qtyAvailable > 1">Available: {{product.qtyAvailable}}</span>
+              <span ng-show="product.qtyAvailable == 1">Only one available</span>
+              <span ng-show="product.qtyAvailable < 1">No more in stock</span>
+            </div>
+            <div class="qty_message" ng-show="exceedQtyAvail">
+              <span>There are no more than {{product.qtyAvailable}} available</span>
+            </div>
+            <a href="#bag_btn" class="btn_red" ng-hide="product.qtyAvailable < 1" ng-click="addToBag(); bagToggle()">
+              <span>add to bag</span>
+            </a>
+            <div class="btn_red no_qty" ng-show="product.qtyAvailable < 1">
+              <span>add to bag</span>
+            </div>
           </div>
         </div>
+      </div>
+      <div class="pro_form_box" ng-if="product.collection == 'ericas custom announcements and invitations'">
+        <form class="infuse_form" accept-charset="UTF-8" action="https://an140.infusionsoft.com/app/form/process/057770e90414ca5c886724184dad4e4d" class="infusion-form" method="POST">
+          <input name="inf_form_xid" type="hidden" value="057770e90414ca5c886724184dad4e4d">
+          <input name="inf_form_name" type="hidden" value="TWS Questions Comments Requests">
+          <input name="infusionsoft_version" type="hidden" value="1.62.0.37">
+
+          <input class="infusion-field-onwhite" id="inf_field_FirstName" name="inf_field_FirstName" type="text" placeholder="first name*" onblur="requiredField(this)" required>
+          <input class="infusion-field-onwhite" id="inf_field_LastName" name="inf_field_LastName" type="text" placeholder="last name">
+          <input class="infusion-field-onwhite" id="inf_field_Email" name="inf_field_Email" type="email" placeholder="email*" onblur="requiredField(this)" required>
+          <input class="infusion-field-onwhite" id="inf_custom_TimeFrame" name="inf_custom_TimeFrame" type="text" placeholder="time frame*" onblur="requiredField(this)" required/>
+          <input class="infusion-field-onwhite" id="inf_custom_budget" name="inf_custom_budget" type="text" placeholder="budget*" onblur="requiredField(this)" required/>
+          <div class="text_areas">
+              <textarea cols="5" rows="5" class="infusion-field-onwhite"  id="inf_custom_Surveymessage" name="inf_custom_Surveymessage" placeholder="Tell me about yourself and your wedding*" onblur="requiredField(this)" required></textarea>
+          </div>
+
+          <button class="infusion-submit" type="submit">
+              submit <i class="fa fa-bolt"></i>
+          </button>
+        </form>
+        <script type="text/javascript" src="https://an140.infusionsoft.com/app/webTracking/getTrackingCode?trackingId=ce1c56f581c3fcee728d109870c1eb9a"></script>
       </div>
     </div>
 

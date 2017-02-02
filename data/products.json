@@ -266,50 +266,30 @@
 	"id": "999",
 	"index": 12,
 	"name": "Custom Wedding Announcement",
-	"img": "whale-blanket-front.png",
+	"img": "announcement/announcements and invites product page.jpg",
 	"slides": [{
-		"img": "announcement/1.jpg"
+		"img": "announcement/announcements and invites product page.jpg"
 	}, {
-		"img": "announcement/2.jpg"
+		"img": "announcement/announcements and invites product page2.jpg"
 	}, {
-		"img": "announcement/3.jpg"
+		"img": "announcement/announcements and invites product page3.jpg"
 	}, {
-		"img": "announcement/4.jpg"
+		"img": "announcement/announcements and invites product page4.jpg"
 	}, {
-		"img": "announcement/5.jpg"
+		"img": "announcement/announcements and invites product page5.jpg"
 	}, {
-		"img": "announcement/6.jpg"
+		"img": "announcement/announcements and invites product page6.jpg"
 	}, {
-		"img": "announcement/7.jpg"
+		"img": "announcement/announcements and invites product page7.jpg"
 	}, {
-		"img": "announcement/8.jpg"
-	}, {
-		"img": "announcement/chevronwedding_final2.jpg"
-	}, {
-		"img": "announcement/chevronwedding_final.jpg"
-	}, {
-		"img": "announcement/9.jpg"
-	}, {
-		"img": "announcement/10.jpg"
-	}, {
-		"img": "announcement/11.jpg"
-	}, {
-		"img": "announcement/12.jpg"
-	}, {
-		"img": "announcement/13.jpg"
-	}, {
-		"img": "announcement/14.jpg"
-	}, {
-		"img": "announcement/15.jpg"
-	}, {
-		"img": "announcement/16.jpg"
+		"img": "announcement/announcements and invites product page8.jpg"
 	}],
 	"price": "",
 	"discount": 0,
-	"status": "coming soon",
+	"status": "active",
 	"sku": "CA001",
 	"qtyAvailable": 0,
-	"collection": "ericas",
+	"collection": "ericas custom announcements and invitations",
 	"category": "wedding",
 	"shortDescription": "Looky lookie",
 	"longDescription": "Custom Wedding Announcement just for you."
@@ -326,7 +306,7 @@
 	"status": "coming soon",
 	"sku": "CA002",
 	"qtyAvailable": 0,
-	"collection": "ericas",
+	"collection": "ericas custom announcements and invitations",
 	"category": "Graduation",
 	"shortDescription": "Looky lookie",
 	"longDescription": "Custom Graduation Announcement just for you."
@@ -343,7 +323,7 @@
 	"status": "coming soon",
 	"sku": "CA003",
 	"qtyAvailable": 0,
-	"collection": "ericas",
+	"collection": "ericas custom announcements and invitations",
 	"category": "Design work",
 	"shortDescription": "Looky lookie",
 	"longDescription": "Custom Graphic Design just for you."
