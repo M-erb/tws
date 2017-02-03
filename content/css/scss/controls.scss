@@ -433,21 +433,21 @@ textarea.infusion-field-input-container {
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     text-shadow: none;
 }
-
+$placeholder: rgba(41,41,41,.4);
 .infusion-field-onwhite::-webkit-input-placeholder {
-    color: rgba(41,41,41,.3);
+    color: $placeholder;
     text-shadow: none;
 }
 .infusion-field-onwhite::-moz-placeholder {
-    color: rgba(41,41,41,.3);
+    color: $placeholder;
     text-shadow: none;
 }
 .infusion-field-onwhite:-ms-input-placeholder {
-    color: rgba(41,41,41,.3);
+    color: $placeholder;
     text-shadow: none;
 }
 .infusion-field-onwhite:-moz-placeholder {
-    color: rgba(41,41,41,.3);
+    color: $placeholder;
     text-shadow: none;
 }
 

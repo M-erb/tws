@@ -2041,19 +2041,19 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   text-shadow: none; }
 
 .infusion-field-onwhite::-webkit-input-placeholder {
-  color: rgba(41, 41, 41, 0.3);
+  color: rgba(41, 41, 41, 0.4);
   text-shadow: none; }
 
 .infusion-field-onwhite::-moz-placeholder {
-  color: rgba(41, 41, 41, 0.3);
+  color: rgba(41, 41, 41, 0.4);
   text-shadow: none; }
 
 .infusion-field-onwhite:-ms-input-placeholder {
-  color: rgba(41, 41, 41, 0.3);
+  color: rgba(41, 41, 41, 0.4);
   text-shadow: none; }
 
 .infusion-field-onwhite:-moz-placeholder {
-  color: rgba(41, 41, 41, 0.3);
+  color: rgba(41, 41, 41, 0.4);
   text-shadow: none; }
 
 textarea.infusion-field-onwhite {
@@ -2443,7 +2443,8 @@ textarea.infusion-field-onwhite {
     display: inline-block;
     align-self: baseline;
     width: 100%;
-    max-width: 700px; }
+    max-width: 700px;
+    min-width: 300px; }
   .pro_wrap .pro_info_wrap .pro_checkout {
     display: flex;
     justify-content: flex-end;

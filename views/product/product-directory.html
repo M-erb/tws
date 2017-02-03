@@ -72,14 +72,14 @@
   </div>
   <div class="page_wrap">
     <div class="pro_container">
-      <a class="pro_box" ng-href="/product-directory/product{{pro.index - 1}}"
+      <a class="pro_box" ng-href="/products/product{{pro.index - 1}}"
       ng-repeat="pro in products | filter: inputSearch | filter: categorySearch | filter: collecSearch">
         <div class="pro_img">
           <img
           ng-src="content/img/products/{{pro.img}}"
           src="content/img/logo/full-color/tws_logo_small150.jpg"
           alt="image of {{pro.name}}"
-          ng-show="showImgsContitions(pro.index - 1)"/>
+          ng-show="showImgsConditions(pro.index - 1)"/>
         </div>
         <div class="pro_name">
           <span ng-class="{'show_name' : pro.status == 'coming soon' || pro.status == 'coming soon w imgs'}">{{pro.name}}</span>
@@ -89,9 +89,10 @@
           <div class="price_off" ng-show="pro.discount">
             <span>{{pro.discount}}<i class="fa fa-percent" aria-hidden="true"></i> off</span>
           </div>
-          <span class="pro_price" ng-hide="pro.discount || pro.status == 'coming soon'|| pro.status == 'coming soon w imgs'"><i class="fa fa-usd" aria-hidden="true"></i>{{pro.price.toFixed(2)}}</span>
+          <span class="pro_price" ng-hide="pro.discount || pro.status === 'coming soon'|| pro.status === 'coming soon w imgs' || pro.type === 'custom'"><i class="fa fa-usd" aria-hidden="true"></i>{{pro.price.toFixed(2)}}</span>
           <span class="pro_price" ng-show="pro.discount"><i class="fa fa-usd" aria-hidden="true"></i>{{disPrice($index).toFixed(2)}}</span>
           <span class="pro_price" ng-show="pro.status == 'coming soon' || pro.status == 'coming soon w imgs'">Coming Soon</span>
+          <span class="pro_price" ng-show="pro.type == 'custom' && pro.status != 'coming soon'">Custom</span>
         </div>
       </a>
     </div>

@@ -18,7 +18,7 @@ twsApp.controller('productDirectoryCtrl', ['$scope', '$stateParams','products', 
   $scope.pagetitle = 'products'
   $scope.collecSearch = ''
 
-  $scope.showImgsContitions = function(i) {
+  $scope.showImgsConditions = function(i) {
     if($scope.products[i].status === 'active') {
       return true
     }else if($scope.products[i].status === 'sold') {

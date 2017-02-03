@@ -1,7 +1,7 @@
 twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$localStorageProvider', '$uiViewScrollProvider', 'AngularyticsProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $localStorageProvider, $uiViewScrollProvider, AngularyticsProvider){
 
   $uiViewScrollProvider.useAnchorScroll();
-  // $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
   $localStorageProvider.setKeyPrefix('');
   AngularyticsProvider.setEventHandlers(['Console', 'GoogleUniversal']);
 
@@ -32,7 +32,7 @@ twsApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$lo
     });
   $stateProvider
     .state('productInfo', {
-      url: '/product-directory/product{proIndex}',
+      url: '/products/product{proIndex}',
       templateUrl: 'views/product/product-info.html',
       controller: 'productInfoCtrl'
     });

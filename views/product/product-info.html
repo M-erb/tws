@@ -41,7 +41,8 @@
           </div>
           <p>{{product.longDescription}}</p>
           <div class="feature_box" ng-hide="product.status == 'coming soon' || product.status == 'coming soon w imgs'">
-            <h3>features</h3>
+            <h3 ng-hide="product.collection === 'ericas custom announcements and invitations'">features</h3>
+            <h3 ng-show="product.collection === 'ericas custom announcements and invitations'">we will:</h3>
             <ul>
               <li ng-repeat="item in product.features">
                 {{item}}
@@ -86,7 +87,10 @@
           </div>
         </div>
       </div>
-      <div class="pro_form_box" ng-if="product.collection == 'ericas custom announcements and invitations'">
+      <div class="pro_form_box col" ng-if="product.collection == 'ericas custom announcements and invitations' && product.status != 'coming soon'">
+        <div class="">
+          <h3>let's get started!</h3>
+        </div>
         <form class="infuse_form" accept-charset="UTF-8" action="https://an140.infusionsoft.com/app/form/process/057770e90414ca5c886724184dad4e4d" class="infusion-form" method="POST">
           <input name="inf_form_xid" type="hidden" value="057770e90414ca5c886724184dad4e4d">
           <input name="inf_form_name" type="hidden" value="TWS Questions Comments Requests">
@@ -97,8 +101,9 @@
           <input class="infusion-field-onwhite" id="inf_field_Email" name="inf_field_Email" type="email" placeholder="email*" onblur="requiredField(this)" required>
           <input class="infusion-field-onwhite" id="inf_custom_TimeFrame" name="inf_custom_TimeFrame" type="text" placeholder="time frame*" onblur="requiredField(this)" required/>
           <input class="infusion-field-onwhite" id="inf_custom_budget" name="inf_custom_budget" type="text" placeholder="budget*" onblur="requiredField(this)" required/>
+          <input class="infusion-field-onwhite" id="inf_custom_Numofprints" name="inf_custom_Numofprints" placeholder="est. number of prints" type="text" />
           <div class="text_areas">
-              <textarea cols="5" rows="5" class="infusion-field-onwhite"  id="inf_custom_Surveymessage" name="inf_custom_Surveymessage" placeholder="Tell me about yourself and your wedding*" onblur="requiredField(this)" required></textarea>
+              <textarea cols="5" rows="5" class="infusion-field-onwhite"  id="inf_custom_Surveymessage" name="inf_custom_Surveymessage" placeholder="{{product.placeholder}}*" onblur="requiredField(this)" required></textarea>
           </div>
 
           <button class="infusion-submit" type="submit">
